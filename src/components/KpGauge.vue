@@ -2,43 +2,66 @@
   <div class="glass-panel p-5 sm:p-6">
     <div class="flex items-center justify-between mb-4">
       <h2 class="text-lg font-semibold text-text-primary">{{ t('kp.current') }}</h2>
-      <span
-        v-if="noaaScale"
-        class="px-3 py-1.5 rounded-full text-sm font-bold"
-        :class="noaaScale === 'G5' ? 'bg-kp-extreme/20 text-kp-extreme' :
-                noaaScale === 'G4' ? 'bg-kp-severe/20 text-kp-severe' :
-                noaaScale === 'G3' ? 'bg-kp-storm/20 text-kp-storm' :
-                'bg-kp-unsettled/20 text-kp-unsettled'"
-      >
-        {{ noaaScale }}
-      </span>
+      <div class="flex items-center gap-2">
+        <!-- NOAA / BAS toggle -->
+        <div class="flex rounded-lg overflow-hidden border border-[var(--color-border)] text-[11px] font-semibold">
+          <button
+            class="px-2.5 py-1 transition-colors"
+            :class="dataSource === 'noaa'
+              ? 'bg-accent text-white'
+              : 'bg-[var(--color-card-bg)] text-text-muted hover:text-text-secondary'"
+            @click="$emit('update:dataSource', 'noaa')"
+          >NOAA</button>
+          <button
+            class="px-2.5 py-1 transition-colors"
+            :class="dataSource === 'bas'
+              ? 'bg-accent text-white'
+              : 'bg-[var(--color-card-bg)] text-text-muted hover:text-text-secondary'"
+            @click="$emit('update:dataSource', 'bas')"
+          >BAS</button>
+        </div>
+        <span
+          v-if="noaaScale"
+          class="px-3 py-1.5 rounded-full text-sm font-bold"
+          :class="noaaScale === 'G5' ? 'bg-kp-extreme/20 text-kp-extreme' :
+                  noaaScale === 'G4' ? 'bg-kp-severe/20 text-kp-severe' :
+                  noaaScale === 'G3' ? 'bg-kp-storm/20 text-kp-storm' :
+                  'bg-kp-unsettled/20 text-kp-unsettled'"
+        >
+          {{ noaaScale }}
+        </span>
+      </div>
     </div>
 
     <!-- Gauge + Scale: column on mobile, row on desktop -->
     <div class="flex flex-col sm:flex-row items-center gap-5 sm:gap-8 mb-5">
       <div
         class="kp-gauge-ring shrink-0"
-        :class="{ active: kp !== null }"
+        :class="{ active: displayKp !== null }"
         :style="gaugeGlow"
       >
         <div class="kp-gauge-inner">
           <div
             class="text-5xl font-black leading-none transition-colors duration-500"
             :class="{ 'kp-value-animate': animating }"
-            :style="{ color: kp !== null ? getKpColor(kp) : 'var(--color-text-muted)' }"
+            :style="{ color: displayKp !== null ? getKpColor(displayKp) : 'var(--color-text-muted)' }"
           >
-            {{ kp !== null ? kp.toFixed(1) : '--' }}
+            {{ displayKp !== null ? displayKp.toFixed(1) : '--' }}
           </div>
-          <div class="text-[10px] text-text-muted mt-1">NOAA Kp</div>
+          <div class="text-[10px] text-text-muted mt-1">{{ dataSource === 'bas' ? 'BAS Kpm' : 'NOAA Kp' }}</div>
           <!-- Secondary readings -->
           <div class="flex gap-3 mt-1 text-[11px]">
-            <div v-if="liveKp !== null" class="text-center">
+            <div v-if="liveKp !== null && dataSource === 'noaa'" class="text-center">
               <span class="text-text-muted block text-[9px]">Live</span>
               <span class="font-bold" :style="{ color: getKpColor(liveKp) }">{{ liveKp.toFixed(1) }}</span>
             </div>
-            <div v-if="showBas && basEstimate !== null" class="text-center">
-              <span class="text-text-muted block text-[9px]">BAS~</span>
-              <span class="font-bold" :style="{ color: getKpColor(basEstimate) }">{{ basEstimate.toFixed(1) }}</span>
+            <div v-if="dataSource === 'noaa' && basKp !== null" class="text-center">
+              <span class="text-text-muted block text-[9px]">BAS</span>
+              <span class="font-bold" :style="{ color: getKpColor(basKp) }">{{ basKp.toFixed(1) }}</span>
+            </div>
+            <div v-if="dataSource === 'bas' && kp !== null" class="text-center">
+              <span class="text-text-muted block text-[9px]">NOAA</span>
+              <span class="font-bold" :style="{ color: getKpColor(kp) }">{{ kp.toFixed(1) }}</span>
             </div>
           </div>
         </div>
@@ -51,7 +74,7 @@
             v-for="i in 10"
             :key="i"
             class="scale-segment"
-            :class="{ lit: kp !== null && kp >= i - 1 }"
+            :class="{ lit: displayKp !== null && displayKp >= i - 1 }"
             :style="{ background: getKpColor(i - 1) }"
           />
         </div>
@@ -59,8 +82,8 @@
           <span v-for="i in [0, 3, 5, 7, 9]" :key="i" class="sm:hidden">{{ i }}</span>
           <span v-for="i in 10" :key="'d'+i" class="hidden sm:inline">{{ i - 1 }}</span>
         </div>
-        <div class="text-sm font-semibold mt-2" :style="{ color: kp !== null ? getKpColor(kp) : 'var(--color-text-muted)' }">
-          {{ kp !== null ? kpLevelText : t('app.loading') }}
+        <div class="text-sm font-semibold mt-2" :style="{ color: displayKp !== null ? getKpColor(displayKp) : 'var(--color-text-muted)' }">
+          {{ displayKp !== null ? kpLevelText : t('app.loading') }}
         </div>
       </div>
     </div>
@@ -77,8 +100,8 @@
       </div>
       <div>
         <div class="text-[11px] uppercase tracking-wider text-text-muted">{{ t('kp.yourThreshold') }}</div>
-        <div class="font-semibold" :class="kp >= threshold ? 'text-kp-severe' : 'text-kp-quiet'">
-          Kp {{ threshold }}{{ kp >= threshold ? ' · ' + t('kp.active') : '' }}
+        <div class="font-semibold" :class="displayKp >= threshold ? 'text-kp-severe' : 'text-kp-quiet'">
+          Kp {{ threshold }}{{ displayKp >= threshold ? ' · ' + t('kp.active') : '' }}
         </div>
       </div>
     </div>
@@ -94,8 +117,8 @@ const { t, locale } = useI18n()
 const props = defineProps({
   kp: { type: Number, default: null },
   liveKp: { type: Number, default: null },
-  basEstimate: { type: Number, default: null },
-  showBas: { type: Boolean, default: false },
+  basKp: { type: Number, default: null },
+  dataSource: { type: String, default: 'noaa' },
   kpType: { type: String, default: 'observed' },
   timeTag: { type: String, default: '' },
   threshold: { type: Number, default: 4 },
@@ -106,21 +129,25 @@ const props = defineProps({
   get3hWindow: { type: Function, required: true },
 })
 
+defineEmits(['update:dataSource'])
+
 const animating = ref(false)
 
-// Animate on Kp value change
-watch(() => props.kp, (newVal, oldVal) => {
+const displayKp = computed(() => props.dataSource === 'bas' ? props.basKp : props.kp)
+
+// Animate on value change
+watch(displayKp, (newVal, oldVal) => {
   if (newVal !== null && oldVal !== null && newVal !== oldVal) {
     animating.value = true
     setTimeout(() => { animating.value = false }, 500)
   }
 })
 
-const noaaScale = computed(() => props.kp !== null ? props.getNoaaScale(props.kp) : null)
+const noaaScale = computed(() => displayKp.value !== null ? props.getNoaaScale(displayKp.value) : null)
 
 const kpLevelText = computed(() => {
-  if (props.kp === null) return ''
-  const v = props.kp
+  if (displayKp.value === null) return ''
+  const v = displayKp.value
   if (v < 4) return t('kp.quiet')
   if (v < 5) return t('kp.unsettled')
   if (v < 6) return t('kp.minorStorm')
@@ -144,10 +171,10 @@ const localTime = computed(() => {
 })
 
 const gaugeGlow = computed(() => {
-  if (props.kp === null) return {}
-  const color = props.getKpColor(props.kp)
+  if (displayKp.value === null) return {}
+  const color = props.getKpColor(displayKp.value)
   return {
-    filter: props.kp >= 4 ? `drop-shadow(0 0 20px ${color}40)` : 'none',
+    filter: displayKp.value >= 4 ? `drop-shadow(0 0 20px ${color}40)` : 'none',
   }
 })
 </script>

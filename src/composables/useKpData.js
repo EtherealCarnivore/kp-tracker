@@ -48,29 +48,6 @@ function getNoaaScale(kp) {
   return null
 }
 
-/**
- * Convert NOAA global Kp to an approximate BAS Kpm equivalent.
- *
- * BAS uses their own Kpm methodology (MAK model) based on ACE satellite data
- * and the Panagyurishte observatory. The correlation with global Kp is r~0.84
- * but BAS values tend to be significantly lower, especially during storms.
- *
- * This is a rough linear approximation based on observed data:
- * - At quiet conditions (Kp 0-2): Kpm ≈ Kp (similar)
- * - At active conditions (Kp 3-5): Kpm ≈ 0.65 * Kp
- * - At storm conditions (Kp 5+): Kpm ≈ 0.45 * Kp + 0.5
- *
- * NOT scientifically precise — this is an approximation for reference only.
- */
-function noaaToBAS(kp) {
-  const v = parseFloat(kp)
-  if (isNaN(v)) return null
-  if (v <= 2) return Math.round(v * 0.9 * 100) / 100
-  if (v <= 5) return Math.round((v * 0.65 + 0.3) * 100) / 100
-  // Storm: aggressive reduction — BAS reads much lower in storms
-  return Math.round((v * 0.45 + 0.8) * 100) / 100
-}
-
 function formatTime(utcStr, tz = 'Europe/Sofia') {
   try {
     const d = new Date(utcStr.replace(' ', 'T') + (utcStr.includes('Z') ? '' : 'Z'))
@@ -123,11 +100,13 @@ async function fetchCurrentKp() {
     const data = await fetchJSON(`${NOAA_BASE}/products/noaa-planetary-k-index.json`)
     if (data && data.length > 1) {
       const latest = data[data.length - 1]
-      const kp = parseFloat(latest.Kp ?? latest.kp ?? 0)
+      // Data rows can be arrays (with header row at index 0) or objects
+      const kp = parseFloat(Array.isArray(latest) ? latest[1] : (latest.Kp ?? latest.kp ?? 0))
+      const timeTag = Array.isArray(latest) ? latest[0] : latest.time_tag
       if (!isNaN(kp)) {
         currentKp.value = {
           kp,
-          timeTag: latest.time_tag,
+          timeTag,
           type: 'observed',
         }
       }
@@ -274,7 +253,6 @@ export function useKpData(refreshSeconds = 120) {
     getKpColor,
     getKpLevel,
     getNoaaScale,
-    noaaToBAS,
     formatTime,
     formatTimeShort,
     get3hWindow,

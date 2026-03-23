@@ -132,10 +132,6 @@ export default {
   "info.active": "Active — noticeable",
   "info.stormG1G2": "Storm (G1-G2)",
   "info.severeG3G5": "Severe (G3-G5)",
-  "info.affectPeople": "Does it affect people?",
-  "info.affectText": "Officially, solar storms don't directly harm people — Earth's field and atmosphere protect us. However, research has found associations with heart rate variability, blood pressure, sleep, mood, headache, and general malaise. Evidence is mixed but some people consistently notice it.",
-  "info.bulgaria": "Bulgaria",
-  "info.bulgariaText": "The Panagyurishte Observatory (PAG) has measured local geomagnetic data since 1937. Local K correlates highly (r~0.84) with global Kp but reads slightly higher during storms.",
 
   // Settings
   "settings.title": "Settings",
@@ -158,12 +154,6 @@ export default {
   "settings.clear": "Clear All Logs",
   "settings.clearConfirm": "Delete all logged entries? This cannot be undone.",
   "settings.language": "Language",
-  "settings.dataSource": "Data Source",
-  "settings.dataSourceNoaa": "NOAA (Global)",
-  "settings.dataSourceBas": "BAS (Bulgaria)",
-  "settings.dataSourceNoaaDesc": "Global Kp from NOAA Space Weather Prediction Center. 13 stations worldwide.",
-  "settings.dataSourceBasDesc": "Kpm from Bulgarian Academy of Sciences (NIGGG). Local estimate using ACE satellite data.",
-  "settings.basUnavailable": "BAS data not yet available. The scraper runs every 15 min.",
 
   // Footer
   "footer.dataFrom": "Data from",

@@ -1,8 +1,9 @@
 /**
  * Fetches Kpm data from the Bulgarian Academy of Sciences (NIGGG-BAS).
  *
- * Data source: http://www.geophys.bas.bg/kp_for/kpYYMMDD.txt
- * Format: 15-minute interval Kpm estimates
+ * Data source: http://www.geophys.bas.bg/kp_for/kp_mod_en.php
+ * The HTML page contains the real-time model output (15-min Kpm estimates
+ * and 6-hour forecast) which differs from the static text files.
  *
  * This script runs via GitHub Actions every 15 minutes and writes
  * the parsed data to public/data/bas-kpm.json for the frontend to consume.
@@ -15,19 +16,7 @@ import { fileURLToPath } from 'url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const OUTPUT_PATH = join(__dirname, '..', 'public', 'data', 'bas-kpm.json')
 
-// BAS hosts (try multiple in case one is down)
-const BAS_HOSTS = [
-  'http://www.geophys.bas.bg',
-  'http://data.niggg.bas.bg',
-  'http://data.geophys.bas.bg',
-]
-
-function formatDateForBAS(date) {
-  const yy = String(date.getUTCFullYear()).slice(2)
-  const mm = String(date.getUTCMonth() + 1).padStart(2, '0')
-  const dd = String(date.getUTCDate()).padStart(2, '0')
-  return `${yy}${mm}${dd}`
-}
+const BAS_URL = 'http://www.geophys.bas.bg/kp_for/kp_mod_en.php'
 
 async function fetchWithTimeout(url, timeoutMs = 15000) {
   const controller = new AbortController()
@@ -42,71 +31,134 @@ async function fetchWithTimeout(url, timeoutMs = 15000) {
   }
 }
 
-async function fetchBASFile(dateStr) {
-  for (const host of BAS_HOSTS) {
-    const url = `${host}/kp_for/kp${dateStr}.txt`
-    try {
-      console.log(`Trying: ${url}`)
-      const res = await fetchWithTimeout(url)
-      if (res.ok) {
-        const text = await res.text()
-        if (text.trim().length > 10) {
-          console.log(`Success: ${url}`)
-          return text
-        }
-      }
-    } catch (e) {
-      console.log(`Failed: ${url} (${e.message})`)
+/**
+ * Parse the BAS HTML page.
+ * The page contains two tables:
+ *   1. Observed/estimated values (past ~30h)
+ *   2. Forecast for next 6 hours (after "Forecast for next 6 hours" divider)
+ *
+ * Each cell: "HH:MM | value" or "HH:MM | n/a"
+ */
+function parseBASHtml(html) {
+  const observed = []
+  const forecast = []
+
+  // Find the forecast divider to separate observed vs forecast
+  const forecastDividerIdx = html.indexOf('Forecast for next 6 hours')
+  if (forecastDividerIdx === -1) {
+    // Try Bulgarian version
+    const bgIdx = html.indexOf('6 часа')
+    if (bgIdx === -1) {
+      console.warn('Could not find forecast divider')
     }
   }
-  return null
+
+  // Extract all table cells with time|value pattern
+  const cellRegex = /<td[^>]*>(\d{1,2}:\d{2})\s*\|\s*([\d.]+|n\/a)<\/td>/gi
+  let match
+  let isForecast = false
+
+  // Track position to determine if we're past the forecast divider
+  while ((match = cellRegex.exec(html)) !== null) {
+    if (forecastDividerIdx > 0 && match.index > forecastDividerIdx) {
+      isForecast = true
+    }
+
+    const time = match[1]
+    const valueStr = match[2]
+
+    if (valueStr === 'n/a') continue
+
+    const kpm = parseFloat(valueStr)
+    if (isNaN(kpm)) continue
+
+    const entry = { time, kpm }
+
+    if (isForecast) {
+      forecast.push(entry)
+    } else {
+      observed.push(entry)
+    }
+  }
+
+  return { observed, forecast }
 }
 
 /**
- * Parse BAS text file format:
- * Header: "DD MM YYYY 15-minute Estimated Geomagnetic Activity Index"
- * Data: "HH:MM  value"
+ * Convert time-only entries to full timestamps.
+ * BAS shows times in UTC. We need to figure out dates from context:
+ * - The page shows ~30h of past data + 6h forecast
+ * - Times wrap around midnight, so we detect day boundaries
  */
-function parseBASText(text, dateStr) {
-  const lines = text.trim().split('\n')
-  const entries = []
+function entriesToTimestamps(entries, referenceDate) {
+  if (entries.length === 0) return []
 
-  // Always derive date from the filename (YYMMDD) — BAS header dates can be wrong
-  // e.g., file kp260322.txt has header "26 03 2022" (wrong year)
-  const year = 2000 + parseInt(dateStr.slice(0, 2))
-  const month = parseInt(dateStr.slice(2, 4))
-  const day = parseInt(dateStr.slice(4, 6))
+  const result = []
+  const now = referenceDate
+  const todayStr = now.toISOString().split('T')[0]
 
-  for (const line of lines.slice(1)) {
-    const match = line.trim().match(/^(\d{1,2}):(\d{2})\s+([-\d.]+)/)
-    if (match) {
-      const hour = parseInt(match[1])
-      const minute = parseInt(match[2])
-      const kpm = parseFloat(match[3])
+  // Work backwards from now to assign dates
+  // Start from the last observed entry and work backwards
+  let currentDate = new Date(todayStr + 'T00:00:00Z')
+  let prevHour = 99
 
-      // BAS uses -1 as "no data" sentinel — skip those
-      if (kpm < 0) continue
+  for (let i = entries.length - 1; i >= 0; i--) {
+    const [hh, mm] = entries[i].time.split(':').map(Number)
 
-      // Build UTC timestamp
-      const dateISO = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`
-      const timeISO = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}:00`
+    // If hour jumps up (going backwards means we crossed midnight backwards)
+    if (hh > prevHour) {
+      currentDate = new Date(currentDate.getTime() - 86400000)
+    }
+    prevHour = hh
 
-      entries.push({
-        time_tag: `${dateISO} ${timeISO}`,
-        kpm,
-      })
+    const dateStr = currentDate.toISOString().split('T')[0]
+    const timeStr = `${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')}:00`
+
+    result[i] = {
+      time_tag: `${dateStr} ${timeStr}`,
+      kpm: entries[i].kpm,
     }
   }
 
-  return entries
+  return result
+}
+
+function forecastToTimestamps(entries, referenceDate) {
+  if (entries.length === 0) return []
+
+  const result = []
+  const now = referenceDate
+  const todayStr = now.toISOString().split('T')[0]
+  const tomorrowStr = new Date(now.getTime() + 86400000).toISOString().split('T')[0]
+
+  let prevHour = -1
+  let currentDateStr = todayStr
+
+  for (const entry of entries) {
+    const [hh, mm] = entry.time.split(':').map(Number)
+
+    // Detect midnight wrap in forecast
+    if (hh < prevHour) {
+      currentDateStr = tomorrowStr
+    }
+    prevHour = hh
+
+    const timeStr = `${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')}:00`
+
+    result.push({
+      time_tag: `${currentDateStr} ${timeStr}`,
+      kpm: entry.kpm,
+      type: 'forecast',
+    })
+  }
+
+  return result
 }
 
 /**
  * Convert 15-minute Kpm entries into 3-hour windows
- * (average of the 12 readings in each 3-hour block)
  */
 function to3HourWindows(entries) {
-  const windows = []
   const groups = {}
 
   for (const entry of entries) {
@@ -118,6 +170,7 @@ function to3HourWindows(entries) {
     groups[key].push(entry.kpm)
   }
 
+  const windows = []
   for (const [timeTag, values] of Object.entries(groups).sort()) {
     const avg = values.reduce((a, b) => a + b, 0) / values.length
     const max = Math.max(...values)
@@ -135,63 +188,54 @@ function to3HourWindows(entries) {
 
 async function main() {
   const now = new Date()
-  const today = formatDateForBAS(now)
-  const yesterday = formatDateForBAS(new Date(now.getTime() - 86400000))
 
-  console.log(`Fetching BAS data for ${yesterday} and ${today}...`)
+  console.log(`Fetching BAS data from HTML page...`)
 
-  // Fetch today and yesterday
-  const [yesterdayText, todayText] = await Promise.all([
-    fetchBASFile(yesterday),
-    fetchBASFile(today),
-  ])
-
-  let allEntries = []
-
-  if (yesterdayText) {
-    const parsed = parseBASText(yesterdayText, yesterday)
-    console.log(`Yesterday: ${parsed.length} entries`)
-    allEntries.push(...parsed)
-  } else {
-    console.log('Yesterday: no data available')
-  }
-
-  if (todayText) {
-    const parsed = parseBASText(todayText, today)
-    console.log(`Today: ${parsed.length} entries`)
-    allEntries.push(...parsed)
-  } else {
-    console.log('Today: no data available')
-  }
-
-  // Load existing data to preserve it if BAS is down
-  let existingData = { entries_15min: [], windows_3h: [], last_updated: null, status: 'unknown' }
+  let html
   try {
-    if (existsSync(OUTPUT_PATH)) {
-      existingData = JSON.parse(readFileSync(OUTPUT_PATH, 'utf-8'))
-    }
-  } catch {}
+    const res = await fetchWithTimeout(BAS_URL)
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    html = await res.text()
+    console.log(`Fetched HTML: ${html.length} bytes`)
+  } catch (e) {
+    console.error(`Failed to fetch BAS page: ${e.message}`)
 
-  if (allEntries.length === 0) {
-    console.log('No new data from BAS. Keeping existing data.')
-    // Update status but keep old data
+    // Preserve existing data
+    let existingData = { status: 'unknown' }
+    try {
+      if (existsSync(OUTPUT_PATH)) {
+        existingData = JSON.parse(readFileSync(OUTPUT_PATH, 'utf-8'))
+      }
+    } catch {}
+
     existingData.status = 'bas_unreachable'
     existingData.last_check = now.toISOString()
     writeFileSync(OUTPUT_PATH, JSON.stringify(existingData, null, 2))
     return
   }
 
+  const { observed, forecast } = parseBASHtml(html)
+  console.log(`Parsed: ${observed.length} observed, ${forecast.length} forecast entries`)
+
+  if (observed.length === 0) {
+    console.error('No observed data parsed from BAS page')
+    return
+  }
+
+  const observedEntries = entriesToTimestamps(observed, now)
+  const forecastEntries = forecastToTimestamps(forecast, now)
+
+  const allEntries = [...observedEntries]
   const windows = to3HourWindows(allEntries)
 
-  // Determine current status
-  const latestEntry = allEntries[allEntries.length - 1]
+  // Current = last observed entry
+  const latestEntry = observedEntries[observedEntries.length - 1]
   let currentStatus = 'quiet'
   if (latestEntry) {
     if (latestEntry.kpm >= 5) currentStatus = 'storm'
     else if (latestEntry.kpm >= 4) currentStatus = 'active'
   }
 
-  // Find max in last 24h
   const max24h = allEntries.length > 0
     ? Math.max(...allEntries.map(e => e.kpm))
     : null
@@ -209,9 +253,8 @@ async function main() {
       activity_level: currentStatus,
     },
     max_24h: max24h,
-    // Last 48h of 15-minute readings
-    entries_15min: allEntries.slice(-192), // 2 days * 96 per day
-    // 3-hour windows (for chart compatibility)
+    entries_15min: observedEntries,
+    forecast_15min: forecastEntries,
     windows_3h: windows,
   }
 
@@ -224,6 +267,9 @@ async function main() {
   console.log(`Current Kpm: ${output.current.kpm} (${output.current.activity_level})`)
   console.log(`Max 24h: ${output.max_24h}`)
   console.log(`3h windows: ${windows.length}`)
+  if (forecastEntries.length > 0) {
+    console.log(`Forecast: ${forecastEntries.length} entries, next=${forecastEntries[0].kpm}`)
+  }
 }
 
 main().catch(e => {

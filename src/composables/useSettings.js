@@ -6,7 +6,7 @@ const defaults = {
   threshold: 4,
   timezone: 'Europe/Sofia',
   refreshInterval: 120,
-  showBASEstimate: false, // show BAS-equivalent approximation alongside NOAA
+  dataSource: 'noaa', // 'noaa' or 'bas'
 }
 
 const settings = ref({ ...defaults })

@@ -1,6 +1,7 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { useKpData } from './composables/useKpData.js'
+import { useBASData } from './composables/useBASData.js'
 import { useSymptomLog } from './composables/useSymptomLog.js'
 import { useSettings } from './composables/useSettings.js'
 import { useTheme } from './composables/useTheme.js'
@@ -20,8 +21,10 @@ useTheme() // Initialize theme on load
 
 const {
   currentKp, liveEstimate, kpHistory, kpForecast, solarWind, lastUpdate, loading,
-  fetchAll, getKpColor, getKpLevel, getNoaaScale, noaaToBAS, formatTime, get3hWindow,
+  fetchAll, getKpColor, getKpLevel, getNoaaScale, formatTime, get3hWindow,
 } = useKpData(settings.value.refreshInterval)
+
+const { getBASCurrent } = useBASData(settings.value.refreshInterval)
 
 const {
   recentLogs, stats, addLog, deleteLog, clearAllLogs, exportLogs, importLogs,
@@ -33,7 +36,10 @@ const showInfo = ref(false)
 const kpNum = computed(() => currentKp.value?.kp ?? null)
 const kpTimeTag = computed(() => currentKp.value?.timeTag ?? '')
 const liveKp = computed(() => liveEstimate.value?.kp ?? null)
-const basEstimate = computed(() => kpNum.value !== null ? noaaToBAS(kpNum.value) : null)
+const basKp = computed(() => {
+  const bas = getBASCurrent()
+  return bas?.kp ?? null
+})
 
 const lastUpdateStr = computed(() => {
   if (!lastUpdate.value) return t('app.loading')
@@ -106,8 +112,8 @@ async function handleImport(file) {
           class="panel-enter panel-delay-1"
           :kp="kpNum"
           :live-kp="liveKp"
-          :bas-estimate="basEstimate"
-          :show-bas="settings.showBASEstimate"
+          :bas-kp="basKp"
+          :data-source="settings.dataSource"
           :kp-type="currentKp?.type"
           :time-tag="kpTimeTag"
           :threshold="settings.threshold"
@@ -116,6 +122,7 @@ async function handleImport(file) {
           :get-kp-level="getKpLevel"
           :get-noaa-scale="getNoaaScale"
           :get3h-window="get3hWindow"
+          @update:data-source="(v) => settings.dataSource = v"
         />
         <SolarWind
           class="panel-enter panel-delay-2"
@@ -170,12 +177,6 @@ async function handleImport(file) {
                 <div class="flex gap-2"><span class="w-12 font-bold text-kp-storm">5-6</span> {{ t('info.stormG1G2') }}</div>
                 <div class="flex gap-2"><span class="w-12 font-bold text-kp-severe">7-9</span> {{ t('info.severeG3G5') }}</div>
               </div>
-            </div>
-            <div>
-              <h3 class="text-accent font-semibold mb-2">{{ t('info.affectPeople') }}</h3>
-              <p class="mb-3">{{ t('info.affectText') }}</p>
-              <h3 class="text-accent font-semibold mb-2">{{ t('info.bulgaria') }}</h3>
-              <p>{{ t('info.bulgariaText') }}</p>
             </div>
             <div class="md:col-span-2 pt-3 border-t border-[var(--color-border)] text-xs text-text-muted">
               Data: <a href="https://www.swpc.noaa.gov/" target="_blank" class="text-accent hover:underline">NOAA SWPC</a> &bull;
