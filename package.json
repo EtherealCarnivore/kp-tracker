@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "fetch:bas": "node scripts/fetch-bas.js",
+    "fetch:balkan": "node scripts/fetch-balkan.js"
   },
   "dependencies": {
     "vue": "^3.5.30"

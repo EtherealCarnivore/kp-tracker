@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue'
 import { useKpData } from './composables/useKpData.js'
 import { useBASData } from './composables/useBASData.js'
+import { useBalkanData } from './composables/useBalkanData.js'
 import { useSymptomLog } from './composables/useSymptomLog.js'
 import { useSettings } from './composables/useSettings.js'
 import { useTheme } from './composables/useTheme.js'
@@ -24,7 +25,8 @@ const {
   fetchAll, getKpColor, getKpLevel, getNoaaScale, formatTime, get3hWindow,
 } = useKpData(settings.value.refreshInterval)
 
-const { getBASCurrent } = useBASData(settings.value.refreshInterval)
+const { getBASCurrent, getBASHistory } = useBASData(settings.value.refreshInterval)
+const { getBalkanCurrent, getBalkanHistory } = useBalkanData(settings.value.refreshInterval)
 
 const {
   recentLogs, stats, addLog, deleteLog, clearAllLogs, exportLogs, importLogs,
@@ -39,6 +41,40 @@ const liveKp = computed(() => liveEstimate.value?.kp ?? null)
 const basKp = computed(() => {
   const bas = getBASCurrent()
   return bas?.kp ?? null
+})
+const balkanKp = computed(() => {
+  const balkan = getBalkanCurrent()
+  return balkan?.kp ?? null
+})
+
+const activeKp = computed(() => {
+  if (settings.value.dataSource === 'bas') return basKp.value
+  if (settings.value.dataSource === 'balkan') return balkanKp.value
+  return liveKp.value ?? kpNum.value
+})
+
+const activeHistory = computed(() => {
+  if (settings.value.dataSource === 'bas') return getBASHistory()
+  if (settings.value.dataSource === 'balkan') return getBalkanHistory()
+  return kpHistory.value
+})
+
+const activeForecast = computed(() => {
+  // Only NOAA has forecast data — for BAS/Balkan, use their history
+  // but still append NOAA forecast for future windows
+  if (settings.value.dataSource === 'noaa') return kpForecast.value
+
+  // For BAS/Balkan: build a combined array with their observed data + NOAA predicted
+  const src = settings.value.dataSource === 'bas' ? getBASHistory() : getBalkanHistory()
+  const observed = src.map(h => ({ ...h, type: 'observed' }))
+  const noaaPredicted = kpForecast.value.filter(f => f.type === 'predicted')
+  return [...observed, ...noaaPredicted]
+})
+
+const activeThreshold = computed(() => {
+  if (settings.value.dataSource === 'bas') return settings.value.thresholdBas
+  if (settings.value.dataSource === 'balkan') return settings.value.thresholdBalkan
+  return settings.value.thresholdNoaa
 })
 
 const lastUpdateStr = computed(() => {
@@ -102,7 +138,7 @@ async function handleImport(file) {
     </header>
 
     <!-- Alert -->
-    <AlertBanner :kp="kpNum" :threshold="settings.threshold" />
+    <AlertBanner :kp="activeKp" :threshold="activeThreshold" />
 
     <!-- Main Content -->
     <main class="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-5 space-y-4 sm:space-y-5">
@@ -113,10 +149,11 @@ async function handleImport(file) {
           :kp="kpNum"
           :live-kp="liveKp"
           :bas-kp="basKp"
+          :balkan-kp="balkanKp"
           :data-source="settings.dataSource"
           :kp-type="currentKp?.type"
           :time-tag="kpTimeTag"
-          :threshold="settings.threshold"
+          :threshold="activeThreshold"
           :timezone="effectiveTz"
           :get-kp-color="getKpColor"
           :get-kp-level="getKpLevel"
@@ -132,9 +169,9 @@ async function handleImport(file) {
 
       <KpChart
         class="panel-enter panel-delay-3"
-        :history="kpHistory"
-        :forecast="kpForecast"
-        :threshold="settings.threshold"
+        :history="activeHistory"
+        :forecast="activeForecast"
+        :threshold="activeThreshold"
         :timezone="effectiveTz"
         :get-kp-color="getKpColor"
         :format-time="formatTime"
@@ -167,10 +204,11 @@ async function handleImport(file) {
         </div>
 
         <Transition name="info">
-          <div v-if="showInfo" class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-text-secondary leading-relaxed">
+          <div v-if="showInfo" class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-text-secondary leading-relaxed">
             <div>
-              <h3 class="text-accent font-semibold mb-2">{{ t('info.whatIsKp') }}</h3>
-              <p class="mb-3">{{ t('info.whatIsKpText') }}</p>
+              <h3 class="text-accent font-semibold mb-2">{{ t('info.noaaTitle') }}</h3>
+              <p class="mb-3">{{ t('info.noaaText') }}</p>
+              <div class="bg-[var(--color-card-bg)] rounded-lg px-3 py-2 mb-3 text-xs text-text-muted font-mono">{{ t('info.noaaMath') }}</div>
               <div class="space-y-1.5 text-xs">
                 <div class="flex gap-2"><span class="w-12 font-bold text-kp-quiet">0-3</span> {{ t('info.quiet') }}</div>
                 <div class="flex gap-2"><span class="w-12 font-bold text-kp-unsettled">4</span> {{ t('info.active') }}</div>
@@ -178,9 +216,32 @@ async function handleImport(file) {
                 <div class="flex gap-2"><span class="w-12 font-bold text-kp-severe">7-9</span> {{ t('info.severeG3G5') }}</div>
               </div>
             </div>
-            <div class="md:col-span-2 pt-3 border-t border-[var(--color-border)] text-xs text-text-muted">
+            <div>
+              <h3 class="text-accent font-semibold mb-2">{{ t('info.basTitle') }}</h3>
+              <p class="mb-3">{{ t('info.basText') }}</p>
+              <div class="bg-[var(--color-card-bg)] rounded-lg px-3 py-2 mb-3 text-xs text-text-muted font-mono">{{ t('info.basMath') }}</div>
+              <div class="space-y-1.5 text-xs">
+                <div class="flex gap-2"><span class="w-12 font-bold text-kp-quiet">0-3</span> {{ t('info.quiet') }}</div>
+                <div class="flex gap-2"><span class="w-12 font-bold text-kp-unsettled">4</span> {{ t('info.active') }}</div>
+                <div class="flex gap-2"><span class="w-12 font-bold text-kp-storm">5-6</span> {{ t('info.stormG1G2') }}</div>
+                <div class="flex gap-2"><span class="w-12 font-bold text-kp-severe">7-9</span> {{ t('info.severeG3G5') }}</div>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-accent font-semibold mb-2">{{ t('info.komshiTitle') }}</h3>
+              <p class="mb-3">{{ t('info.komshiText') }}</p>
+              <div class="bg-[var(--color-card-bg)] rounded-lg px-3 py-2 mb-3 text-xs text-text-muted font-mono">{{ t('info.komshiMath') }}</div>
+              <div class="space-y-1.5 text-xs">
+                <div class="flex gap-2"><span class="w-12 font-bold text-kp-quiet">0-3</span> {{ t('info.quiet') }}</div>
+                <div class="flex gap-2"><span class="w-12 font-bold text-kp-unsettled">4</span> {{ t('info.active') }}</div>
+                <div class="flex gap-2"><span class="w-12 font-bold text-kp-storm">5-6</span> {{ t('info.stormG1G2') }}</div>
+                <div class="flex gap-2"><span class="w-12 font-bold text-kp-severe">7-9</span> {{ t('info.severeG3G5') }}</div>
+              </div>
+            </div>
+            <div class="md:col-span-3 pt-3 border-t border-[var(--color-border)] text-xs text-text-muted">
               Data: <a href="https://www.swpc.noaa.gov/" target="_blank" class="text-accent hover:underline">NOAA SWPC</a> &bull;
               <a href="http://www.geophys.bas.bg/kp_for/kp_mod_en.php" target="_blank" class="text-accent hover:underline">BAS Geophysical Institute</a> &bull;
+              <a href="https://imag-data.bgs.ac.uk/GIN_V1/GINServices" target="_blank" class="text-accent hover:underline">INTERMAGNET</a> &bull;
               <a href="https://kp.gfz-potsdam.de/" target="_blank" class="text-accent hover:underline">GFZ Potsdam</a>
             </div>
           </div>

@@ -1,0 +1,31 @@
+name: Fetch Balkan K Data
+
+on:
+  schedule:
+    # Run every 30 minutes (INTERMAGNET data lags ~1h, no need for 15min)
+    - cron: '*/30 * * * *'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch Balkan magnetometer data
+        run: node scripts/fetch-balkan.js
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/balkan-k.json
+          git diff --cached --quiet || git commit -m "chore: update Balkan K data [skip ci]"
+          git push

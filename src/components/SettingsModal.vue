@@ -63,18 +63,51 @@
               </div>
             </div>
 
-            <!-- Threshold -->
+            <!-- Thresholds -->
             <div class="border-t border-[var(--color-border)] pt-5">
               <label class="block text-sm font-medium mb-2">{{ t('settings.threshold') }}</label>
-              <div class="flex items-center gap-4">
-                <input
-                  type="range"
-                  :value="settings.threshold"
-                  @input="$emit('update', { ...settings, threshold: Number($event.target.value) })"
-                  min="1" max="9" class="flex-1"
-                >
-                <span class="text-2xl font-black text-kp-unsettled w-10 text-center">{{ settings.threshold }}</span>
+
+              <div class="space-y-3">
+                <div>
+                  <span class="text-xs text-text-muted">BAS</span>
+                  <div class="flex items-center gap-4">
+                    <input
+                      type="range"
+                      :value="settings.thresholdBas"
+                      @input="$emit('update', { ...settings, thresholdBas: Number($event.target.value) })"
+                      min="1" max="9" class="flex-1"
+                    >
+                    <span class="text-2xl font-black text-kp-unsettled w-10 text-center">{{ settings.thresholdBas }}</span>
+                  </div>
+                </div>
+
+                <div>
+                  <span class="text-xs text-text-muted">NOAA</span>
+                  <div class="flex items-center gap-4">
+                    <input
+                      type="range"
+                      :value="settings.thresholdNoaa"
+                      @input="$emit('update', { ...settings, thresholdNoaa: Number($event.target.value) })"
+                      min="1" max="9" class="flex-1"
+                    >
+                    <span class="text-2xl font-black text-kp-unsettled w-10 text-center">{{ settings.thresholdNoaa }}</span>
+                  </div>
+                </div>
+
+                <div>
+                  <span class="text-xs text-text-muted">Komshi</span>
+                  <div class="flex items-center gap-4">
+                    <input
+                      type="range"
+                      :value="settings.thresholdBalkan"
+                      @input="$emit('update', { ...settings, thresholdBalkan: Number($event.target.value) })"
+                      min="1" max="9" class="flex-1"
+                    >
+                    <span class="text-2xl font-black text-kp-unsettled w-10 text-center">{{ settings.thresholdBalkan }}</span>
+                  </div>
+                </div>
               </div>
+
               <p class="text-xs text-text-muted mt-2">{{ t('settings.thresholdHint') }}</p>
             </div>
 

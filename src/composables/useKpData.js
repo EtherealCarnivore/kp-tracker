@@ -161,14 +161,16 @@ async function fetchKpHistory() {
 async function fetchKpForecast() {
   try {
     const data = await fetchJSON(`${NOAA_BASE}/products/noaa-planetary-k-index-forecast.json`)
-    if (data && data.length > 0) {
-      const items = data
-        .map(row => ({
-          timeTag: row.time_tag,
-          kp: parseFloat(row.kp),
-          type: row.observed, // 'observed', 'estimated', or 'predicted'
-          noaaScale: row.noaa_scale,
-        }))
+    if (data && data.length > 1) {
+      // First row is header: ["time_tag","kp","observed","noaa_scale"]
+      const rows = Array.isArray(data[0]) ? data.slice(1) : data
+      const items = rows
+        .map(row => {
+          if (Array.isArray(row)) {
+            return { timeTag: row[0], kp: parseFloat(row[1]), type: row[2], noaaScale: row[3] }
+          }
+          return { timeTag: row.time_tag, kp: parseFloat(row.kp), type: row.observed, noaaScale: row.noaa_scale }
+        })
         .filter(r => !isNaN(r.kp))
       kpForecast.value = items
     }

@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between mb-4">
       <h2 class="text-lg font-semibold text-text-primary">{{ t('kp.current') }}</h2>
       <div class="flex items-center gap-2">
-        <!-- NOAA / BAS toggle -->
+        <!-- Source toggle -->
         <div class="flex rounded-lg overflow-hidden border border-[var(--color-border)] text-[11px] font-semibold">
           <button
             class="px-2.5 py-1 transition-colors"
@@ -19,6 +19,14 @@
               : 'bg-[var(--color-card-bg)] text-text-muted hover:text-text-secondary'"
             @click="$emit('update:dataSource', 'bas')"
           >BAS</button>
+          <button
+            class="px-2.5 py-1 transition-colors"
+            :class="dataSource === 'balkan'
+              ? 'bg-accent text-white'
+              : 'bg-[var(--color-card-bg)] text-text-muted hover:text-text-secondary'"
+            @click="$emit('update:dataSource', 'balkan')"
+            :title="'Ground stations: Bulgaria, Romania, Serbia, Greece'"
+          >Komshi</button>
         </div>
         <span
           v-if="noaaScale"
@@ -48,21 +56,15 @@
           >
             {{ displayKp !== null ? displayKp.toFixed(1) : '--' }}
           </div>
-          <div class="text-[10px] text-text-muted mt-1">{{ dataSource === 'bas' ? 'BAS Kpm' : 'NOAA Kp' }}</div>
+          <div class="text-[10px] text-text-muted mt-1">{{ sourceLabel }}</div>
           <!-- Secondary readings -->
           <div class="flex gap-3 mt-1 text-[11px]">
-            <div v-if="liveKp !== null && dataSource === 'noaa'" class="text-center">
-              <span class="text-text-muted block text-[9px]">Live</span>
-              <span class="font-bold" :style="{ color: getKpColor(liveKp) }">{{ liveKp.toFixed(1) }}</span>
-            </div>
-            <div v-if="dataSource === 'noaa' && basKp !== null" class="text-center">
-              <span class="text-text-muted block text-[9px]">BAS</span>
-              <span class="font-bold" :style="{ color: getKpColor(basKp) }">{{ basKp.toFixed(1) }}</span>
-            </div>
-            <div v-if="dataSource === 'bas' && kp !== null" class="text-center">
-              <span class="text-text-muted block text-[9px]">NOAA</span>
-              <span class="font-bold" :style="{ color: getKpColor(kp) }">{{ kp.toFixed(1) }}</span>
-            </div>
+            <template v-for="sec in secondaryReadings" :key="sec.label">
+              <div class="text-center">
+                <span class="text-text-muted block text-[9px]">{{ sec.label }}</span>
+                <span class="font-bold" :style="{ color: getKpColor(sec.value) }">{{ sec.value.toFixed(1) }}</span>
+              </div>
+            </template>
           </div>
         </div>
       </div>
@@ -118,6 +120,7 @@ const props = defineProps({
   kp: { type: Number, default: null },
   liveKp: { type: Number, default: null },
   basKp: { type: Number, default: null },
+  balkanKp: { type: Number, default: null },
   dataSource: { type: String, default: 'noaa' },
   kpType: { type: String, default: 'observed' },
   timeTag: { type: String, default: '' },
@@ -133,7 +136,11 @@ defineEmits(['update:dataSource'])
 
 const animating = ref(false)
 
-const displayKp = computed(() => props.dataSource === 'bas' ? props.basKp : props.kp)
+const displayKp = computed(() => {
+  if (props.dataSource === 'bas') return props.basKp
+  if (props.dataSource === 'balkan') return props.balkanKp
+  return props.liveKp ?? props.kp
+})
 
 // Animate on value change
 watch(displayKp, (newVal, oldVal) => {
@@ -141,6 +148,31 @@ watch(displayKp, (newVal, oldVal) => {
     animating.value = true
     setTimeout(() => { animating.value = false }, 500)
   }
+})
+
+const sourceLabel = computed(() => {
+  if (props.dataSource === 'bas') return 'BAS Kpm'
+  if (props.dataSource === 'balkan') return 'Komshi K'
+  return props.liveKp !== null ? 'NOAA Kp (Live)' : 'NOAA Kp'
+})
+
+const secondaryReadings = computed(() => {
+  const readings = []
+  const src = props.dataSource
+
+  if (src === 'noaa') {
+    if (props.kp !== null && props.liveKp !== null) readings.push({ label: '3h', value: props.kp })
+    if (props.basKp !== null) readings.push({ label: 'BAS', value: props.basKp })
+    if (props.balkanKp !== null) readings.push({ label: 'Komshi', value: props.balkanKp })
+  } else if (src === 'bas') {
+    if (props.kp !== null) readings.push({ label: 'NOAA', value: props.liveKp ?? props.kp })
+    if (props.balkanKp !== null) readings.push({ label: 'Komshi', value: props.balkanKp })
+  } else if (src === 'balkan') {
+    if (props.kp !== null) readings.push({ label: 'NOAA', value: props.liveKp ?? props.kp })
+    if (props.basKp !== null) readings.push({ label: 'BAS', value: props.basKp })
+  }
+
+  return readings
 })
 
 const noaaScale = computed(() => displayKp.value !== null ? props.getNoaaScale(displayKp.value) : null)

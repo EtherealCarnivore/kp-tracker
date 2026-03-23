@@ -36,8 +36,17 @@
           <div
             v-for="(bar, idx) in displayBars" :key="idx"
             class="flex-1 flex items-end justify-center h-full relative cursor-pointer"
+            :class="{ 'forecast-zone': bar.type === 'predicted' }"
             @click="selectedIdx = selectedIdx === idx ? null : idx"
           >
+            <!-- Forecast divider -->
+            <div v-if="bar.isForecastStart" class="absolute left-0 top-0 bottom-0 z-20 pointer-events-none">
+              <div class="w-[1.5px] h-full bg-text-muted/40" style="margin-left:-1px" />
+              <div class="absolute -top-5 left-0 text-[9px] font-semibold text-text-muted uppercase tracking-wider whitespace-nowrap">
+                {{ locale === 'bg' ? 'Прогноза' : 'Forecast' }}
+              </div>
+            </div>
+
             <div
               class="w-full mx-px rounded-t-[3px] sm:rounded-t-md transition-all duration-500 relative"
               :class="{ 'forecast-style': bar.type === 'predicted', 'estimated-style': bar.type === 'estimated', 'selected-ring': selectedIdx === idx }"
@@ -159,7 +168,7 @@ function fmtDate(date, tz) {
 function barBg(bar) {
   if (!bar.kp) return 'transparent'
   const c = props.getKpColor(bar.kp)
-  if (bar.type === 'predicted') return `linear-gradient(to top, ${c}44, ${c}77)`
+  if (bar.type === 'predicted') return `linear-gradient(to top, ${c}30, ${c}55)`
   if (bar.type === 'estimated') return `linear-gradient(to top, ${c}99, ${c}cc)`
   return `linear-gradient(to top, ${c}dd, ${c})`
 }
@@ -207,12 +216,15 @@ const displayBars = computed(() => {
     items = [...past, ...predicted]
   }
 
-  // Build display bars with now marker
+  // Build display bars with now marker + forecast start flag
+  let forecastStartMarked = false
   return items.map(item => {
     const barStart = item.date.getTime()
     const barEnd = barStart + 3 * 3600000
     const isNowBar = now >= barStart && now < barEnd
     const nowPct = isNowBar ? ((now - barStart) / (barEnd - barStart)) * 100 : 0
+    const isForecastStart = item.type === 'predicted' && !forecastStartMarked
+    if (isForecastStart) forecastStartMarked = true
 
     return {
       kp: item.kp,
@@ -220,6 +232,7 @@ const displayBars = computed(() => {
       type: item.type,
       isNowBar,
       nowPct,
+      isForecastStart,
       windowLabel: range.value === '7d'
         ? item.date.toLocaleString('en-GB', { timeZone: tz, day: 'numeric', month: 'short' })
         : windowLabel(item.date, tz),
@@ -255,10 +268,14 @@ const dateSubtitle = computed(() => {
 .tooltip-enter-active, .tooltip-leave-active { transition: all 0.25s ease; }
 .tooltip-enter-from, .tooltip-leave-to { opacity: 0; transform: translateY(8px); }
 
+.forecast-zone {
+  background: rgba(255, 255, 255, 0.02);
+}
+
 .forecast-style { position: relative; }
 .forecast-style::after {
   content: ''; position: absolute; inset: 0; border-radius: inherit;
-  background: repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(255,255,255,0.07) 4px, rgba(255,255,255,0.07) 8px);
+  background: repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(255,255,255,0.05) 4px, rgba(255,255,255,0.05) 8px);
   pointer-events: none;
 }
 
