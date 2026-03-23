@@ -2,8 +2,8 @@
   "source": "NIGGG-BAS (Bulgarian Academy of Sciences)",
   "methodology": "Kpm - estimated Kp from ACE satellite data using MAK model",
   "confidence_interval": "±0.63 at 50% probability",
-  "last_updated": "2026-03-23T13:50:52.419Z",
-  "last_check": "2026-03-23T13:50:52.419Z",
+  "last_updated": "2026-03-23T15:01:19.483Z",
+  "last_check": "2026-03-23T15:01:19.483Z",
   "status": "ok",
   "current": {
     "kpm": 2,
