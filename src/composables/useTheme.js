@@ -23,7 +23,7 @@ const themes = {
   },
 }
 
-const currentTheme = ref(localStorage.getItem(STORAGE_KEY) || 'dark')
+const currentTheme = ref(localStorage.getItem(STORAGE_KEY) || 'light')
 
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme)

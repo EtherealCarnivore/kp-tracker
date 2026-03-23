@@ -177,22 +177,8 @@ async function handleImport(file) {
         :format-time="formatTime"
       />
 
-      <SymptomTracker
-        class="panel-enter panel-delay-4"
-        :logs="recentLogs"
-        :current-kp="kpNum"
-        :timezone="effectiveTz"
-        @save="handleSaveLog"
-        @delete="deleteLog"
-      />
-
-      <CorrelationView
-        class="panel-enter panel-delay-5"
-        :stats="stats"
-      />
-
       <!-- Info Section -->
-      <div class="glass-panel p-5 sm:p-6 panel-enter panel-delay-6">
+      <div class="glass-panel p-5 sm:p-6 panel-enter panel-delay-4">
         <div class="flex items-center justify-between">
           <h2 class="text-lg font-semibold text-text-primary">{{ t('info.title') }}</h2>
           <button
@@ -247,6 +233,20 @@ async function handleImport(file) {
           </div>
         </Transition>
       </div>
+
+      <SymptomTracker
+        class="panel-enter panel-delay-5"
+        :logs="recentLogs"
+        :current-kp="kpNum"
+        :timezone="effectiveTz"
+        @save="handleSaveLog"
+        @delete="deleteLog"
+      />
+
+      <CorrelationView
+        class="panel-enter panel-delay-6"
+        :stats="stats"
+      />
     </main>
 
     <!-- Footer -->

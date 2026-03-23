@@ -8,7 +8,7 @@ const defaults = {
   thresholdBalkan: 4,
   timezone: 'Europe/Sofia',
   refreshInterval: 120,
-  dataSource: 'noaa', // 'noaa' or 'bas'
+  dataSource: 'bas', // 'noaa', 'bas', or 'balkan'
 }
 
 const settings = ref({ ...defaults })

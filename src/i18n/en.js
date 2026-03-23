@@ -123,7 +123,7 @@ export default {
   "corr.none": "So far, your data doesn't show a strong difference between high and low Kp days. Keep tracking — patterns may emerge with more data points.",
 
   // Info
-  "info.title": "About the Data Sources",
+  "info.title": "Kp Index",
   "info.show": "Show",
   "info.hide": "Hide",
   "info.noaaTitle": "NOAA Kp (Global)",

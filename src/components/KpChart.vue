@@ -31,14 +31,36 @@
           <div class="w-full border-t-2 border-dashed border-kp-unsettled/30" />
         </div>
 
+        <!-- Day band labels (top of chart) -->
+        <div v-if="range !== '24h'" class="absolute inset-0 flex pointer-events-none z-10">
+          <div v-for="(bar, idx) in displayBars" :key="'day'+idx" class="flex-1 relative">
+            <div v-if="bar.isDayStart" class="absolute top-1 left-0 whitespace-nowrap">
+              <span
+                class="text-[9px] sm:text-[10px] font-semibold px-1.5 py-0.5 rounded"
+                :class="bar.isToday
+                  ? 'bg-accent/20 text-accent font-bold'
+                  : 'text-text-muted'"
+              >{{ bar.dayLabel }}</span>
+            </div>
+          </div>
+        </div>
+
         <!-- Bars -->
         <div class="absolute inset-0 flex items-end">
           <div
             v-for="(bar, idx) in displayBars" :key="idx"
             class="flex-1 flex items-end justify-center h-full relative cursor-pointer"
-            :class="{ 'forecast-zone': bar.type === 'predicted' }"
+            :class="[
+              bar.type === 'predicted' ? 'forecast-zone' : '',
+              bar.dayIndex % 2 === 1 && range !== '24h' ? 'day-band-alt' : '',
+            ]"
             @click="selectedIdx = selectedIdx === idx ? null : idx"
           >
+            <!-- Day boundary line -->
+            <div v-if="bar.isDayStart && idx > 0 && range !== '24h'" class="absolute left-0 top-0 bottom-0 z-10 pointer-events-none">
+              <div class="w-[1px] h-full border-l border-dashed border-text-muted/20" style="margin-left:-1px" />
+            </div>
+
             <!-- Forecast divider -->
             <div v-if="bar.isForecastStart" class="absolute left-0 top-0 bottom-0 z-20 pointer-events-none">
               <div class="w-[1.5px] h-full bg-text-muted/40" style="margin-left:-1px" />
@@ -216,8 +238,11 @@ const displayBars = computed(() => {
     items = [...past, ...predicted]
   }
 
-  // Build display bars with now marker + forecast start flag
+  // Build display bars with now marker + forecast start flag + day grouping
   let forecastStartMarked = false
+  const todayStr = new Date().toLocaleString('en-GB', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' })
+  const seenDays = []
+
   return items.map(item => {
     const barStart = item.date.getTime()
     const barEnd = barStart + 3 * 3600000
@@ -226,6 +251,19 @@ const displayBars = computed(() => {
     const isForecastStart = item.type === 'predicted' && !forecastStartMarked
     if (isForecastStart) forecastStartMarked = true
 
+    // Day grouping for alternating bands
+    const dayStr = item.date.toLocaleString('en-GB', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' })
+    if (!seenDays.includes(dayStr)) seenDays.push(dayStr)
+    const dayIndex = seenDays.indexOf(dayStr)
+    const isToday = dayStr === todayStr
+    const loc = locale.value === 'bg' ? 'bg-BG' : 'en-GB'
+    const dayLabel = isToday
+      ? (locale.value === 'bg' ? 'Днес' : 'Today')
+      : item.date.toLocaleString(loc, { timeZone: tz, weekday: 'short', day: 'numeric', month: 'short' })
+    const isDayStart = seenDays.indexOf(dayStr) === dayIndex && items.indexOf(item) === items.findIndex(i =>
+      i.date.toLocaleString('en-GB', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' }) === dayStr
+    )
+
     return {
       kp: item.kp,
       date: item.date,
@@ -233,6 +271,10 @@ const displayBars = computed(() => {
       isNowBar,
       nowPct,
       isForecastStart,
+      dayIndex,
+      dayLabel,
+      isDayStart,
+      isToday,
       windowLabel: range.value === '7d'
         ? item.date.toLocaleString('en-GB', { timeZone: tz, day: 'numeric', month: 'short' })
         : windowLabel(item.date, tz),
@@ -267,6 +309,10 @@ const dateSubtitle = computed(() => {
 .tabular-nums { font-variant-numeric: tabular-nums; }
 .tooltip-enter-active, .tooltip-leave-active { transition: all 0.25s ease; }
 .tooltip-enter-from, .tooltip-leave-to { opacity: 0; transform: translateY(8px); }
+
+.day-band-alt {
+  background: rgba(128, 128, 128, 0.06);
+}
 
 .forecast-zone {
   background: rgba(255, 255, 255, 0.02);
