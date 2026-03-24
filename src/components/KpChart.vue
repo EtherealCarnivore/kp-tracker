@@ -97,9 +97,9 @@
     <!-- X-axis: window range labels -->
     <div class="flex ml-[22px] mt-1.5">
       <div v-for="(bar, idx) in displayBars" :key="'x'+idx" class="flex-1 text-center min-w-0">
-        <div class="text-[9px] sm:text-[10px] tabular-nums leading-tight truncate"
+        <div v-if="xAxisLabel(bar, idx)" class="text-[9px] sm:text-[10px] tabular-nums leading-tight truncate"
           :class="bar.type === 'predicted' ? 'text-accent/60' : bar.type === 'estimated' ? 'text-accent' : 'text-text-muted'">
-          {{ bar.windowLabel }}
+          {{ xAxisLabel(bar, idx) }}
         </div>
       </div>
     </div>
@@ -175,6 +175,18 @@ function windowLabel(date, tz) {
   const startH = date.toLocaleString('en-GB', { timeZone: tz, hour: '2-digit', hour12: false })
   const endH = new Date(date.getTime() + 3 * 3600000).toLocaleString('en-GB', { timeZone: tz, hour: '2-digit', hour12: false })
   return `${startH}-${endH}`
+}
+
+function xAxisLabel(bar, idx) {
+  if (range.value === '24h') return bar.windowLabel
+  if (range.value === '7d') {
+    // 7-day: only show time on first bar of each day (00-03)
+    if (bar.isDayStart) return windowLabel(bar.date, props.timezone)
+    return null
+  }
+  // 3-day: show time every other bar to reduce clutter
+  if (idx % 2 === 0) return windowLabel(bar.date, props.timezone)
+  return null
 }
 
 function windowFull(date, tz) {
