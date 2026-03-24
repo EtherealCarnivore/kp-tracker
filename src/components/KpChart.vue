@@ -31,20 +31,6 @@
           <div class="w-full border-t-2 border-dashed border-kp-unsettled/30" />
         </div>
 
-        <!-- Day band labels (top of chart) -->
-        <div v-if="range !== '24h'" class="absolute inset-0 flex pointer-events-none z-10">
-          <div v-for="(bar, idx) in displayBars" :key="'day'+idx" class="flex-1 relative">
-            <div v-if="bar.isDayStart" class="absolute top-1 left-0 whitespace-nowrap">
-              <span
-                class="text-[9px] sm:text-[10px] font-semibold px-1.5 py-0.5 rounded"
-                :class="bar.isToday
-                  ? 'bg-accent/20 text-accent font-bold'
-                  : 'text-text-muted'"
-              >{{ bar.dayLabel }}</span>
-            </div>
-          </div>
-        </div>
-
         <!-- Bars -->
         <div class="absolute inset-0 flex items-end">
           <div
@@ -94,13 +80,27 @@
       </div>
     </div>
 
-    <!-- X-axis: window range labels -->
-    <div class="flex ml-[22px] mt-1.5">
+    <!-- X-axis -->
+    <!-- 24h: per-bar time window labels -->
+    <div v-if="range === '24h'" class="flex ml-[22px] mt-1.5">
       <div v-for="(bar, idx) in displayBars" :key="'x'+idx" class="flex-1 text-center min-w-0">
-        <div v-if="xAxisLabel(bar, idx)" class="text-[9px] sm:text-[10px] tabular-nums leading-tight truncate"
+        <div class="text-[9px] sm:text-[10px] tabular-nums leading-tight truncate"
           :class="bar.type === 'predicted' ? 'text-accent/60' : bar.type === 'estimated' ? 'text-accent' : 'text-text-muted'">
-          {{ xAxisLabel(bar, idx) }}
+          {{ bar.windowLabel }}
         </div>
+      </div>
+    </div>
+    <!-- 3d/7d: one label per day, centered across that day's bars -->
+    <div v-else class="flex ml-[22px] mt-1.5">
+      <div v-for="(group, gi) in dayGroups" :key="'dg'+gi"
+        class="text-center border-l first:border-l-0"
+        :style="{ flex: group.count }"
+        :class="group.isToday ? 'border-accent/20' : 'border-[var(--color-border)]'"
+      >
+        <span
+          class="text-[9px] sm:text-[11px] font-semibold px-1 leading-tight inline-block truncate max-w-full"
+          :class="group.isToday ? 'text-accent font-bold' : 'text-text-muted'"
+        >{{ group.label }}</span>
       </div>
     </div>
 
@@ -175,18 +175,6 @@ function windowLabel(date, tz) {
   const startH = date.toLocaleString('en-GB', { timeZone: tz, hour: '2-digit', hour12: false })
   const endH = new Date(date.getTime() + 3 * 3600000).toLocaleString('en-GB', { timeZone: tz, hour: '2-digit', hour12: false })
   return `${startH}-${endH}`
-}
-
-function xAxisLabel(bar, idx) {
-  if (range.value === '24h') return bar.windowLabel
-  if (range.value === '7d') {
-    // 7-day: only show time on first bar of each day (00-03)
-    if (bar.isDayStart) return windowLabel(bar.date, props.timezone)
-    return null
-  }
-  // 3-day: show time every other bar to reduce clutter
-  if (idx % 2 === 0) return windowLabel(bar.date, props.timezone)
-  return null
 }
 
 function windowFull(date, tz) {
@@ -292,6 +280,26 @@ const displayBars = computed(() => {
         : windowLabel(item.date, tz),
     }
   })
+})
+
+// Group bars by day for x-axis labels in 3d/7d views
+const dayGroups = computed(() => {
+  const bars = displayBars.value
+  if (bars.length === 0) return []
+
+  const groups = []
+  let currentDay = null
+
+  for (const bar of bars) {
+    const dayKey = bar.dayIndex
+    if (dayKey !== currentDay) {
+      groups.push({ label: bar.dayLabel, count: 1, isToday: bar.isToday })
+      currentDay = dayKey
+    } else {
+      groups[groups.length - 1].count++
+    }
+  }
+  return groups
 })
 
 const selectedBarInfo = computed(() => {
