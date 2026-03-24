@@ -5,7 +5,7 @@
       <span class="text-xs text-text-muted">{{ t('sw.source') }}</span>
     </div>
 
-    <div class="grid grid-cols-2 gap-3">
+    <div class="grid grid-cols-2 gap-2 sm:gap-3">
       <!-- Speed -->
       <div class="sw-card">
         <div class="text-2xl font-bold leading-tight" :style="{ color: speedColor }">

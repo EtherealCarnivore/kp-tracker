@@ -18,7 +18,7 @@
             </button>
           </div>
 
-          <div class="p-5 space-y-6">
+          <div class="p-4 sm:p-5 space-y-5 sm:space-y-6">
             <!-- Theme Selector -->
             <div>
               <label class="block text-sm font-medium mb-3">{{ locale === 'bg' ? 'Тема' : 'Theme' }}</label>

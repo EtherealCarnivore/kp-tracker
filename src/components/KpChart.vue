@@ -107,19 +107,19 @@
     <!-- Tooltip -->
     <Transition name="tooltip">
       <div v-if="selectedBarInfo"
-        class="mt-3 flex items-center justify-between gap-4 bg-[var(--color-bg-panel)] border border-[var(--color-border)] rounded-xl px-4 py-3 shadow-lg">
-        <div class="flex items-center gap-3">
-          <span class="text-2xl font-black tabular-nums" :style="{ color: getKpColor(selectedBarInfo.kp) }">Kp {{ selectedBarInfo.kp.toFixed(1) }}</span>
+        class="mt-3 flex flex-wrap sm:flex-nowrap items-center justify-between gap-2 sm:gap-4 bg-[var(--color-bg-panel)] border border-[var(--color-border)] rounded-xl px-3 sm:px-4 py-3 shadow-lg">
+        <div class="flex items-center gap-2 sm:gap-3">
+          <span class="text-xl sm:text-2xl font-black tabular-nums" :style="{ color: getKpColor(selectedBarInfo.kp) }">Kp {{ selectedBarInfo.kp.toFixed(1) }}</span>
           <span v-if="selectedBarInfo.type !== 'observed'" class="text-[11px] px-2 py-0.5 rounded font-medium"
             :class="selectedBarInfo.type === 'predicted' ? 'bg-accent/15 text-accent' : 'bg-kp-unsettled/15 text-kp-unsettled'">
             {{ selectedBarInfo.type === 'predicted' ? t('chart.forecast') : (locale === 'bg' ? 'Оценка' : 'Estimate') }}
           </span>
         </div>
         <div class="text-right flex-1">
-          <div class="text-sm font-medium text-text-primary">{{ selectedBarInfo.window }}</div>
-          <div class="text-xs text-text-muted">{{ selectedBarInfo.date }}</div>
+          <div class="text-xs sm:text-sm font-medium text-text-primary">{{ selectedBarInfo.window }}</div>
+          <div class="text-[11px] sm:text-xs text-text-muted">{{ selectedBarInfo.date }}</div>
         </div>
-        <button class="min-w-[36px] min-h-[36px] flex items-center justify-center rounded-lg text-text-muted hover:text-text-primary text-lg"
+        <button class="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-text-muted hover:text-text-primary text-lg"
           @click.stop="selectedIdx = null">&times;</button>
       </div>
     </Transition>
@@ -165,7 +165,7 @@ const range = ref('24h')
 const selectedIdx = ref(null)
 function switchRange(key) { range.value = key; selectedIdx.value = null }
 
-const chartHeight = computed(() => windowWidth.value < 640 ? 240 : 280)
+const chartHeight = computed(() => windowWidth.value < 640 ? 260 : 280)
 
 function parseTime(utcStr) {
   return new Date(utcStr.replace(' ', 'T') + (utcStr.includes('Z') ? '' : 'Z'))

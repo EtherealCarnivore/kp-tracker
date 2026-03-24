@@ -4,23 +4,23 @@
       <h2 class="text-lg font-semibold text-text-primary">{{ t('kp.current') }}</h2>
       <div class="flex items-center gap-2">
         <!-- Source toggle -->
-        <div class="flex rounded-lg overflow-hidden border border-[var(--color-border)] text-[11px] font-semibold">
+        <div class="flex rounded-lg overflow-hidden border border-[var(--color-border)] text-xs sm:text-[11px] font-semibold">
           <button
-            class="px-2.5 py-1 transition-colors"
+            class="px-3 py-2 sm:px-2.5 sm:py-1 min-h-[40px] transition-colors"
             :class="dataSource === 'noaa'
               ? 'bg-accent text-white'
               : 'bg-[var(--color-card-bg)] text-text-muted hover:text-text-secondary'"
             @click="$emit('update:dataSource', 'noaa')"
           >NOAA</button>
           <button
-            class="px-2.5 py-1 transition-colors"
+            class="px-3 py-2 sm:px-2.5 sm:py-1 min-h-[40px] transition-colors"
             :class="dataSource === 'bas'
               ? 'bg-accent text-white'
               : 'bg-[var(--color-card-bg)] text-text-muted hover:text-text-secondary'"
             @click="$emit('update:dataSource', 'bas')"
           >BAS</button>
           <button
-            class="px-2.5 py-1 transition-colors"
+            class="px-3 py-2 sm:px-2.5 sm:py-1 min-h-[40px] transition-colors"
             :class="dataSource === 'balkan'
               ? 'bg-accent text-white'
               : 'bg-[var(--color-card-bg)] text-text-muted hover:text-text-secondary'"
@@ -56,12 +56,12 @@
           >
             {{ displayKp !== null ? displayKp.toFixed(1) : '--' }}
           </div>
-          <div class="text-[10px] text-text-muted mt-1">{{ sourceLabel }}</div>
+          <div class="text-xs sm:text-[10px] text-text-muted mt-1">{{ sourceLabel }}</div>
           <!-- Secondary readings -->
-          <div class="flex gap-3 mt-1 text-[11px]">
+          <div class="flex gap-3 mt-1 text-xs sm:text-[11px]">
             <template v-for="sec in secondaryReadings" :key="sec.label">
               <div class="text-center">
-                <span class="text-text-muted block text-[9px]">{{ sec.label }}</span>
+                <span class="text-text-muted block text-[10px] sm:text-[9px]">{{ sec.label }}</span>
                 <span class="font-bold" :style="{ color: getKpColor(sec.value) }">{{ sec.value.toFixed(1) }}</span>
               </div>
             </template>
@@ -91,17 +91,17 @@
     </div>
 
     <!-- Details Row — grid on mobile for better layout -->
-    <div class="grid grid-cols-3 gap-3 text-sm">
+    <div class="grid grid-cols-3 gap-2 sm:gap-3 text-xs sm:text-sm">
       <div>
-        <div class="text-[11px] uppercase tracking-wider text-text-muted">{{ t('kp.window') }}</div>
+        <div class="text-[10px] sm:text-[11px] uppercase tracking-wider text-text-muted">{{ t('kp.window') }}</div>
         <div class="font-semibold text-text-primary">{{ windowStr }}</div>
       </div>
       <div>
-        <div class="text-[11px] uppercase tracking-wider text-text-muted">{{ t('kp.localTime') }}</div>
+        <div class="text-[10px] sm:text-[11px] uppercase tracking-wider text-text-muted">{{ t('kp.localTime') }}</div>
         <div class="font-semibold text-text-primary">{{ localTime }}</div>
       </div>
       <div>
-        <div class="text-[11px] uppercase tracking-wider text-text-muted">{{ t('kp.yourThreshold') }}</div>
+        <div class="text-[10px] sm:text-[11px] uppercase tracking-wider text-text-muted">{{ t('kp.yourThreshold') }}</div>
         <div class="font-semibold" :class="displayKp >= threshold ? 'text-kp-severe' : 'text-kp-quiet'">
           Kp {{ threshold }}{{ displayKp >= threshold ? ' · ' + t('kp.active') : '' }}
         </div>

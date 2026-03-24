@@ -28,7 +28,7 @@
         <!-- Symptoms -->
         <div>
           <label class="block text-sm font-medium text-text-secondary mb-2">{{ t('tracker.symptoms') }}</label>
-          <div class="flex flex-wrap gap-2.5">
+          <div class="flex flex-wrap gap-1.5 sm:gap-2.5">
             <button
               v-for="s in symptomOptions"
               :key="s.value"
@@ -42,7 +42,7 @@
         </div>
 
         <!-- Grid fields -->
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div class="grid grid-cols-1 gap-2 min-[400px]:grid-cols-2 min-[400px]:gap-3 sm:grid-cols-4">
           <div>
             <label class="block text-xs text-text-muted mb-1.5">{{ t('tracker.sleep') }}</label>
             <select v-model="form.sleep">
