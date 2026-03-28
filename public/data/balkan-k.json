@@ -2,10 +2,10 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Mid-latitude (K9 ≥ 500 nT)",
-  "last_updated": "2026-03-28T18:50:58.790Z",
+  "last_updated": "2026-03-28T19:34:54.325Z",
   "status": "ok",
   "current": {
-    "balkan_k": 1.23,
+    "balkan_k": 0.87,
     "time_tag": "2026-03-28 18:00:00",
     "activity_level": "quiet",
     "station_count": 2
@@ -104,37 +104,37 @@
     },
     {
       "time_tag": "2026-03-28 15:00:00",
-      "balkan_k": 1.76,
-      "balkan_k_max": 2,
+      "balkan_k": 2.09,
+      "balkan_k_max": 2.21,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 1.52,
-          "disturbance_nt": 7.6
+          "k": 1.98,
+          "disturbance_nt": 9.9
         },
         {
           "code": "SUA",
-          "k": 2,
-          "disturbance_nt": 10
+          "k": 2.21,
+          "disturbance_nt": 12.1
         }
       ]
     },
     {
       "time_tag": "2026-03-28 18:00:00",
-      "balkan_k": 1.23,
-      "balkan_k_max": 1.24,
+      "balkan_k": 0.87,
+      "balkan_k_max": 0.94,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 1.24,
-          "disturbance_nt": 6.2
+          "k": 0.8,
+          "disturbance_nt": 4
         },
         {
           "code": "SUA",
-          "k": 1.22,
-          "disturbance_nt": 6.1
+          "k": 0.94,
+          "disturbance_nt": 4.7
         }
       ]
     }
@@ -145,7 +145,7 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2570,
+      "valid_readings": 2600,
       "k_windows": 7
     },
     {
@@ -153,7 +153,7 @@
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 2560,
+      "valid_readings": 2600,
       "k_windows": 7
     },
     {
