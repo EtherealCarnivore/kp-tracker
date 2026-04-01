@@ -226,8 +226,13 @@ const displayBars = computed(() => {
   // Filter based on range
   let items = []
   if (range.value === '24h') {
-    // Show: last 8 observed/estimated + all predicted (up to 8)
-    const observed = allEntries.filter(e => e.type === 'observed' || e.type === 'estimated')
+    // Only include observed/estimated from the last 27h (9 × 3h windows)
+    // Prevents stale data from creating gaps when sources stop updating
+    const cutoff = now - 27 * 3600000
+    const observed = allEntries.filter(e =>
+      (e.type === 'observed' || e.type === 'estimated') &&
+      e.date.getTime() >= cutoff
+    )
     const predicted = allEntries.filter(e => e.type === 'predicted')
     items = [...observed.slice(-8), ...predicted.slice(0, 8)]
   } else {

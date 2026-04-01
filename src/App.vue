@@ -47,15 +47,35 @@ const balkanKp = computed(() => {
   return balkan?.kp ?? null
 })
 
+// Check if BAS/Balkan data is stale (newest entry older than 6 hours)
+function isSourceStale(history) {
+  if (!history || history.length === 0) return true
+  const latest = history[history.length - 1]
+  const latestTime = new Date(latest.timeTag.replace(' ', 'T') + 'Z').getTime()
+  return Date.now() - latestTime > 6 * 3600000
+}
+
 const activeKp = computed(() => {
-  if (settings.value.dataSource === 'bas') return basKp.value
-  if (settings.value.dataSource === 'balkan') return balkanKp.value
+  if (settings.value.dataSource === 'bas') {
+    if (!isSourceStale(getBASHistory())) return basKp.value
+    return liveKp.value ?? kpNum.value // fall back to NOAA
+  }
+  if (settings.value.dataSource === 'balkan') {
+    if (!isSourceStale(getBalkanHistory())) return balkanKp.value
+    return liveKp.value ?? kpNum.value
+  }
   return liveKp.value ?? kpNum.value
 })
 
 const activeHistory = computed(() => {
-  if (settings.value.dataSource === 'bas') return getBASHistory()
-  if (settings.value.dataSource === 'balkan') return getBalkanHistory()
+  if (settings.value.dataSource === 'bas') {
+    if (!isSourceStale(getBASHistory())) return getBASHistory()
+    return kpHistory.value
+  }
+  if (settings.value.dataSource === 'balkan') {
+    if (!isSourceStale(getBalkanHistory())) return getBalkanHistory()
+    return kpHistory.value
+  }
   return kpHistory.value
 })
 
@@ -64,8 +84,11 @@ const activeForecast = computed(() => {
   // but still append NOAA forecast for future windows
   if (settings.value.dataSource === 'noaa') return kpForecast.value
 
-  // For BAS/Balkan: build a combined array with their observed data + NOAA predicted
+  // If BAS/Balkan data is stale, fall back to NOAA entirely
   const src = settings.value.dataSource === 'bas' ? getBASHistory() : getBalkanHistory()
+  if (isSourceStale(src)) return kpForecast.value
+
+  // For BAS/Balkan: build a combined array with their observed data + NOAA predicted
   const observed = src.map(h => ({ ...h, type: 'observed' }))
   const noaaPredicted = kpForecast.value.filter(f => f.type === 'predicted')
   return [...observed, ...noaaPredicted]
