@@ -2,28 +2,16 @@
   "source": "NIGGG-BAS (Bulgarian Academy of Sciences)",
   "methodology": "Kpm - estimated Kp from ACE satellite data using MAK model",
   "confidence_interval": "±0.63 at 50% probability",
-  "last_updated": "2026-04-03T21:18:51.399Z",
-  "last_check": "2026-04-03T21:18:51.399Z",
+  "last_updated": "2026-04-03T21:58:59.341Z",
+  "last_check": "2026-04-03T21:58:59.341Z",
   "status": "ok",
   "current": {
-    "kpm": 4.67,
-    "time_tag": "2026-04-03 20:45:00",
+    "kpm": 4.33,
+    "time_tag": "2026-04-03 21:45:00",
     "activity_level": "active"
   },
   "max_24h": 5.33,
   "entries_15min": [
-    {
-      "time_tag": "2026-04-03 09:00:00",
-      "kpm": 3.33
-    },
-    {
-      "time_tag": "2026-04-03 09:15:00",
-      "kpm": 3.33
-    },
-    {
-      "time_tag": "2026-04-03 09:30:00",
-      "kpm": 3.33
-    },
     {
       "time_tag": "2026-04-03 09:45:00",
       "kpm": 3.33
@@ -203,52 +191,53 @@
     {
       "time_tag": "2026-04-03 20:45:00",
       "kpm": 4.67
+    },
+    {
+      "time_tag": "2026-04-03 21:00:00",
+      "kpm": 4
+    },
+    {
+      "time_tag": "2026-04-03 21:15:00",
+      "kpm": 4.33
+    },
+    {
+      "time_tag": "2026-04-03 21:30:00",
+      "kpm": 4.33
+    },
+    {
+      "time_tag": "2026-04-03 21:45:00",
+      "kpm": 4.33
     }
   ],
   "forecast_15min": [
     {
-      "time_tag": "2026-04-03 21:15:00",
-      "kpm": 4.67,
-      "type": "forecast"
-    },
-    {
-      "time_tag": "2026-04-03 21:30:00",
-      "kpm": 4.67,
-      "type": "forecast"
-    },
-    {
-      "time_tag": "2026-04-03 21:45:00",
-      "kpm": 4.67,
-      "type": "forecast"
-    },
-    {
       "time_tag": "2026-04-03 22:00:00",
-      "kpm": 4.67,
+      "kpm": 4.33,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 22:15:00",
-      "kpm": 4.67,
+      "kpm": 4.33,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 22:30:00",
-      "kpm": 4.67,
+      "kpm": 4.33,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 22:45:00",
-      "kpm": 4.67,
+      "kpm": 4.33,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 23:00:00",
-      "kpm": 4.67,
+      "kpm": 4.33,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 23:15:00",
-      "kpm": 4.67,
+      "kpm": 4.33,
       "type": "forecast"
     },
     {
@@ -293,47 +282,62 @@
     },
     {
       "time_tag": "2026-04-04 01:30:00",
-      "kpm": 4.33,
+      "kpm": 4,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-04 01:45:00",
-      "kpm": 4.33,
+      "kpm": 4,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-04 02:00:00",
-      "kpm": 4.33,
+      "kpm": 4,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-04 02:15:00",
-      "kpm": 4.33,
+      "kpm": 4,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-04 02:30:00",
-      "kpm": 4.33,
+      "kpm": 4,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-04 02:45:00",
-      "kpm": 4.33,
+      "kpm": 4,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-04 03:00:00",
-      "kpm": 4.33,
+      "kpm": 4,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-04-04 03:15:00",
+      "kpm": 4,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-04-04 03:30:00",
+      "kpm": 4,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-04-04 03:45:00",
+      "kpm": 4,
       "type": "forecast"
     }
   ],
   "windows_3h": [
     {
       "time_tag": "2026-04-03 09:00:00",
-      "kpm_avg": 3.36,
+      "kpm_avg": 3.37,
       "kpm_max": 3.67,
       "kpm_latest": 3.33,
-      "readings": 12
+      "readings": 9
     },
     {
       "time_tag": "2026-04-03 12:00:00",
@@ -355,6 +359,13 @@
       "kpm_max": 5,
       "kpm_latest": 4.67,
       "readings": 12
+    },
+    {
+      "time_tag": "2026-04-03 21:00:00",
+      "kpm_avg": 4.25,
+      "kpm_max": 4.33,
+      "kpm_latest": 4.33,
+      "readings": 4
     }
   ]
 }
