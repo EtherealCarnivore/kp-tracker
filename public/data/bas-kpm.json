@@ -2,32 +2,16 @@
   "source": "NIGGG-BAS (Bulgarian Academy of Sciences)",
   "methodology": "Kpm - estimated Kp from ACE satellite data using MAK model",
   "confidence_interval": "±0.63 at 50% probability",
-  "last_updated": "2026-04-03T15:03:51.358Z",
-  "last_check": "2026-04-03T15:03:51.358Z",
+  "last_updated": "2026-04-03T15:55:22.961Z",
+  "last_check": "2026-04-03T15:55:22.961Z",
   "status": "ok",
   "current": {
-    "kpm": 3.33,
-    "time_tag": "2026-04-03 14:45:00",
-    "activity_level": "quiet"
+    "kpm": 5,
+    "time_tag": "2026-04-03 15:45:00",
+    "activity_level": "storm"
   },
-  "max_24h": 3.67,
+  "max_24h": 5,
   "entries_15min": [
-    {
-      "time_tag": "2026-04-03 02:45:00",
-      "kpm": 3.33
-    },
-    {
-      "time_tag": "2026-04-03 03:00:00",
-      "kpm": 3.67
-    },
-    {
-      "time_tag": "2026-04-03 03:15:00",
-      "kpm": 3.67
-    },
-    {
-      "time_tag": "2026-04-03 03:30:00",
-      "kpm": 3.33
-    },
     {
       "time_tag": "2026-04-03 03:45:00",
       "kpm": 3.67
@@ -206,145 +190,154 @@
     },
     {
       "time_tag": "2026-04-03 14:45:00",
-      "kpm": 3.33
+      "kpm": 3
+    },
+    {
+      "time_tag": "2026-04-03 15:00:00",
+      "kpm": 4
+    },
+    {
+      "time_tag": "2026-04-03 15:15:00",
+      "kpm": 4.67
+    },
+    {
+      "time_tag": "2026-04-03 15:30:00",
+      "kpm": 4.67
+    },
+    {
+      "time_tag": "2026-04-03 15:45:00",
+      "kpm": 5
     }
   ],
   "forecast_15min": [
     {
-      "time_tag": "2026-04-03 15:00:00",
-      "kpm": 3.33,
-      "type": "forecast"
-    },
-    {
-      "time_tag": "2026-04-03 15:15:00",
-      "kpm": 3.33,
-      "type": "forecast"
-    },
-    {
-      "time_tag": "2026-04-03 15:30:00",
-      "kpm": 3.33,
-      "type": "forecast"
-    },
-    {
-      "time_tag": "2026-04-03 15:45:00",
-      "kpm": 3.33,
-      "type": "forecast"
-    },
-    {
       "time_tag": "2026-04-03 16:00:00",
-      "kpm": 3.33,
+      "kpm": 5,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 16:15:00",
-      "kpm": 3.33,
+      "kpm": 5,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 16:30:00",
-      "kpm": 3.33,
+      "kpm": 5,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 16:45:00",
-      "kpm": 3.33,
+      "kpm": 5,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 17:00:00",
-      "kpm": 3.33,
+      "kpm": 5,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 17:15:00",
-      "kpm": 3.33,
+      "kpm": 5,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 17:30:00",
-      "kpm": 3.33,
+      "kpm": 5,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 17:45:00",
-      "kpm": 3.33,
+      "kpm": 4.67,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 18:00:00",
-      "kpm": 3.33,
+      "kpm": 4.67,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 18:15:00",
-      "kpm": 3.33,
+      "kpm": 4.67,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 18:30:00",
-      "kpm": 3.33,
+      "kpm": 4.67,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 18:45:00",
-      "kpm": 3.33,
+      "kpm": 4.67,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 19:00:00",
-      "kpm": 3.33,
+      "kpm": 4.67,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 19:15:00",
-      "kpm": 3.33,
+      "kpm": 4.67,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 19:30:00",
-      "kpm": 3.33,
+      "kpm": 4.67,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 19:45:00",
-      "kpm": 3.33,
+      "kpm": 4.67,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 20:00:00",
-      "kpm": 3.33,
+      "kpm": 4.67,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 20:15:00",
-      "kpm": 3.33,
+      "kpm": 4.67,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 20:30:00",
-      "kpm": 3.33,
+      "kpm": 4.67,
       "type": "forecast"
     },
     {
       "time_tag": "2026-04-03 20:45:00",
-      "kpm": 3.33,
+      "kpm": 4.67,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-04-03 21:00:00",
+      "kpm": 4.67,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-04-03 21:15:00",
+      "kpm": 4.67,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-04-03 21:30:00",
+      "kpm": 4.67,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-04-03 21:45:00",
+      "kpm": 4.33,
       "type": "forecast"
     }
   ],
   "windows_3h": [
     {
-      "time_tag": "2026-04-03 00:00:00",
-      "kpm_avg": 3.33,
-      "kpm_max": 3.33,
-      "kpm_latest": 3.33,
-      "readings": 1
-    },
-    {
       "time_tag": "2026-04-03 03:00:00",
-      "kpm_avg": 3.42,
+      "kpm_avg": 3.37,
       "kpm_max": 3.67,
       "kpm_latest": 3,
-      "readings": 12
+      "readings": 9
     },
     {
       "time_tag": "2026-04-03 06:00:00",
@@ -362,10 +355,17 @@
     },
     {
       "time_tag": "2026-04-03 12:00:00",
-      "kpm_avg": 3.08,
+      "kpm_avg": 3.06,
       "kpm_max": 3.33,
-      "kpm_latest": 3.33,
+      "kpm_latest": 3,
       "readings": 12
+    },
+    {
+      "time_tag": "2026-04-03 15:00:00",
+      "kpm_avg": 4.59,
+      "kpm_max": 5,
+      "kpm_latest": 5,
+      "readings": 4
     }
   ]
 }
