@@ -2,11 +2,11 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Mid-latitude (K9 ≥ 500 nT)",
-  "last_updated": "2026-04-04T15:00:48.145Z",
+  "last_updated": "2026-04-04T15:55:43.489Z",
   "status": "ok",
   "current": {
-    "balkan_k": 2.95,
-    "time_tag": "2026-04-04 12:00:00",
+    "balkan_k": 0.38,
+    "time_tag": "2026-04-04 15:00:00",
     "activity_level": "quiet",
     "station_count": 2
   },
@@ -80,25 +80,43 @@
         {
           "code": "SUA",
           "k": 3.11,
-          "disturbance_nt": 22.3
+          "disturbance_nt": 22.2
         }
       ]
     },
     {
       "time_tag": "2026-04-04 12:00:00",
-      "balkan_k": 2.95,
-      "balkan_k_max": 3.07,
+      "balkan_k": 2.9,
+      "balkan_k_max": 3.02,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 2.82,
-          "disturbance_nt": 18.2
+          "k": 2.77,
+          "disturbance_nt": 17.7
         },
         {
           "code": "SUA",
-          "k": 3.07,
-          "disturbance_nt": 21.5
+          "k": 3.02,
+          "disturbance_nt": 20.4
+        }
+      ]
+    },
+    {
+      "time_tag": "2026-04-04 15:00:00",
+      "balkan_k": 0.38,
+      "balkan_k_max": 0.57,
+      "station_count": 2,
+      "stations": [
+        {
+          "code": "PAG",
+          "k": 0.18,
+          "disturbance_nt": 0.9
+        },
+        {
+          "code": "SUA",
+          "k": 0.57,
+          "disturbance_nt": 2.9
         }
       ]
     }
@@ -109,16 +127,16 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2330,
-      "k_windows": 5
+      "valid_readings": 2380,
+      "k_windows": 6
     },
     {
       "code": "SUA",
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 2330,
-      "k_windows": 5
+      "valid_readings": 2390,
+      "k_windows": 6
     },
     {
       "code": "GCK",
