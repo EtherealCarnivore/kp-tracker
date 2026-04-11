@@ -2,10 +2,10 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Mid-latitude (K9 ≥ 500 nT)",
-  "last_updated": "2026-04-10T23:05:24.532Z",
+  "last_updated": "2026-04-11T00:01:10.312Z",
   "status": "ok",
   "current": {
-    "balkan_k": 1.75,
+    "balkan_k": 1.68,
     "time_tag": "2026-04-10 21:00:00",
     "activity_level": "quiet",
     "station_count": 2
@@ -13,124 +13,20 @@
   "max_24h": 3.81,
   "windows_3h": [
     {
-      "time_tag": "2026-04-09 00:00:00",
-      "balkan_k": 1.12,
-      "balkan_k_max": 1.12,
-      "station_count": 1,
-      "stations": [
-        {
-          "code": "GCK",
-          "k": 1.12,
-          "disturbance_nt": 5.6
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-04-09 03:00:00",
-      "balkan_k": 2.29,
-      "balkan_k_max": 2.29,
-      "station_count": 1,
-      "stations": [
-        {
-          "code": "GCK",
-          "k": 2.29,
-          "disturbance_nt": 12.9
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-04-09 06:00:00",
-      "balkan_k": 3.19,
-      "balkan_k_max": 3.19,
-      "station_count": 1,
-      "stations": [
-        {
-          "code": "GCK",
-          "k": 3.19,
-          "disturbance_nt": 23.7
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-04-09 09:00:00",
-      "balkan_k": 3.15,
-      "balkan_k_max": 3.15,
-      "station_count": 1,
-      "stations": [
-        {
-          "code": "GCK",
-          "k": 3.15,
-          "disturbance_nt": 23
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-04-09 12:00:00",
-      "balkan_k": 1.87,
-      "balkan_k_max": 1.87,
-      "station_count": 1,
-      "stations": [
-        {
-          "code": "GCK",
-          "k": 1.87,
-          "disturbance_nt": 9.4
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-04-09 15:00:00",
-      "balkan_k": 1.36,
-      "balkan_k_max": 1.36,
-      "station_count": 1,
-      "stations": [
-        {
-          "code": "GCK",
-          "k": 1.36,
-          "disturbance_nt": 6.8
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-04-09 18:00:00",
-      "balkan_k": 2.15,
-      "balkan_k_max": 2.15,
-      "station_count": 1,
-      "stations": [
-        {
-          "code": "GCK",
-          "k": 2.15,
-          "disturbance_nt": 11.5
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-04-09 21:00:00",
-      "balkan_k": 2.14,
-      "balkan_k_max": 2.14,
-      "station_count": 1,
-      "stations": [
-        {
-          "code": "GCK",
-          "k": 2.14,
-          "disturbance_nt": 11.4
-        }
-      ]
-    },
-    {
       "time_tag": "2026-04-10 00:00:00",
-      "balkan_k": 2.92,
-      "balkan_k_max": 2.99,
+      "balkan_k": 2.64,
+      "balkan_k_max": 2.7,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 2.84,
-          "disturbance_nt": 18.4
+          "k": 2.57,
+          "disturbance_nt": 15.7
         },
         {
           "code": "SUA",
-          "k": 2.99,
-          "disturbance_nt": 19.9
+          "k": 2.7,
+          "disturbance_nt": 17
         }
       ]
     },
@@ -244,19 +140,19 @@
     },
     {
       "time_tag": "2026-04-10 21:00:00",
-      "balkan_k": 1.75,
-      "balkan_k_max": 1.82,
+      "balkan_k": 1.68,
+      "balkan_k_max": 1.74,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 1.68,
-          "disturbance_nt": 8.4
+          "k": 1.62,
+          "disturbance_nt": 8.1
         },
         {
           "code": "SUA",
-          "k": 1.82,
-          "disturbance_nt": 9.1
+          "k": 1.74,
+          "disturbance_nt": 8.7
         }
       ]
     }
@@ -267,7 +163,7 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2820,
+      "valid_readings": 1430,
       "k_windows": 8
     },
     {
@@ -275,16 +171,14 @@
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 2810,
+      "valid_readings": 1430,
       "k_windows": 8
     },
     {
       "code": "GCK",
       "name": "Grocka",
       "country": "Serbia",
-      "status": "ok",
-      "valid_readings": 1440,
-      "k_windows": 8
+      "status": "no_data"
     },
     {
       "code": "PEG",
