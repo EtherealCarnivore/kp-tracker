@@ -2,8 +2,8 @@
   "source": "NIGGG-BAS (Bulgarian Academy of Sciences)",
   "methodology": "Kpm - estimated Kp from ACE satellite data using MAK model",
   "confidence_interval": "±0.63 at 50% probability",
-  "last_updated": "2026-04-11T14:22:35.970Z",
-  "last_check": "2026-04-11T14:22:35.970Z",
+  "last_updated": "2026-04-11T15:03:35.954Z",
+  "last_check": "2026-04-11T15:03:35.954Z",
   "status": "ok",
   "current": {
     "kpm": 3,
@@ -12,14 +12,6 @@
   },
   "max_24h": 3.33,
   "entries_15min": [
-    {
-      "time_tag": "2026-04-11 02:15:00",
-      "kpm": 3
-    },
-    {
-      "time_tag": "2026-04-11 02:30:00",
-      "kpm": 2.67
-    },
     {
       "time_tag": "2026-04-11 02:45:00",
       "kpm": 2.67
@@ -211,16 +203,6 @@
   ],
   "forecast_15min": [
     {
-      "time_tag": "2026-04-11 14:30:00",
-      "kpm": 3,
-      "type": "forecast"
-    },
-    {
-      "time_tag": "2026-04-11 14:45:00",
-      "kpm": 3,
-      "type": "forecast"
-    },
-    {
       "time_tag": "2026-04-11 15:00:00",
       "kpm": 3,
       "type": "forecast"
@@ -329,15 +311,25 @@
       "time_tag": "2026-04-11 20:15:00",
       "kpm": 3,
       "type": "forecast"
+    },
+    {
+      "time_tag": "2026-04-11 20:30:00",
+      "kpm": 3,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-04-11 20:45:00",
+      "kpm": 3,
+      "type": "forecast"
     }
   ],
   "windows_3h": [
     {
       "time_tag": "2026-04-11 00:00:00",
-      "kpm_avg": 2.78,
-      "kpm_max": 3,
+      "kpm_avg": 2.67,
+      "kpm_max": 2.67,
       "kpm_latest": 2.67,
-      "readings": 3
+      "readings": 1
     },
     {
       "time_tag": "2026-04-11 03:00:00",
