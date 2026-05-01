@@ -2,13 +2,13 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Mid-latitude (K9 ≥ 500 nT)",
-  "last_updated": "2026-05-01T18:39:25.657Z",
+  "last_updated": "2026-05-01T20:08:02.958Z",
   "status": "ok",
   "current": {
-    "balkan_k": 3.06,
+    "balkan_k": 2.96,
     "time_tag": "2026-05-01 18:00:00",
-    "activity_level": "unsettled",
-    "station_count": 1
+    "activity_level": "quiet",
+    "station_count": 2
   },
   "max_24h": 3.78,
   "windows_3h": [
@@ -208,32 +208,37 @@
     },
     {
       "time_tag": "2026-05-01 15:00:00",
-      "balkan_k": 2.01,
-      "balkan_k_max": 2.13,
+      "balkan_k": 1.97,
+      "balkan_k_max": 2.07,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 2.13,
-          "disturbance_nt": 11.3
+          "k": 2.07,
+          "disturbance_nt": 10.7
         },
         {
           "code": "SUA",
-          "k": 1.88,
-          "disturbance_nt": 9.4
+          "k": 1.86,
+          "disturbance_nt": 9.3
         }
       ]
     },
     {
       "time_tag": "2026-05-01 18:00:00",
-      "balkan_k": 3.06,
-      "balkan_k_max": 3.06,
-      "station_count": 1,
+      "balkan_k": 2.96,
+      "balkan_k_max": 3.12,
+      "station_count": 2,
       "stations": [
         {
+          "code": "PAG",
+          "k": 2.79,
+          "disturbance_nt": 17.9
+        },
+        {
           "code": "SUA",
-          "k": 3.06,
-          "disturbance_nt": 21.2
+          "k": 3.12,
+          "disturbance_nt": 22.4
         }
       ]
     }
@@ -244,15 +249,15 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2520,
-      "k_windows": 6
+      "valid_readings": 2620,
+      "k_windows": 7
     },
     {
       "code": "SUA",
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 2550,
+      "valid_readings": 2640,
       "k_windows": 7
     },
     {
