@@ -2,117 +2,157 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Mid-latitude (K9 ≥ 500 nT)",
-  "last_updated": "2026-05-06T11:26:31.349Z",
+  "last_updated": "2026-05-06T13:16:35.991Z",
   "status": "ok",
   "current": {
-    "balkan_k": 2.51,
-    "time_tag": "2026-05-06 09:00:00",
+    "balkan_k": 2.54,
+    "time_tag": "2026-05-06 12:00:00",
     "activity_level": "quiet",
     "station_count": 2
   },
-  "max_24h": 4,
+  "max_24h": 3.74,
   "windows_3h": [
     {
       "time_tag": "2026-05-05 00:00:00",
-      "balkan_k": 4,
+      "balkan_k": 3.74,
       "balkan_k_max": 4,
-      "station_count": 1,
+      "station_count": 2,
       "stations": [
         {
           "code": "GCK",
           "k": 4,
           "disturbance_nt": 40.1
+        },
+        {
+          "code": "PEG",
+          "k": 3.47,
+          "disturbance_nt": 29.4
         }
       ]
     },
     {
       "time_tag": "2026-05-05 03:00:00",
-      "balkan_k": 2.73,
-      "balkan_k_max": 2.73,
-      "station_count": 1,
+      "balkan_k": 3.06,
+      "balkan_k_max": 3.39,
+      "station_count": 2,
       "stations": [
         {
           "code": "GCK",
           "k": 2.73,
           "disturbance_nt": 17.3
+        },
+        {
+          "code": "PEG",
+          "k": 3.39,
+          "disturbance_nt": 27.8
         }
       ]
     },
     {
       "time_tag": "2026-05-05 06:00:00",
-      "balkan_k": 3.2,
+      "balkan_k": 2.12,
       "balkan_k_max": 3.2,
-      "station_count": 1,
+      "station_count": 2,
       "stations": [
         {
           "code": "GCK",
           "k": 3.2,
           "disturbance_nt": 24
+        },
+        {
+          "code": "PEG",
+          "k": 1.04,
+          "disturbance_nt": 5.2
         }
       ]
     },
     {
       "time_tag": "2026-05-05 09:00:00",
-      "balkan_k": 3.06,
-      "balkan_k_max": 3.06,
-      "station_count": 1,
+      "balkan_k": 3.15,
+      "balkan_k_max": 3.24,
+      "station_count": 2,
       "stations": [
         {
           "code": "GCK",
           "k": 3.06,
           "disturbance_nt": 21.3
+        },
+        {
+          "code": "PEG",
+          "k": 3.24,
+          "disturbance_nt": 24.7
         }
       ]
     },
     {
       "time_tag": "2026-05-05 12:00:00",
-      "balkan_k": 2.27,
-      "balkan_k_max": 2.27,
-      "station_count": 1,
+      "balkan_k": 2.42,
+      "balkan_k_max": 2.58,
+      "station_count": 2,
       "stations": [
         {
           "code": "GCK",
           "k": 2.27,
           "disturbance_nt": 12.7
+        },
+        {
+          "code": "PEG",
+          "k": 2.58,
+          "disturbance_nt": 15.8
         }
       ]
     },
     {
       "time_tag": "2026-05-05 15:00:00",
-      "balkan_k": 1.65,
+      "balkan_k": 1.25,
       "balkan_k_max": 1.65,
-      "station_count": 1,
+      "station_count": 2,
       "stations": [
         {
           "code": "GCK",
           "k": 1.65,
           "disturbance_nt": 8.2
+        },
+        {
+          "code": "PEG",
+          "k": 0.86,
+          "disturbance_nt": 4.3
         }
       ]
     },
     {
       "time_tag": "2026-05-05 18:00:00",
-      "balkan_k": 0.91,
-      "balkan_k_max": 0.91,
-      "station_count": 1,
+      "balkan_k": 1.23,
+      "balkan_k_max": 1.54,
+      "station_count": 2,
       "stations": [
         {
           "code": "GCK",
           "k": 0.91,
           "disturbance_nt": 4.5
+        },
+        {
+          "code": "PEG",
+          "k": 1.54,
+          "disturbance_nt": 7.7
         }
       ]
     },
     {
       "time_tag": "2026-05-05 21:00:00",
-      "balkan_k": 0.9,
-      "balkan_k_max": 0.9,
-      "station_count": 1,
+      "balkan_k": 0.93,
+      "balkan_k_max": 0.96,
+      "station_count": 2,
       "stations": [
         {
           "code": "GCK",
           "k": 0.9,
           "disturbance_nt": 4.5
+        },
+        {
+          "code": "PEG",
+          "k": 0.96,
+          "disturbance_nt": 4.8
         }
       ]
     },
@@ -172,19 +212,37 @@
     },
     {
       "time_tag": "2026-05-06 09:00:00",
-      "balkan_k": 2.51,
-      "balkan_k_max": 2.75,
+      "balkan_k": 2.69,
+      "balkan_k_max": 2.88,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 2.75,
-          "disturbance_nt": 17.5
+          "k": 2.88,
+          "disturbance_nt": 18.8
         },
         {
           "code": "SUA",
-          "k": 2.28,
-          "disturbance_nt": 12.8
+          "k": 2.5,
+          "disturbance_nt": 15
+        }
+      ]
+    },
+    {
+      "time_tag": "2026-05-06 12:00:00",
+      "balkan_k": 2.54,
+      "balkan_k_max": 2.68,
+      "station_count": 2,
+      "stations": [
+        {
+          "code": "PAG",
+          "k": 2.68,
+          "disturbance_nt": 16.8
+        },
+        {
+          "code": "SUA",
+          "k": 2.4,
+          "disturbance_nt": 14
         }
       ]
     }
@@ -195,16 +253,16 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2050,
-      "k_windows": 4
+      "valid_readings": 2130,
+      "k_windows": 5
     },
     {
       "code": "SUA",
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 2120,
-      "k_windows": 4
+      "valid_readings": 2230,
+      "k_windows": 5
     },
     {
       "code": "GCK",
@@ -218,7 +276,9 @@
       "code": "PEG",
       "name": "Pedeli",
       "country": "Greece",
-      "status": "no_data"
+      "status": "ok",
+      "valid_readings": 1440,
+      "k_windows": 8
     }
   ]
 }
