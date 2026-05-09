@@ -2,32 +2,16 @@
   "source": "NIGGG-BAS (Bulgarian Academy of Sciences)",
   "methodology": "Kpm - estimated Kp from ACE satellite data using MAK model",
   "confidence_interval": "±0.63 at 50% probability",
-  "last_updated": "2026-05-09T10:10:39.351Z",
-  "last_check": "2026-05-09T10:10:39.351Z",
+  "last_updated": "2026-05-09T11:12:38.262Z",
+  "last_check": "2026-05-09T11:12:38.262Z",
   "status": "ok",
   "current": {
     "kpm": 2,
-    "time_tag": "2026-05-09 10:00:00",
+    "time_tag": "2026-05-09 11:00:00",
     "activity_level": "quiet"
   },
   "max_24h": 3,
   "entries_15min": [
-    {
-      "time_tag": "2026-05-08 22:00:00",
-      "kpm": 2.67
-    },
-    {
-      "time_tag": "2026-05-08 22:15:00",
-      "kpm": 2.67
-    },
-    {
-      "time_tag": "2026-05-08 22:30:00",
-      "kpm": 2.67
-    },
-    {
-      "time_tag": "2026-05-08 22:45:00",
-      "kpm": 2.67
-    },
     {
       "time_tag": "2026-05-08 23:00:00",
       "kpm": 2.67
@@ -207,29 +191,25 @@
     {
       "time_tag": "2026-05-09 10:00:00",
       "kpm": 2
-    }
-  ],
-  "forecast_15min": [
+    },
     {
       "time_tag": "2026-05-09 10:15:00",
-      "kpm": 2,
-      "type": "forecast"
+      "kpm": 2
     },
     {
       "time_tag": "2026-05-09 10:30:00",
-      "kpm": 2,
-      "type": "forecast"
+      "kpm": 2
     },
     {
       "time_tag": "2026-05-09 10:45:00",
-      "kpm": 2,
-      "type": "forecast"
+      "kpm": 2
     },
     {
       "time_tag": "2026-05-09 11:00:00",
-      "kpm": 2,
-      "type": "forecast"
-    },
+      "kpm": 2
+    }
+  ],
+  "forecast_15min": [
     {
       "time_tag": "2026-05-09 11:15:00",
       "kpm": 2,
@@ -329,6 +309,26 @@
       "time_tag": "2026-05-09 16:00:00",
       "kpm": 2,
       "type": "forecast"
+    },
+    {
+      "time_tag": "2026-05-09 16:15:00",
+      "kpm": 2,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-05-09 16:30:00",
+      "kpm": 2,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-05-09 16:45:00",
+      "kpm": 2,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-05-09 17:00:00",
+      "kpm": 2,
+      "type": "forecast"
     }
   ],
   "windows_3h": [
@@ -337,7 +337,7 @@
       "kpm_avg": 2.67,
       "kpm_max": 2.67,
       "kpm_latest": 2.67,
-      "readings": 8
+      "readings": 4
     },
     {
       "time_tag": "2026-05-09 00:00:00",
@@ -365,7 +365,7 @@
       "kpm_avg": 2,
       "kpm_max": 2,
       "kpm_latest": 2,
-      "readings": 5
+      "readings": 9
     }
   ]
 }
