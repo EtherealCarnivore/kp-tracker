@@ -2,15 +2,15 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Mid-latitude (K9 ≥ 500 nT)",
-  "last_updated": "2026-05-09T07:11:34.794Z",
+  "last_updated": "2026-05-09T09:00:08.628Z",
   "status": "ok",
   "current": {
-    "balkan_k": 0.92,
+    "balkan_k": 1.04,
     "time_tag": "2026-05-09 06:00:00",
     "activity_level": "quiet",
     "station_count": 2
   },
-  "max_24h": 1.14,
+  "max_24h": 1.2,
   "windows_3h": [
     {
       "time_tag": "2026-05-09 00:00:00",
@@ -32,37 +32,37 @@
     },
     {
       "time_tag": "2026-05-09 03:00:00",
-      "balkan_k": 1.14,
-      "balkan_k_max": 1.38,
+      "balkan_k": 1.2,
+      "balkan_k_max": 1.42,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 0.9,
-          "disturbance_nt": 4.5
+          "k": 0.98,
+          "disturbance_nt": 4.9
         },
         {
           "code": "SUA",
-          "k": 1.38,
-          "disturbance_nt": 6.9
+          "k": 1.42,
+          "disturbance_nt": 7.1
         }
       ]
     },
     {
       "time_tag": "2026-05-09 06:00:00",
-      "balkan_k": 0.92,
-      "balkan_k_max": 1.02,
+      "balkan_k": 1.04,
+      "balkan_k_max": 1.44,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 0.82,
-          "disturbance_nt": 4.1
+          "k": 0.64,
+          "disturbance_nt": 3.2
         },
         {
           "code": "SUA",
-          "k": 1.02,
-          "disturbance_nt": 5.1
+          "k": 1.44,
+          "disturbance_nt": 7.2
         }
       ]
     }
@@ -73,7 +73,7 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 1870,
+      "valid_readings": 1970,
       "k_windows": 3
     },
     {
@@ -81,7 +81,7 @@
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 1860,
+      "valid_readings": 1970,
       "k_windows": 3
     },
     {
