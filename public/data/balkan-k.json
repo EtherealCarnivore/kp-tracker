@@ -2,15 +2,15 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Mid-latitude (K9 ≥ 500 nT)",
-  "last_updated": "2026-05-10T08:58:27.396Z",
+  "last_updated": "2026-05-10T10:22:12.735Z",
   "status": "ok",
   "current": {
-    "balkan_k": 1.23,
-    "time_tag": "2026-05-10 06:00:00",
+    "balkan_k": 2.61,
+    "time_tag": "2026-05-10 09:00:00",
     "activity_level": "quiet",
     "station_count": 2
   },
-  "max_24h": 1.71,
+  "max_24h": 2.61,
   "windows_3h": [
     {
       "time_tag": "2026-05-10 00:00:00",
@@ -50,19 +50,37 @@
     },
     {
       "time_tag": "2026-05-10 06:00:00",
-      "balkan_k": 1.23,
-      "balkan_k_max": 1.24,
+      "balkan_k": 1.27,
+      "balkan_k_max": 1.42,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 1.22,
-          "disturbance_nt": 6.1
+          "k": 1.12,
+          "disturbance_nt": 5.6
         },
         {
           "code": "SUA",
-          "k": 1.24,
-          "disturbance_nt": 6.2
+          "k": 1.42,
+          "disturbance_nt": 7.1
+        }
+      ]
+    },
+    {
+      "time_tag": "2026-05-10 09:00:00",
+      "balkan_k": 2.61,
+      "balkan_k_max": 2.97,
+      "station_count": 2,
+      "stations": [
+        {
+          "code": "PAG",
+          "k": 2.97,
+          "disturbance_nt": 19.7
+        },
+        {
+          "code": "SUA",
+          "k": 2.25,
+          "disturbance_nt": 12.5
         }
       ]
     }
@@ -73,16 +91,16 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 1970,
-      "k_windows": 3
+      "valid_readings": 2060,
+      "k_windows": 4
     },
     {
       "code": "SUA",
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 1970,
-      "k_windows": 3
+      "valid_readings": 2050,
+      "k_windows": 4
     },
     {
       "code": "GCK",
