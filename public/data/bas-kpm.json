@@ -3,8 +3,8 @@
   "methodology": "Kpm - estimated Kp from ACE satellite data using MAK model",
   "confidence_interval": "±0.63 at 50% probability",
   "last_updated": "2026-05-12T07:16:12.043Z",
-  "last_check": "2026-05-12T07:16:12.043Z",
-  "status": "ok",
+  "last_check": "2026-05-12T10:05:14.766Z",
+  "status": "bas_unreachable",
   "current": {
     "kpm": 1.33,
     "time_tag": "2026-05-12 07:00:00",
