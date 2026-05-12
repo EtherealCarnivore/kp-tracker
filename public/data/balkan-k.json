@@ -2,157 +2,49 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Mid-latitude (K9 ≥ 500 nT)",
-  "last_updated": "2026-05-12T00:06:59.824Z",
+  "last_updated": "2026-05-12T04:24:03.307Z",
   "status": "ok",
   "current": {
-    "balkan_k": 0.79,
-    "time_tag": "2026-05-11 21:00:00",
+    "balkan_k": 0.66,
+    "time_tag": "2026-05-12 03:00:00",
     "activity_level": "quiet",
     "station_count": 2
   },
-  "max_24h": 2.11,
+  "max_24h": 0.66,
   "windows_3h": [
     {
-      "time_tag": "2026-05-11 00:00:00",
-      "balkan_k": 1.42,
-      "balkan_k_max": 1.48,
+      "time_tag": "2026-05-12 00:00:00",
+      "balkan_k": 0.27,
+      "balkan_k_max": 0.36,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 1.36,
-          "disturbance_nt": 6.8
+          "k": 0.18,
+          "disturbance_nt": 0.9
         },
         {
           "code": "SUA",
-          "k": 1.48,
-          "disturbance_nt": 7.4
+          "k": 0.36,
+          "disturbance_nt": 1.8
         }
       ]
     },
     {
-      "time_tag": "2026-05-11 03:00:00",
-      "balkan_k": 1.4,
-      "balkan_k_max": 1.46,
+      "time_tag": "2026-05-12 03:00:00",
+      "balkan_k": 0.66,
+      "balkan_k_max": 0.78,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 1.34,
-          "disturbance_nt": 6.7
+          "k": 0.54,
+          "disturbance_nt": 2.7
         },
         {
           "code": "SUA",
-          "k": 1.46,
-          "disturbance_nt": 7.3
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-05-11 06:00:00",
-      "balkan_k": 1.23,
-      "balkan_k_max": 1.44,
-      "station_count": 2,
-      "stations": [
-        {
-          "code": "PAG",
-          "k": 1.44,
-          "disturbance_nt": 7.2
-        },
-        {
-          "code": "SUA",
-          "k": 1.02,
-          "disturbance_nt": 5.1
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-05-11 09:00:00",
-      "balkan_k": 2.11,
-      "balkan_k_max": 2.12,
-      "station_count": 2,
-      "stations": [
-        {
-          "code": "PAG",
-          "k": 2.12,
-          "disturbance_nt": 11.2
-        },
-        {
-          "code": "SUA",
-          "k": 2.1,
-          "disturbance_nt": 11
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-05-11 12:00:00",
-      "balkan_k": 1.72,
-      "balkan_k_max": 1.92,
-      "station_count": 2,
-      "stations": [
-        {
-          "code": "PAG",
-          "k": 1.92,
-          "disturbance_nt": 9.6
-        },
-        {
-          "code": "SUA",
-          "k": 1.52,
-          "disturbance_nt": 7.6
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-05-11 15:00:00",
-      "balkan_k": 1.32,
-      "balkan_k_max": 1.5,
-      "station_count": 2,
-      "stations": [
-        {
-          "code": "PAG",
-          "k": 1.14,
-          "disturbance_nt": 5.7
-        },
-        {
-          "code": "SUA",
-          "k": 1.5,
-          "disturbance_nt": 7.5
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-05-11 18:00:00",
-      "balkan_k": 1.51,
-      "balkan_k_max": 1.66,
-      "station_count": 2,
-      "stations": [
-        {
-          "code": "PAG",
-          "k": 1.36,
-          "disturbance_nt": 6.8
-        },
-        {
-          "code": "SUA",
-          "k": 1.66,
-          "disturbance_nt": 8.3
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-05-11 21:00:00",
-      "balkan_k": 0.79,
-      "balkan_k_max": 0.84,
-      "station_count": 2,
-      "stations": [
-        {
-          "code": "PAG",
-          "k": 0.74,
-          "disturbance_nt": 3.7
-        },
-        {
-          "code": "SUA",
-          "k": 0.84,
-          "disturbance_nt": 4.2
+          "k": 0.78,
+          "disturbance_nt": 3.9
         }
       ]
     }
@@ -163,16 +55,16 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 1440,
-      "k_windows": 8
+      "valid_readings": 1700,
+      "k_windows": 2
     },
     {
       "code": "SUA",
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 1440,
-      "k_windows": 8
+      "valid_readings": 1690,
+      "k_windows": 2
     },
     {
       "code": "GCK",
