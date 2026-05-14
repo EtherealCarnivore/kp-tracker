@@ -2,7 +2,7 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Mid-latitude (K9 ≥ 500 nT)",
-  "last_updated": "2026-05-14T08:11:17.026Z",
+  "last_updated": "2026-05-14T10:58:04.837Z",
   "status": "ok",
   "current": {
     "balkan_k": 2.01,
