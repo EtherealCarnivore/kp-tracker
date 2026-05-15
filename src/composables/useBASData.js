@@ -85,6 +85,10 @@ function getBASStatus() {
   }
 }
 
+function getBASLastUpdated() {
+  return basData.value?.last_updated ?? null
+}
+
 export function useBASData(refreshSeconds = 120) {
   onMounted(() => {
     fetchBASData()
@@ -104,5 +108,6 @@ export function useBASData(refreshSeconds = 120) {
     getBASCurrent,
     getBASForecast,
     getBASStatus,
+    getBASLastUpdated,
   }
 }

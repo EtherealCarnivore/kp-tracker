@@ -45,6 +45,10 @@ function getBalkanStations() {
   return balkanData.value?.stations ?? []
 }
 
+function getBalkanLastUpdated() {
+  return balkanData.value?.last_updated ?? null
+}
+
 export function useBalkanData(refreshSeconds = 120) {
   onMounted(() => {
     fetchBalkanData()
@@ -63,5 +67,6 @@ export function useBalkanData(refreshSeconds = 120) {
     getBalkanCurrent,
     getBalkanHistory,
     getBalkanStations,
+    getBalkanLastUpdated,
   }
 }

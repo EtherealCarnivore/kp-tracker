@@ -8,7 +8,10 @@ const defaults = {
   thresholdBalkan: 4,
   timezone: 'Europe/Sofia',
   refreshInterval: 120,
-  dataSource: 'bas', // 'noaa', 'bas', or 'balkan'
+  // Komshi (regional Balkan K) is the default for new users: it's actually
+  // measured from ground stations near Bulgaria, not a model prediction.
+  // Existing users who picked another source keep it (localStorage wins).
+  dataSource: 'balkan',
 }
 
 const settings = ref({ ...defaults })

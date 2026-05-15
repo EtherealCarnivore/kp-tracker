@@ -11,6 +11,7 @@
               ? 'bg-accent text-white'
               : 'bg-[var(--color-card-bg)] text-text-muted hover:text-text-secondary'"
             @click="$emit('update:dataSource', 'noaa')"
+            :title="t('source.noaa.tooltip')"
           >NOAA</button>
           <button
             class="px-3 py-2 sm:px-2.5 sm:py-1 min-h-[40px] transition-colors"
@@ -18,6 +19,7 @@
               ? 'bg-accent text-white'
               : 'bg-[var(--color-card-bg)] text-text-muted hover:text-text-secondary'"
             @click="$emit('update:dataSource', 'bas')"
+            :title="t('source.bas.tooltip')"
           >BAS</button>
           <button
             class="px-3 py-2 sm:px-2.5 sm:py-1 min-h-[40px] transition-colors"
@@ -25,7 +27,7 @@
               ? 'bg-accent text-white'
               : 'bg-[var(--color-card-bg)] text-text-muted hover:text-text-secondary'"
             @click="$emit('update:dataSource', 'balkan')"
-            :title="t('kp.komshiTooltip')"
+            :title="t('source.balkan.tooltip')"
           >Komshi</button>
         </div>
         <span
@@ -57,6 +59,15 @@
             {{ displayKp !== null ? displayKp.toFixed(1) : '--' }}
           </div>
           <div class="text-xs sm:text-[10px] text-text-muted mt-1">{{ sourceLabel }}</div>
+          <!-- Source kind badge: tells the user at a glance whether they're
+               looking at a real magnetometer reading or a model prediction. -->
+          <div
+            class="source-kind mt-0.5 px-1.5 py-0.5 rounded text-[8px] sm:text-[8px] font-bold uppercase tracking-wider"
+            :class="sourceKindClass"
+            :title="sourceKindTooltip"
+          >
+            {{ sourceKindLabel }}
+          </div>
           <!-- Stale-source fallback indicator: visible only when user's selected source went stale -->
           <div
             v-if="isStale"
@@ -228,6 +239,21 @@ const sourceLabel = computed(() => {
     : t('source.label.noaa')
 })
 
+// MEASURED vs MODEL distinction. Surfaces in the gauge as a small chip so
+// users don't read BAS's volatility as the world being chaotic — it's just
+// a model that re-runs every 15 min.
+const sourceKindLabel = computed(() =>
+  props.activeSource === 'bas' ? t('source.kind.model') : t('source.kind.measured')
+)
+const sourceKindClass = computed(() =>
+  props.activeSource === 'bas' ? 'kind-model' : 'kind-measured'
+)
+const sourceKindTooltip = computed(() => {
+  if (props.activeSource === 'bas') return t('source.bas.tooltip')
+  if (props.activeSource === 'balkan') return t('source.balkan.tooltip')
+  return t('source.noaa.tooltip')
+})
+
 const secondaryReadings = computed(() => {
   const readings = []
   const src = props.activeSource
@@ -284,6 +310,24 @@ const gaugeGlow = computed(() => {
 </script>
 
 <style scoped>
+/* Source-kind chip inside the gauge: distinguishes measured magnetometer
+   data (calm green) from modeled predictions (amber — pay attention to
+   volatility). */
+.source-kind {
+  display: inline-block;
+  cursor: help;
+}
+.source-kind.kind-measured {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--color-kp-quiet);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+.source-kind.kind-model {
+  background: rgba(234, 179, 8, 0.15);
+  color: var(--color-kp-unsettled);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
 /* The threshold control sits in its own row so it doesn't read as passive
    metadata. Surface treatment + a subtle accent border at rest signal "this
    is interactive" before the user even hovers. */

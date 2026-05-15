@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted, onUnmounted } from 'vue'
 import { useKpData } from './composables/useKpData.js'
 import { useBASData } from './composables/useBASData.js'
 import { useBalkanData } from './composables/useBalkanData.js'
@@ -22,8 +22,8 @@ const {
   fetchAll, getKpColor, getKpLevel, getNoaaScale, formatTime, get3hWindow,
 } = useKpData(settings.value.refreshInterval)
 
-const { getBASCurrent, getBASHistory, getBASForecast } = useBASData(settings.value.refreshInterval)
-const { getBalkanCurrent, getBalkanHistory } = useBalkanData(settings.value.refreshInterval)
+const { getBASCurrent, getBASHistory, getBASForecast, getBASLastUpdated } = useBASData(settings.value.refreshInterval)
+const { getBalkanCurrent, getBalkanHistory, getBalkanLastUpdated } = useBalkanData(settings.value.refreshInterval)
 
 const showSettings = ref(false)
 const showInfo = ref(true)
@@ -134,17 +134,47 @@ const activeThreshold = computed(() => {
   return settings.value.thresholdNoaa
 })
 
-const lastUpdateStr = computed(() => {
-  if (!lastUpdate.value) return t('app.loading')
-  const tz = settings.value.timezone === 'local'
-    ? Intl.DateTimeFormat().resolvedOptions().timeZone
-    : settings.value.timezone
-  return t('app.updated') + ' ' + lastUpdate.value.toLocaleString('en-GB', {
-    timeZone: tz,
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-  })
+// Ticks every 30s so the staleness badge updates without a full refetch.
+const nowTick = ref(Date.now())
+let nowTimer = null
+onMounted(() => { nowTimer = setInterval(() => { nowTick.value = Date.now() }, 30000) })
+onUnmounted(() => { if (nowTimer) clearInterval(nowTimer) })
+
+// How old is the data the user is currently looking at, in minutes? Reflects
+// activeSource — NOAA is client-fetched (always fresh), BAS/Komshi depend on
+// the GitHub Actions cron (often 1-2h behind because of free-tier throttling).
+const dataAgeMinutes = computed(() => {
+  // touch nowTick so this recomputes on the timer
+  const now = nowTick.value
+  let lastUpdatedTime
+  if (activeSource.value === 'bas') {
+    const ts = getBASLastUpdated()
+    lastUpdatedTime = ts ? new Date(ts).getTime() : null
+  } else if (activeSource.value === 'balkan') {
+    const ts = getBalkanLastUpdated()
+    lastUpdatedTime = ts ? new Date(ts).getTime() : null
+  } else {
+    lastUpdatedTime = lastUpdate.value?.getTime() ?? null
+  }
+  if (!lastUpdatedTime) return null
+  return Math.max(0, Math.round((now - lastUpdatedTime) / 60000))
+})
+
+// fresh < 15 min, stale 15–60, very stale ≥ 60
+const stalenessLevel = computed(() => {
+  if (dataAgeMinutes.value == null) return 'loading'
+  if (dataAgeMinutes.value < 15) return 'fresh'
+  if (dataAgeMinutes.value < 60) return 'stale'
+  return 'veryStale'
+})
+
+const dataAgeLabel = computed(() => {
+  if (dataAgeMinutes.value == null) return t('app.loading')
+  if (dataAgeMinutes.value === 0) return t('app.dataAgeNow')
+  if (dataAgeMinutes.value < 60) return t('app.dataAgeMin', { min: dataAgeMinutes.value })
+  const h = Math.floor(dataAgeMinutes.value / 60)
+  const m = dataAgeMinutes.value % 60
+  return t('app.dataAgeHours', { hours: h, min: m })
 })
 
 const effectiveTz = computed(() =>
@@ -174,7 +204,13 @@ function updateActiveThreshold(newValue) {
           <span class="text-xs text-text-muted hidden sm:inline">{{ t('app.subtitle') }}</span>
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-xs text-text-muted hidden sm:inline">{{ lastUpdateStr }}</span>
+          <span
+            class="data-age-badge text-[10px] sm:text-xs font-semibold px-2 py-1 rounded-md whitespace-nowrap"
+            :class="`level-${stalenessLevel}`"
+            :title="t('app.cronHint', { refresh: settings.refreshInterval })"
+          >
+            {{ dataAgeLabel }}
+          </span>
           <button
             class="min-w-[44px] min-h-[44px] rounded-xl bg-[var(--color-card-bg)] hover:bg-[var(--color-bg-input)] flex items-center justify-center text-text-secondary transition-colors"
             @click="fetchAll"
@@ -250,7 +286,12 @@ function updateActiveThreshold(newValue) {
         <Transition name="info">
           <div v-if="showInfo" class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-text-secondary leading-relaxed">
             <div>
-              <h3 class="text-accent font-semibold mb-2">{{ t('info.noaaTitle') }}</h3>
+              <h3 class="text-accent font-semibold mb-2 flex items-center gap-2">
+                {{ t('info.noaaTitle') }}
+                <span class="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-kp-quiet/15 text-kp-quiet border border-kp-quiet/30">
+                  {{ t('source.kind.measured') }}
+                </span>
+              </h3>
               <p class="mb-3">{{ t('info.noaaText') }}</p>
               <div class="bg-[var(--color-card-bg)] rounded-lg px-3 py-2 mb-3 text-xs text-text-muted font-mono">{{ t('info.noaaMath') }}</div>
               <div class="space-y-1.5 text-xs">
@@ -261,8 +302,17 @@ function updateActiveThreshold(newValue) {
               </div>
             </div>
             <div>
-              <h3 class="text-accent font-semibold mb-2">{{ t('info.basTitle') }}</h3>
+              <h3 class="text-accent font-semibold mb-2 flex items-center gap-2">
+                {{ t('info.basTitle') }}
+                <span class="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-kp-unsettled/15 text-kp-unsettled border border-kp-unsettled/30">
+                  {{ t('source.kind.model') }}
+                </span>
+              </h3>
               <p class="mb-3">{{ t('info.basText') }}</p>
+              <div class="bg-kp-unsettled/8 border border-kp-unsettled/25 rounded-lg px-3 py-2.5 mb-3 text-xs text-text-secondary flex gap-2 items-start">
+                <span class="text-base shrink-0 leading-none" aria-hidden="true">⚠️</span>
+                <span>{{ t('info.basWarning') }}</span>
+              </div>
               <div class="bg-[var(--color-card-bg)] rounded-lg px-3 py-2 mb-3 text-xs text-text-muted font-mono">{{ t('info.basMath') }}</div>
               <div class="space-y-1.5 text-xs">
                 <div class="flex gap-2"><span class="w-12 font-bold text-kp-quiet">0-3</span> {{ t('info.quiet') }}</div>
@@ -272,7 +322,12 @@ function updateActiveThreshold(newValue) {
               </div>
             </div>
             <div>
-              <h3 class="text-accent font-semibold mb-2">{{ t('info.komshiTitle') }}</h3>
+              <h3 class="text-accent font-semibold mb-2 flex items-center gap-2">
+                {{ t('info.komshiTitle') }}
+                <span class="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-kp-quiet/15 text-kp-quiet border border-kp-quiet/30">
+                  {{ t('source.kind.measured') }}
+                </span>
+              </h3>
               <p class="mb-3">{{ t('info.komshiText') }}</p>
               <div class="bg-[var(--color-card-bg)] rounded-lg px-3 py-2 mb-3 text-xs text-text-muted font-mono">{{ t('info.komshiMath') }}</div>
               <div class="space-y-1.5 text-xs">
@@ -314,4 +369,32 @@ function updateActiveThreshold(newValue) {
 .info-enter-active, .info-leave-active { transition: all 0.3s ease; overflow: hidden; }
 .info-enter-from, .info-leave-to { opacity: 0; max-height: 0; }
 .info-enter-to, .info-leave-from { opacity: 1; max-height: 600px; }
+
+/* Staleness badge: green when fresh, amber 15-60m, red ≥1h. Tooltip
+   explains the GitHub Actions cron throttle so users don't think the
+   app is broken when data lags. */
+.data-age-badge {
+  border: 1px solid transparent;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  cursor: help;
+}
+.data-age-badge.level-fresh {
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--color-kp-quiet);
+  border-color: rgba(34, 197, 94, 0.25);
+}
+.data-age-badge.level-stale {
+  background: rgba(234, 179, 8, 0.12);
+  color: var(--color-kp-unsettled);
+  border-color: rgba(234, 179, 8, 0.3);
+}
+.data-age-badge.level-veryStale {
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--color-kp-severe);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+.data-age-badge.level-loading {
+  background: var(--color-card-bg);
+  color: var(--color-text-muted);
+}
 </style>

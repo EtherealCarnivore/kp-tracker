@@ -4,6 +4,13 @@ export default {
   "app.subtitle": "Geomagnetic Activity Monitor",
   "app.updated": "Updated",
   "app.loading": "Loading...",
+  "app.fresh": "Fresh",
+  "app.stale": "Stale",
+  "app.veryStale": "Very stale",
+  "app.dataAgeMin": "Updated {min} min ago",
+  "app.dataAgeHours": "Updated {hours}h {min}m ago",
+  "app.dataAgeNow": "Just updated",
+  "app.cronHint": "BAS and Komshi data refresh through a GitHub Actions cron. GitHub throttles free-tier schedules — fetches typically land every 1–2 hours, not every 15 minutes as scheduled. NOAA data is fetched directly from your browser every {refresh}s.",
 
   // Alert Banner
   "alert.extreme": "Kp {kp} ({source}) — Severe geomagnetic storm! Take care of yourself.",
@@ -19,6 +26,11 @@ export default {
   "source.label.noaa": "NOAA Kp",
   "source.label.bas": "BAS Kpm",
   "source.label.balkan": "Komshi K",
+  "source.kind.measured": "MEASURED",
+  "source.kind.model": "MODEL",
+  "source.noaa.tooltip": "Global · measured · 13 ground stations worldwide",
+  "source.bas.tooltip": "Modeled from solar wind · re-runs every 15 min · can swing between updates",
+  "source.balkan.tooltip": "Regional · measured · 4 Balkan stations · best for local symptom tracking",
 
   // Kp Gauge
   "kp.current": "Current Kp",
@@ -83,6 +95,7 @@ export default {
   "info.basTitle": "BAS Kpm (Model)",
   "info.basText": "The Bulgarian Academy of Sciences doesn't use ground stations. Instead, it reads solar wind data from the L1 monitor (ACE / DSCOVR, between Earth and the Sun) and feeds it into the MAK model: \"if the solar wind looks like this, then Kp is probably that.\" It's a prediction, not a measurement. Updates every 15 minutes. Models like this tend to compress extremes — a real storm might hit Kp 7 while BAS shows 5. BAS publishes an accuracy of ±0.63 Kp at 50% probability.",
   "info.basMath": "How: solar wind speed + magnetic field (L1 satellite) → MAK model → predicted Kp",
+  "info.basWarning": "Heads up: because BAS re-runs its model every 15 minutes on the latest solar-wind data, its predictions can swing meaningfully between updates (e.g. 5.0 → 4.67 → 4.33 across half an hour is normal). It's best read as an early-warning signal rather than a steady reading. For tracking actual symptoms, NOAA (global, measured) or Komshi (regional, measured) are more reliable.",
   "info.komshiTitle": "Komshi K (Regional)",
   "info.komshiText": "Our own regional K-index built from 4 real ground stations in the Balkans: Panagyurishte (Bulgaria), Surlari (Romania), Grocka (Serbia), and Pedeli (Greece). We take 1-minute magnetic field readings from each station, calculate the horizontal field strength (H = √(X² + Y²)), subtract the quiet baseline, find the max disturbance in each 3h window, and map it to the same 0-9 scale as NOAA. Then we average across all reporting stations. Same method as NOAA, just for our neighborhood.",
   "info.komshiMath": "How: H = √(X² + Y²) → subtract quiet baseline → max disturbance in 3h → K scale → average of 4 Balkan stations",
