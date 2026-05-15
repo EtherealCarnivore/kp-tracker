@@ -29,35 +29,49 @@ const OUTPUT_PATH = join(__dirname, '..', 'public', 'data', 'balkan-k.json')
 
 const INTERMAGNET_BASE = 'https://imag-data.bgs.ac.uk/GIN_V1/GINServices'
 
+// IAGA-published K=9 lower limits (nT) per station — these are the official
+// station-specific saturation thresholds. The generic 500-nT mid-latitude
+// scale was systematically under-counting our stations' K by ~25-35% during
+// storms because their real K9 thresholds sit in the 320-380 nT range.
+// Source: http://isgi.unistra.fr/observatory.php?obs={PAG,SUA,GCK,PEG}
+//         http://www.wdc.bgs.ac.uk/obsinfo/sua.html (cross-check)
 const STATIONS = [
-  { code: 'PAG', name: 'Panagjurishte', country: 'Bulgaria', lat: 42.52, lon: 24.18 },
-  { code: 'SUA', name: 'Surlari', country: 'Romania', lat: 44.68, lon: 26.25 },
-  { code: 'GCK', name: 'Grocka', country: 'Serbia', lat: 44.63, lon: 20.77 },
-  { code: 'PEG', name: 'Pedeli', country: 'Greece', lat: 38.10, lon: 23.90 },
+  { code: 'PAG', name: 'Panagjurishte', country: 'Bulgaria', lat: 42.52, lon: 24.18, k9: 355 },
+  { code: 'SUA', name: 'Surlari',       country: 'Romania',  lat: 44.68, lon: 26.25, k9: 373 },
+  { code: 'GCK', name: 'Grocka',        country: 'Serbia',   lat: 44.63, lon: 20.77, k9: 378 },
+  { code: 'PEG', name: 'Penteli',       country: 'Greece',   lat: 38.10, lon: 23.90, k9: 323 },
 ]
 
-// Mid-latitude K-index scale (nT thresholds for K=0..9)
-// Based on standard NOAA/GFZ scale for ~40-45° geomagnetic latitude
-const K_THRESHOLDS = [5, 10, 20, 40, 70, 120, 200, 330, 500]
-// K=0: 0-5nT, K=1: 5-10, K=2: 10-20, K=3: 20-40, K=4: 40-70,
-// K=5: 70-120, K=6: 120-200, K=7: 200-330, K=8: 330-500, K=9: >500
+// The standard Bartels K-index scale uses [5, 10, 20, 40, 70, 120, 200, 330, 500]
+// nT as the lower bounds for K=1..9 at a reference station with K9=500. For any
+// other station with K9=X, every threshold scales by X/500. So we keep one
+// reference table and scale per call.
+const K9_REFERENCE = 500
+const K_THRESHOLDS_BASE = [5, 10, 20, 40, 70, 120, 200, 330, 500]
 
-function amplitudeToK(amplitudeNt) {
-  for (let k = 0; k < K_THRESHOLDS.length; k++) {
-    if (amplitudeNt < K_THRESHOLDS[k]) return k
+function thresholdsFor(stationK9) {
+  const factor = stationK9 / K9_REFERENCE
+  return K_THRESHOLDS_BASE.map(t => t * factor)
+}
+
+function amplitudeToK(amplitudeNt, stationK9) {
+  const thresholds = thresholdsFor(stationK9)
+  for (let k = 0; k < thresholds.length; k++) {
+    if (amplitudeNt < thresholds[k]) return k
   }
   return 9
 }
 
 // Convert K back to a fractional value using linear interpolation within the bin
-function amplitudeToKFractional(amplitudeNt) {
-  if (amplitudeNt < K_THRESHOLDS[0]) {
-    return amplitudeNt / K_THRESHOLDS[0]
+function amplitudeToKFractional(amplitudeNt, stationK9) {
+  const thresholds = thresholdsFor(stationK9)
+  if (amplitudeNt < thresholds[0]) {
+    return amplitudeNt / thresholds[0]
   }
-  for (let k = 1; k < K_THRESHOLDS.length; k++) {
-    if (amplitudeNt < K_THRESHOLDS[k]) {
-      const lower = K_THRESHOLDS[k - 1]
-      const upper = K_THRESHOLDS[k]
+  for (let k = 1; k < thresholds.length; k++) {
+    if (amplitudeNt < thresholds[k]) {
+      const lower = thresholds[k - 1]
+      const upper = thresholds[k]
       const fraction = (amplitudeNt - lower) / (upper - lower)
       return k + fraction
     }
@@ -170,8 +184,9 @@ function computeQuietBaseline(H, windowMinutes = 180) {
 /**
  * Compute K-index for each 3-hour window from H and baseline arrays.
  * datetimes are ISO strings, H and baseline are arrays of same length.
+ * stationK9 is the IAGA-published K=9 lower limit for this station (nT).
  */
-function computeKWindows(datetimes, H, baseline) {
+function computeKWindows(datetimes, H, baseline, stationK9) {
   // Group by 3-hour window
   const windows = {}
 
@@ -189,11 +204,15 @@ function computeKWindows(datetimes, H, baseline) {
 
   const result = []
   for (const [timeTag, disturbances] of Object.entries(windows).sort()) {
-    if (disturbances.length < 30) continue // Need at least 30 min of data in window
+    // 15 minutes of data is enough to seed a K-value that will refine as more
+    // samples land. Going below 15 makes the very first reading after a window
+    // boundary too noisy; staying at 30 means the current window often misses
+    // for an extra ~15 minutes when the cron's timing is unlucky.
+    if (disturbances.length < 15) continue
 
     const maxDisturbance = Math.max(...disturbances)
-    const k = amplitudeToK(maxDisturbance)
-    const kFrac = Math.round(amplitudeToKFractional(maxDisturbance) * 100) / 100
+    const k = amplitudeToK(maxDisturbance, stationK9)
+    const kFrac = Math.round(amplitudeToKFractional(maxDisturbance, stationK9) * 100) / 100
 
     result.push({
       time_tag: timeTag,
@@ -201,6 +220,7 @@ function computeKWindows(datetimes, H, baseline) {
       k_fractional: kFrac,
       max_disturbance_nt: Math.round(maxDisturbance * 10) / 10,
       data_points: disturbances.length,
+      partial: disturbances.length < 90, // < 90 of 180 readings = still filling
     })
   }
 
@@ -283,7 +303,7 @@ async function main() {
 
     const H = computeH(data.X, data.Y)
     const baseline = computeQuietBaseline(H)
-    const windows = computeKWindows(data.datetime, H, baseline)
+    const windows = computeKWindows(data.datetime, H, baseline, station.k9)
 
     // Only keep today's windows (yesterday was just for baseline)
     const todayWindows = windows.filter(w => w.time_tag.startsWith(today))
@@ -323,7 +343,7 @@ async function main() {
   const output = {
     source: 'INTERMAGNET Balkan Stations',
     methodology: 'Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)',
-    k_scale: 'Mid-latitude (K9 ≥ 500 nT)',
+    k_scale: 'Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT',
     last_updated: now.toISOString(),
     status: stationStatus.some(s => s.status === 'ok') ? 'ok' : 'no_data',
     current: latest ? {

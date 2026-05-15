@@ -10,7 +10,17 @@
           @click="switchRange(r.key)">{{ r.label }}</button>
       </div>
     </div>
-    <div class="text-xs text-text-muted mb-4">{{ dateSubtitle }}</div>
+    <div class="text-xs text-text-muted mb-2">{{ dateSubtitle }}</div>
+
+    <!-- Long-view fallback notice: shown when 3d/7d forces NOAA because the
+         user's selected source doesn't have multi-day history. -->
+    <div
+      v-if="forcedNoaa"
+      class="mb-4 px-3 py-2 rounded-lg bg-accent/8 border border-accent/20 text-xs text-accent flex items-start gap-2"
+    >
+      <span class="shrink-0" aria-hidden="true">ⓘ</span>
+      <span>{{ t('chart.forcedNoaaHint') }}</span>
+    </div>
 
     <!-- Chart -->
     <div class="flex">
@@ -159,9 +169,13 @@ const props = defineProps({
   threshold: { type: Number, default: 4 },
   timezone: { type: String, default: 'Europe/Sofia' },
   activeSource: { type: String, default: 'noaa' },
+  // True when long-view forced NOAA bars because BAS/Komshi lack multi-day history.
+  forcedNoaa: { type: Boolean, default: false },
   getKpColor: { type: Function, required: true },
   formatTime: { type: Function, required: true },
 })
+
+const emit = defineEmits(['update:range'])
 
 const windowWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 800)
 function onResize() { windowWidth.value = window.innerWidth }
@@ -175,7 +189,11 @@ const ranges = computed(() => [
 ])
 const range = ref('24h')
 const selectedIdx = ref(null)
-function switchRange(key) { range.value = key; selectedIdx.value = null }
+function switchRange(key) {
+  range.value = key
+  selectedIdx.value = null
+  emit('update:range', key)
+}
 
 const chartHeight = computed(() => windowWidth.value < 640 ? 260 : 280)
 

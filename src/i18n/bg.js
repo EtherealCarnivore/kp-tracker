@@ -84,6 +84,7 @@ export default {
   "chart.estimate": "Оценка",
   "chart.legendForecast": "Прогноза",
   "chart.legendEstimate": "Оценка",
+  "chart.forcedNoaaHint": "Изгледът за по-дълъг период използва NOAA — BAS и Komshi не пазят данни за толкова дни назад. Превключи на 24ч, за да видиш източника, който си избрал в индикатора.",
 
   // Info
   "info.title": "Kp индекс",

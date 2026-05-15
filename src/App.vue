@@ -79,7 +79,14 @@ const activeKp = computed(() => {
   return liveKp.value ?? kpNum.value
 })
 
+// Tracks the chart's selected range so we can force NOAA in 3d/7d views
+// (BAS and Komshi don't keep multi-day history; NOAA's endpoint serves 30+ days).
+const chartRange = ref('24h')
+const chartIsLongView = computed(() => chartRange.value === '3d' || chartRange.value === '7d')
+const chartForcedNoaa = computed(() => chartIsLongView.value && activeSource.value !== 'noaa')
+
 const activeHistory = computed(() => {
+  if (chartForcedNoaa.value) return kpHistory.value
   if (activeSource.value === 'bas') return getBASHistory()
   if (activeSource.value === 'balkan') return getBalkanHistory()
   return kpHistory.value
@@ -94,7 +101,7 @@ const activeHistory = computed(() => {
 //                   ground magnetometers only observe)
 //   - Any stale: fall through to NOAA entirely
 const activeForecast = computed(() => {
-  if (isSelectedSourceStale.value || settings.value.dataSource === 'noaa') {
+  if (chartForcedNoaa.value || isSelectedSourceStale.value || settings.value.dataSource === 'noaa') {
     return kpForecast.value.map(f => ({ ...f, source: 'noaa' }))
   }
 
@@ -267,8 +274,10 @@ function updateActiveThreshold(newValue) {
         :threshold="activeThreshold"
         :timezone="effectiveTz"
         :active-source="activeSource"
+        :forced-noaa="chartForcedNoaa"
         :get-kp-color="getKpColor"
         :format-time="formatTime"
+        @update:range="(r) => chartRange = r"
       />
 
       <!-- Info Section -->

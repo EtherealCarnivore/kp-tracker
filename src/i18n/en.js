@@ -84,6 +84,7 @@ export default {
   "chart.estimate": "Estimate",
   "chart.legendForecast": "Forecast",
   "chart.legendEstimate": "Estimate",
+  "chart.forcedNoaaHint": "Long-term view uses NOAA — BAS and Komshi don't keep multi-day history. Switch to 24h to see the source you picked in the gauge.",
 
   // Info
   "info.title": "Kp Index",
