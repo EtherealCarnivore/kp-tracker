@@ -241,16 +241,22 @@ const sourceLabel = computed(() => {
 
 // MEASURED vs MODEL distinction. Surfaces in the gauge as a small chip so
 // users don't read BAS's volatility as the world being chaotic — it's just
-// a model that re-runs every 15 min.
-const sourceKindLabel = computed(() =>
-  props.activeSource === 'bas' ? t('source.kind.model') : t('source.kind.measured')
-)
+// a model that re-runs every 15 min. Komshi additionally gets an "· IAGA"
+// suffix so users notice its values are calibrated per-station and may
+// differ from the older generic-scale numbers they remember.
+const sourceKindLabel = computed(() => {
+  if (props.activeSource === 'bas') return t('source.kind.model')
+  if (props.activeSource === 'balkan') return `${t('source.kind.measured')} · ${t('source.kind.iaga')}`
+  return t('source.kind.measured')
+})
 const sourceKindClass = computed(() =>
   props.activeSource === 'bas' ? 'kind-model' : 'kind-measured'
 )
 const sourceKindTooltip = computed(() => {
   if (props.activeSource === 'bas') return t('source.bas.tooltip')
-  if (props.activeSource === 'balkan') return t('source.balkan.tooltip')
+  if (props.activeSource === 'balkan') {
+    return `${t('source.balkan.tooltip')} — ${t('source.balkan.iagaTooltip')}`
+  }
   return t('source.noaa.tooltip')
 })
 

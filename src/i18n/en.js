@@ -28,6 +28,8 @@ export default {
   "source.label.balkan": "Komshi K",
   "source.kind.measured": "MEASURED",
   "source.kind.model": "MODEL",
+  "source.kind.iaga": "IAGA",
+  "source.balkan.iagaTooltip": "IAGA-calibrated: each station uses its own published K9 threshold (PAG 355, SUA 373, GCK 378, PEG 323 nT) rather than a generic mid-latitude scale. Values match what other regional Kp services would report for the same disturbance.",
   "source.noaa.tooltip": "Global · measured · 13 ground stations worldwide",
   "source.bas.tooltip": "Modeled from solar wind · re-runs every 15 min · can swing between updates",
   "source.balkan.tooltip": "Regional · measured · 4 Balkan stations · best for local symptom tracking",
