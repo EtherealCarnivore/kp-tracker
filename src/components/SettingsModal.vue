@@ -21,7 +21,7 @@
           <div class="p-4 sm:p-5 space-y-5 sm:space-y-6">
             <!-- Theme Selector -->
             <div>
-              <label class="block text-sm font-medium mb-3">{{ locale === 'bg' ? 'Тема' : 'Theme' }}</label>
+              <label class="block text-sm font-medium mb-3">{{ t('settings.theme') }}</label>
               <div class="flex gap-4 justify-center">
                 <button
                   v-for="tm in themeList"
@@ -68,42 +68,23 @@
               <label class="block text-sm font-medium mb-2">{{ t('settings.threshold') }}</label>
 
               <div class="space-y-3">
-                <div>
-                  <span class="text-xs text-text-muted">BAS</span>
-                  <div class="flex items-center gap-4">
+                <div v-for="row in thresholdRows" :key="row.key">
+                  <span class="text-xs text-text-muted">{{ row.label }}</span>
+                  <div class="flex items-center gap-3 sm:gap-4">
                     <input
                       type="range"
-                      :value="settings.thresholdBas"
-                      @input="$emit('update', { ...settings, thresholdBas: Number($event.target.value) })"
-                      min="1" max="9" class="flex-1"
+                      :value="settings[row.key]"
+                      @input="updateThreshold(row.key, $event.target.value)"
+                      min="1" max="9" step="0.5" class="flex-1"
                     >
-                    <span class="text-2xl font-black text-kp-unsettled w-10 text-center">{{ settings.thresholdBas }}</span>
-                  </div>
-                </div>
-
-                <div>
-                  <span class="text-xs text-text-muted">NOAA</span>
-                  <div class="flex items-center gap-4">
                     <input
-                      type="range"
-                      :value="settings.thresholdNoaa"
-                      @input="$emit('update', { ...settings, thresholdNoaa: Number($event.target.value) })"
-                      min="1" max="9" class="flex-1"
+                      type="number"
+                      :value="settings[row.key]"
+                      @input="updateThreshold(row.key, $event.target.value)"
+                      @blur="clampThreshold(row.key)"
+                      min="1" max="9" step="0.5"
+                      class="threshold-num text-2xl font-black text-kp-unsettled w-16 text-center tabular-nums"
                     >
-                    <span class="text-2xl font-black text-kp-unsettled w-10 text-center">{{ settings.thresholdNoaa }}</span>
-                  </div>
-                </div>
-
-                <div>
-                  <span class="text-xs text-text-muted">Komshi</span>
-                  <div class="flex items-center gap-4">
-                    <input
-                      type="range"
-                      :value="settings.thresholdBalkan"
-                      @input="$emit('update', { ...settings, thresholdBalkan: Number($event.target.value) })"
-                      min="1" max="9" class="flex-1"
-                    >
-                    <span class="text-2xl font-black text-kp-unsettled w-10 text-center">{{ settings.thresholdBalkan }}</span>
                   </div>
                 </div>
               </div>
@@ -140,38 +121,6 @@
               </select>
             </div>
 
-            <!-- Export/Import -->
-            <div class="border-t border-[var(--color-border)] pt-5">
-              <label class="block text-sm font-medium mb-2">{{ t('settings.data') }}</label>
-              <div class="flex gap-2 flex-wrap">
-                <button
-                  class="flex-1 px-4 py-2.5 rounded-xl bg-[var(--color-card-bg)] border border-[var(--color-border)] text-sm text-text-secondary hover:bg-[var(--color-bg-input)] transition-colors min-h-[44px]"
-                  @click="$emit('export')"
-                >{{ t('settings.export') }}</button>
-                <button
-                  class="flex-1 px-4 py-2.5 rounded-xl bg-[var(--color-card-bg)] border border-[var(--color-border)] text-sm text-text-secondary hover:bg-[var(--color-bg-input)] transition-colors min-h-[44px]"
-                  @click="triggerImport"
-                >{{ t('settings.import') }}</button>
-                <input ref="fileInput" type="file" accept=".json" class="hidden" @change="handleImport">
-              </div>
-            </div>
-
-            <!-- Danger -->
-            <div class="border-t border-[var(--color-border)] pt-5">
-              <label class="block text-sm font-medium mb-2 text-kp-severe">{{ t('settings.danger') }}</label>
-              <button
-                v-if="!confirmingClear"
-                class="px-4 py-2.5 rounded-xl border border-kp-severe/30 text-sm text-kp-severe hover:bg-kp-severe/10 transition-colors min-h-[44px]"
-                @click="confirmingClear = true"
-              >{{ t('settings.clear') }}</button>
-              <button
-                v-else
-                class="px-4 py-2.5 rounded-xl bg-kp-severe text-white text-sm font-semibold min-h-[44px] transition-colors"
-                @click="handleClear"
-              >
-                {{ t('settings.clearConfirm') }}
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -180,7 +129,7 @@
 </template>
 
 <script setup>
-import { ref, watch, computed } from 'vue'
+import { computed } from 'vue'
 import { useI18n } from '../i18n/index.js'
 import { useTheme } from '../composables/useTheme.js'
 
@@ -194,31 +143,32 @@ const props = defineProps({
   settings: { type: Object, required: true },
 })
 
-const emit = defineEmits(['close', 'update', 'export', 'import', 'clear'])
-const fileInput = ref(null)
-const confirmingClear = ref(false)
+const emit = defineEmits(['close', 'update'])
 
-// Auto-reset confirm after 3 seconds
-let clearTimer = null
-watch(confirmingClear, (val) => {
-  if (val) {
-    clearTimer = setTimeout(() => { confirmingClear.value = false }, 3000)
-  } else if (clearTimer) {
-    clearTimeout(clearTimer)
+const thresholdRows = [
+  { key: 'thresholdBas', label: 'BAS' },
+  { key: 'thresholdNoaa', label: 'NOAA' },
+  { key: 'thresholdBalkan', label: 'Komshi' },
+]
+
+// Threshold updates accept floats (e.g. 3.5). We snap to 0.5 steps and clamp
+// to [1, 9]. Empty string while editing is allowed transiently — the blur
+// handler enforces a valid value.
+function updateThreshold(key, rawValue) {
+  if (rawValue === '' || rawValue === '-') {
+    emit('update', { ...props.settings, [key]: rawValue })
+    return
   }
-})
-
-function triggerImport() { fileInput.value?.click() }
-
-function handleImport(e) {
-  const file = e.target.files?.[0]
-  if (file) emit('import', file)
-  e.target.value = ''
+  const n = Number(rawValue)
+  if (isNaN(n)) return
+  const snapped = Math.round(n * 2) / 2
+  emit('update', { ...props.settings, [key]: snapped })
 }
 
-function handleClear() {
-  emit('clear')
-  confirmingClear.value = false
+function clampThreshold(key) {
+  const v = Number(props.settings[key])
+  if (isNaN(v) || v < 1) emit('update', { ...props.settings, [key]: 1 })
+  else if (v > 9) emit('update', { ...props.settings, [key]: 9 })
 }
 </script>
 
@@ -230,5 +180,28 @@ function handleClear() {
 @media (min-width: 640px) {
   .modal-enter-from > div { transform: scale(0.96) translateY(0); }
   .modal-leave-to > div { transform: scale(0.98) translateY(0); }
+}
+
+/* Numeric threshold input — matches the size of the old read-only span but
+   is now an actual editable field. Hide the browser's default spinner so the
+   layout doesn't shift between focus states. */
+.threshold-num {
+  background: var(--color-bg-input);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 6px 4px;
+  appearance: textfield;
+  -moz-appearance: textfield;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.threshold-num::-webkit-inner-spin-button,
+.threshold-num::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.threshold-num:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-border-glow);
 }
 </style>

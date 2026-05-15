@@ -47,11 +47,19 @@
               <div class="w-[1px] h-full border-l border-dashed border-text-muted/20" style="margin-left:-1px" />
             </div>
 
-            <!-- Forecast divider -->
+            <!-- Forecast start divider — sits one row above the now-marker label so they don't collide -->
             <div v-if="bar.isForecastStart" class="absolute left-0 top-0 bottom-0 z-20 pointer-events-none">
               <div class="w-[1.5px] h-full bg-text-muted/40" style="margin-left:-1px" />
-              <div class="absolute -top-5 left-0 text-[9px] font-semibold text-text-muted uppercase tracking-wider whitespace-nowrap">
-                {{ locale === 'bg' ? 'Прогноза' : 'Forecast' }}
+              <div class="absolute -top-10 left-0 text-[9px] font-semibold text-text-muted uppercase tracking-wider whitespace-nowrap">
+                {{ t('chart.forecastFrom', { source: t('source.' + bar.source) }) }}
+              </div>
+            </div>
+
+            <!-- Forecast source-change divider (e.g. BAS 6h forecast → NOAA continuation) -->
+            <div v-else-if="bar.isForecastSourceChange" class="absolute left-0 top-0 bottom-0 z-20 pointer-events-none">
+              <div class="w-[1px] h-full bg-text-muted/25" style="margin-left:-1px; border-left: 1px dashed currentColor;" />
+              <div class="absolute -top-10 left-0 text-[9px] font-medium text-text-muted/70 uppercase tracking-wider whitespace-nowrap">
+                → {{ t('source.' + bar.source) }}
               </div>
             </div>
 
@@ -112,7 +120,10 @@
           <span class="text-xl sm:text-2xl font-black tabular-nums" :style="{ color: getKpColor(selectedBarInfo.kp) }">Kp {{ selectedBarInfo.kp.toFixed(1) }}</span>
           <span v-if="selectedBarInfo.type !== 'observed'" class="text-[11px] px-2 py-0.5 rounded font-medium"
             :class="selectedBarInfo.type === 'predicted' ? 'bg-accent/15 text-accent' : 'bg-kp-unsettled/15 text-kp-unsettled'">
-            {{ selectedBarInfo.type === 'predicted' ? t('chart.forecast') : (locale === 'bg' ? 'Оценка' : 'Estimate') }}
+            {{ selectedBarInfo.type === 'predicted' ? t('chart.forecast') : t('chart.estimate') }}
+          </span>
+          <span v-if="selectedBarInfo.source" class="text-[10px] px-1.5 py-0.5 rounded bg-[var(--color-bg-input)] text-text-secondary font-semibold uppercase tracking-wider">
+            {{ t('source.' + selectedBarInfo.source) }}
           </span>
         </div>
         <div class="text-right flex-1">
@@ -130,7 +141,7 @@
       <span class="flex items-center gap-1.5 text-xs text-text-secondary"><span class="w-3 h-3 rounded-sm bg-kp-unsettled" /> {{ t('chart.unsettled') }}</span>
       <span class="flex items-center gap-1.5 text-xs text-text-secondary"><span class="w-3 h-3 rounded-sm bg-kp-storm" /> {{ t('chart.storm') }}</span>
       <span class="flex items-center gap-1.5 text-xs text-text-secondary"><span class="w-3 h-3 rounded-sm bg-kp-severe" /> {{ t('chart.severe') }}</span>
-      <span class="flex items-center gap-1.5 text-xs text-text-secondary"><span class="w-3 h-3 rounded-sm estimated-legend" /> {{ locale === 'bg' ? 'Оценка' : 'Estimate' }}</span>
+      <span class="flex items-center gap-1.5 text-xs text-text-secondary"><span class="w-3 h-3 rounded-sm estimated-legend" /> {{ t('chart.estimate') }}</span>
       <span class="flex items-center gap-1.5 text-xs text-text-secondary"><span class="w-3 h-3 rounded-sm forecast-legend-swatch" /> {{ t('chart.forecast') }}</span>
     </div>
   </div>
@@ -144,9 +155,10 @@ const { t, locale } = useI18n()
 
 const props = defineProps({
   history: { type: Array, default: () => [] },
-  forecast: { type: Array, default: () => [] }, // Contains observed + estimated + predicted
+  forecast: { type: Array, default: () => [] }, // Contains observed + estimated + predicted, each tagged with `source`
   threshold: { type: Number, default: 4 },
   timezone: { type: String, default: 'Europe/Sofia' },
+  activeSource: { type: String, default: 'noaa' },
   getKpColor: { type: Function, required: true },
   formatTime: { type: Function, required: true },
 })
@@ -197,7 +209,7 @@ function barBg(bar) {
 
 const nowLabel = computed(() => {
   const time = new Date().toLocaleString('en-GB', { timeZone: props.timezone, hour: '2-digit', minute: '2-digit' })
-  return (locale.value === 'bg' ? 'Сега ' : 'Now ') + time
+  return t('chart.now') + ' ' + time
 })
 
 // ===== USE FORECAST ENDPOINT AS SINGLE SOURCE =====
@@ -214,11 +226,13 @@ const displayBars = computed(() => {
         kp: f.kp,
         date: parseTime(f.timeTag),
         type: f.type, // 'observed', 'estimated', 'predicted'
+        source: f.source || props.activeSource,
       }))
     : props.history.map(h => ({
         kp: h.kp,
         date: parseTime(h.timeTag),
         type: 'observed',
+        source: props.activeSource,
       }))
 
   allEntries = allEntries.filter(e => !isNaN(e.kp)).sort((a, b) => a.date - b.date)
@@ -243,8 +257,12 @@ const displayBars = computed(() => {
     items = [...past, ...predicted]
   }
 
-  // Build display bars with now marker + forecast start flag + day grouping
+  // Build display bars with now marker + forecast start flag + day grouping.
+  // We also surface a second divider when the *forecast source* changes (e.g.
+  // BAS 6h forecast hands off to NOAA's longer-range continuation), so users
+  // can see which provider is responsible for each bar.
   let forecastStartMarked = false
+  let lastForecastSource = null
   const todayStr = new Date().toLocaleString('en-GB', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' })
   const seenDays = []
 
@@ -253,8 +271,18 @@ const displayBars = computed(() => {
     const barEnd = barStart + 3 * 3600000
     const isNowBar = now >= barStart && now < barEnd
     const nowPct = isNowBar ? ((now - barStart) / (barEnd - barStart)) * 100 : 0
-    const isForecastStart = item.type === 'predicted' && !forecastStartMarked
-    if (isForecastStart) forecastStartMarked = true
+
+    let isForecastStart = false
+    let isForecastSourceChange = false
+    if (item.type === 'predicted') {
+      if (!forecastStartMarked) {
+        isForecastStart = true
+        forecastStartMarked = true
+      } else if (lastForecastSource !== null && lastForecastSource !== item.source) {
+        isForecastSourceChange = true
+      }
+      lastForecastSource = item.source
+    }
 
     // Day grouping for alternating bands
     const dayStr = item.date.toLocaleString('en-GB', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' })
@@ -263,7 +291,7 @@ const displayBars = computed(() => {
     const isToday = dayStr === todayStr
     const loc = locale.value === 'bg' ? 'bg-BG' : 'en-GB'
     const dayLabel = isToday
-      ? (locale.value === 'bg' ? 'Днес' : 'Today')
+      ? t('chart.today')
       : item.date.toLocaleString(loc, { timeZone: tz, weekday: 'short', day: 'numeric', month: 'short' })
     const isDayStart = seenDays.indexOf(dayStr) === dayIndex && items.indexOf(item) === items.findIndex(i =>
       i.date.toLocaleString('en-GB', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' }) === dayStr
@@ -273,9 +301,11 @@ const displayBars = computed(() => {
       kp: item.kp,
       date: item.date,
       type: item.type,
+      source: item.source,
       isNowBar,
       nowPct,
       isForecastStart,
+      isForecastSourceChange,
       dayIndex,
       dayLabel,
       isDayStart,
@@ -314,6 +344,7 @@ const selectedBarInfo = computed(() => {
   return {
     kp: bar.kp,
     type: bar.type,
+    source: bar.source,
     window: windowFull(bar.date, props.timezone),
     date: fmtDate(bar.date, props.timezone),
   }

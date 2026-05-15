@@ -3,7 +3,6 @@ import { computed, ref } from 'vue'
 import { useKpData } from './composables/useKpData.js'
 import { useBASData } from './composables/useBASData.js'
 import { useBalkanData } from './composables/useBalkanData.js'
-import { useSymptomLog } from './composables/useSymptomLog.js'
 import { useSettings } from './composables/useSettings.js'
 import { useTheme } from './composables/useTheme.js'
 import { useI18n } from './i18n/index.js'
@@ -12,8 +11,6 @@ import AlertBanner from './components/AlertBanner.vue'
 import KpGauge from './components/KpGauge.vue'
 import SolarWind from './components/SolarWind.vue'
 import KpChart from './components/KpChart.vue'
-import SymptomTracker from './components/SymptomTracker.vue'
-import CorrelationView from './components/CorrelationView.vue'
 import SettingsModal from './components/SettingsModal.vue'
 
 const { t } = useI18n()
@@ -25,15 +22,11 @@ const {
   fetchAll, getKpColor, getKpLevel, getNoaaScale, formatTime, get3hWindow,
 } = useKpData(settings.value.refreshInterval)
 
-const { getBASCurrent, getBASHistory } = useBASData(settings.value.refreshInterval)
+const { getBASCurrent, getBASHistory, getBASForecast } = useBASData(settings.value.refreshInterval)
 const { getBalkanCurrent, getBalkanHistory } = useBalkanData(settings.value.refreshInterval)
 
-const {
-  recentLogs, stats, addLog, deleteLog, clearAllLogs, exportLogs, importLogs,
-} = useSymptomLog()
-
 const showSettings = ref(false)
-const showInfo = ref(false)
+const showInfo = ref(true)
 
 const kpNum = computed(() => currentKp.value?.kp ?? null)
 const kpTimeTag = computed(() => currentKp.value?.timeTag ?? '')
@@ -47,56 +40,97 @@ const balkanKp = computed(() => {
   return balkan?.kp ?? null
 })
 
-// Check if BAS/Balkan data is stale (newest entry older than 6 hours)
-function isSourceStale(history) {
-  if (!history || history.length === 0) return true
+// Returns true when data exists and is older than 6h. Empty history is NOT
+// stale — it just means we haven't loaded yet.
+function isDataStale(history) {
+  if (!history || history.length === 0) return false
   const latest = history[history.length - 1]
   const latestTime = new Date(latest.timeTag.replace(' ', 'T') + 'Z').getTime()
   return Date.now() - latestTime > 6 * 3600000
 }
 
+// Returns true when we shouldn't trust this source (either stale OR empty).
+// Drives the fallback-to-NOAA decision so the user always sees *some* data.
+function shouldFallback(history) {
+  if (!history || history.length === 0) return true
+  return isDataStale(history)
+}
+
+// Stale badge: only shown when data is actually old, not during loading. This
+// keeps the badge from flashing on first page load while BAS data is fetching.
+const isSelectedSourceStale = computed(() => {
+  if (settings.value.dataSource === 'bas') return isDataStale(getBASHistory())
+  if (settings.value.dataSource === 'balkan') return isDataStale(getBalkanHistory())
+  return false
+})
+
+// Effective source. Falls back to NOAA when selected source has stale OR
+// missing data, so downstream components (gauge, chart, alert, log) always
+// have something to render.
+const activeSource = computed(() => {
+  if (settings.value.dataSource === 'bas' && shouldFallback(getBASHistory())) return 'noaa'
+  if (settings.value.dataSource === 'balkan' && shouldFallback(getBalkanHistory())) return 'noaa'
+  return settings.value.dataSource
+})
+
 const activeKp = computed(() => {
-  if (settings.value.dataSource === 'bas') {
-    if (!isSourceStale(getBASHistory())) return basKp.value
-    return liveKp.value ?? kpNum.value // fall back to NOAA
-  }
-  if (settings.value.dataSource === 'balkan') {
-    if (!isSourceStale(getBalkanHistory())) return balkanKp.value
-    return liveKp.value ?? kpNum.value
-  }
+  if (activeSource.value === 'bas') return basKp.value
+  if (activeSource.value === 'balkan') return balkanKp.value
   return liveKp.value ?? kpNum.value
 })
 
 const activeHistory = computed(() => {
-  if (settings.value.dataSource === 'bas') {
-    if (!isSourceStale(getBASHistory())) return getBASHistory()
-    return kpHistory.value
-  }
-  if (settings.value.dataSource === 'balkan') {
-    if (!isSourceStale(getBalkanHistory())) return getBalkanHistory()
-    return kpHistory.value
-  }
+  if (activeSource.value === 'bas') return getBASHistory()
+  if (activeSource.value === 'balkan') return getBalkanHistory()
   return kpHistory.value
 })
 
+// Source-aware forecast: each item tagged with its origin source so the chart
+// can label which provider's prediction the user is seeing.
+//   - NOAA selected: NOAA's own observed+estimated+predicted, all tagged 'noaa'
+//   - BAS fresh: BAS observed + BAS 6h forecast + NOAA forecast for windows
+//                beyond BAS's reach (so 3d/7d views still have far-future bars)
+//   - Balkan fresh: Balkan observed + NOAA forecast (Komshi can't forecast —
+//                   ground magnetometers only observe)
+//   - Any stale: fall through to NOAA entirely
 const activeForecast = computed(() => {
-  // Only NOAA has forecast data — for BAS/Balkan, use their history
-  // but still append NOAA forecast for future windows
-  if (settings.value.dataSource === 'noaa') return kpForecast.value
+  if (isSelectedSourceStale.value || settings.value.dataSource === 'noaa') {
+    return kpForecast.value.map(f => ({ ...f, source: 'noaa' }))
+  }
 
-  // If BAS/Balkan data is stale, fall back to NOAA entirely
-  const src = settings.value.dataSource === 'bas' ? getBASHistory() : getBalkanHistory()
-  if (isSourceStale(src)) return kpForecast.value
+  if (settings.value.dataSource === 'bas') {
+    const observed = getBASHistory().map(h => ({ ...h, type: 'observed', source: 'bas' }))
+    const observedKeys = new Set(observed.map(o => o.timeTag))
+    // BAS history's latest window and BAS forecast's first window are the same
+    // 3h window — observed wins (it's a real measurement). Same dedup against
+    // the NOAA continuation tail.
+    const basPred = getBASForecast().filter(p => !observedKeys.has(p.timeTag))
+    const basPredKeys = new Set(basPred.map(p => p.timeTag))
+    const basPredEnd = basPred.length > 0
+      ? new Date(basPred[basPred.length - 1].timeTag.replace(' ', 'T') + 'Z').getTime()
+      : Date.now()
+    const noaaContinuation = kpForecast.value
+      .filter(f => f.type === 'predicted')
+      .filter(f => new Date(f.timeTag.replace(' ', 'T') + 'Z').getTime() > basPredEnd)
+      .filter(f => !observedKeys.has(f.timeTag) && !basPredKeys.has(f.timeTag))
+      .map(f => ({ ...f, source: 'noaa' }))
+    return [...observed, ...basPred, ...noaaContinuation]
+  }
 
-  // For BAS/Balkan: build a combined array with their observed data + NOAA predicted
-  const observed = src.map(h => ({ ...h, type: 'observed' }))
-  const noaaPredicted = kpForecast.value.filter(f => f.type === 'predicted')
+  // balkan: ground magnetometers can't forecast, so we use NOAA's predicted
+  // bars. Dedup against Balkan history just in case there's a window overlap.
+  const observed = getBalkanHistory().map(h => ({ ...h, type: 'observed', source: 'balkan' }))
+  const observedKeys = new Set(observed.map(o => o.timeTag))
+  const noaaPredicted = kpForecast.value
+    .filter(f => f.type === 'predicted')
+    .filter(f => !observedKeys.has(f.timeTag))
+    .map(f => ({ ...f, source: 'noaa' }))
   return [...observed, ...noaaPredicted]
 })
 
 const activeThreshold = computed(() => {
-  if (settings.value.dataSource === 'bas') return settings.value.thresholdBas
-  if (settings.value.dataSource === 'balkan') return settings.value.thresholdBalkan
+  if (activeSource.value === 'bas') return settings.value.thresholdBas
+  if (activeSource.value === 'balkan') return settings.value.thresholdBalkan
   return settings.value.thresholdNoaa
 })
 
@@ -119,18 +153,15 @@ const effectiveTz = computed(() =>
     : settings.value.timezone
 )
 
-function handleSaveLog(entry) {
-  addLog(entry)
+// Inline threshold edits in the gauge edit *what the user is currently seeing*,
+// so we route to the effective source's key — not settings.dataSource — which
+// keeps WYSIWYG honest when a stale source is falling back to NOAA.
+function updateActiveThreshold(newValue) {
+  if (activeSource.value === 'bas') settings.value.thresholdBas = newValue
+  else if (activeSource.value === 'balkan') settings.value.thresholdBalkan = newValue
+  else settings.value.thresholdNoaa = newValue
 }
 
-async function handleImport(file) {
-  try {
-    const count = await importLogs(file)
-    alert(`Imported ${count} new entries.`)
-  } catch (e) {
-    alert('Import failed: ' + e.message)
-  }
-}
 </script>
 
 <template>
@@ -161,7 +192,7 @@ async function handleImport(file) {
     </header>
 
     <!-- Alert -->
-    <AlertBanner :kp="activeKp" :threshold="activeThreshold" />
+    <AlertBanner :kp="activeKp" :threshold="activeThreshold" :source="activeSource" />
 
     <!-- Main Content -->
     <main class="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-5 space-y-4 sm:space-y-5">
@@ -174,6 +205,8 @@ async function handleImport(file) {
           :bas-kp="basKp"
           :balkan-kp="balkanKp"
           :data-source="settings.dataSource"
+          :active-source="activeSource"
+          :is-stale="isSelectedSourceStale"
           :kp-type="currentKp?.type"
           :time-tag="kpTimeTag"
           :threshold="activeThreshold"
@@ -183,6 +216,7 @@ async function handleImport(file) {
           :get-noaa-scale="getNoaaScale"
           :get3h-window="get3hWindow"
           @update:data-source="(v) => settings.dataSource = v"
+          @update:threshold="updateActiveThreshold"
         />
         <SolarWind
           class="panel-enter panel-delay-2"
@@ -196,6 +230,7 @@ async function handleImport(file) {
         :forecast="activeForecast"
         :threshold="activeThreshold"
         :timezone="effectiveTz"
+        :active-source="activeSource"
         :get-kp-color="getKpColor"
         :format-time="formatTime"
       />
@@ -257,19 +292,6 @@ async function handleImport(file) {
         </Transition>
       </div>
 
-      <SymptomTracker
-        class="panel-enter panel-delay-5"
-        :logs="recentLogs"
-        :current-kp="kpNum"
-        :timezone="effectiveTz"
-        @save="handleSaveLog"
-        @delete="deleteLog"
-      />
-
-      <CorrelationView
-        class="panel-enter panel-delay-6"
-        :stats="stats"
-      />
     </main>
 
     <!-- Footer -->
@@ -284,9 +306,6 @@ async function handleImport(file) {
       :settings="settings"
       @close="showSettings = false"
       @update="(v) => Object.assign(settings, v)"
-      @export="exportLogs"
-      @import="handleImport"
-      @clear="clearAllLogs"
     />
   </div>
 </template>

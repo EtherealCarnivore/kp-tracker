@@ -26,17 +26,23 @@ const { t } = useI18n()
 const props = defineProps({
   kp: { type: Number, default: null },
   threshold: { type: Number, default: 4 },
+  source: { type: String, default: 'noaa' },
 })
 
 const dismissed = ref(false)
 
+// Reset dismissal when Kp severity changes OR when the active source changes,
+// so a user dismissing a NOAA alert still gets re-alerted if they switch to
+// BAS and BAS is also over threshold.
 watch(() => props.kp, (newKp, oldKp) => {
   if (oldKp !== null && newKp !== null && Math.floor(newKp) !== Math.floor(oldKp)) {
     dismissed.value = false
   }
 })
+watch(() => props.source, () => {
+  dismissed.value = false
+})
 
-// Haptic feedback on alert appearance
 watch(() => props.kp, (kp) => {
   if (kp !== null && kp >= props.threshold && !dismissed.value && navigator.vibrate) {
     if (kp >= 7) navigator.vibrate([100, 50, 100])
@@ -47,14 +53,16 @@ watch(() => props.kp, (kp) => {
 const show = computed(() => props.kp !== null && props.kp >= props.threshold)
 const severe = computed(() => props.kp !== null && props.kp >= 7)
 
+const sourceLabel = computed(() => t('source.' + props.source))
+
 const message = computed(() => {
   if (props.kp === null) return ''
-  const kpStr = props.kp.toFixed(1)
-  if (props.kp >= 8) return t('alert.extreme', { kp: kpStr })
-  if (props.kp >= 7) return t('alert.strong', { kp: kpStr })
-  if (props.kp >= 6) return t('alert.moderate', { kp: kpStr })
-  if (props.kp >= 5) return t('alert.minor', { kp: kpStr })
-  return t('alert.threshold', { kp: kpStr, threshold: props.threshold })
+  const params = { kp: props.kp.toFixed(1), source: sourceLabel.value, threshold: props.threshold }
+  if (props.kp >= 8) return t('alert.extreme', params)
+  if (props.kp >= 7) return t('alert.strong', params)
+  if (props.kp >= 6) return t('alert.moderate', params)
+  if (props.kp >= 5) return t('alert.minor', params)
+  return t('alert.threshold', params)
 })
 </script>
 

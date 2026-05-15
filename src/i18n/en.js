@@ -6,11 +6,19 @@ export default {
   "app.loading": "Loading...",
 
   // Alert Banner
-  "alert.extreme": "Kp {kp} — Severe geomagnetic storm! Take care of yourself.",
-  "alert.strong": "Kp {kp} — Strong geomagnetic storm in progress.",
-  "alert.moderate": "Kp {kp} — Moderate storm. You might feel this one.",
-  "alert.minor": "Kp {kp} — Minor storm conditions. Pay attention to how you feel.",
-  "alert.threshold": "Kp {kp} — Above your threshold (Kp {threshold}). Check in with yourself.",
+  "alert.extreme": "Kp {kp} ({source}) — Severe geomagnetic storm! Take care of yourself.",
+  "alert.strong": "Kp {kp} ({source}) — Strong geomagnetic storm in progress.",
+  "alert.moderate": "Kp {kp} ({source}) — Moderate storm. You might feel this one.",
+  "alert.minor": "Kp {kp} ({source}) — Minor storm conditions. Pay attention to how you feel.",
+  "alert.threshold": "Kp {kp} ({source}) — Above your threshold (Kp {threshold}). Check in with yourself.",
+
+  // Source labels (single source of truth)
+  "source.noaa": "NOAA",
+  "source.bas": "BAS",
+  "source.balkan": "Komshi",
+  "source.label.noaa": "NOAA Kp",
+  "source.label.bas": "BAS Kpm",
+  "source.label.balkan": "Komshi K",
 
   // Kp Gauge
   "kp.current": "Current Kp",
@@ -26,6 +34,13 @@ export default {
   "kp.strongStorm": "Strong Storm (G3)",
   "kp.severeStorm": "Severe Storm (G4)",
   "kp.extremeStorm": "Extreme Storm (G5)",
+  "kp.live": "Live",
+  "kp.staleBadge": "STALE — showing NOAA",
+  "kp.staleHint": "Selected source hasn't updated in over 6 hours. Falling back to NOAA.",
+  "kp.komshiTooltip": "Ground stations: Bulgaria, Romania, Serbia, Greece",
+  "kp.alertMeAt": "Alert me at Kp",
+  "kp.thresholdDown": "Decrease threshold",
+  "kp.thresholdUp": "Increase threshold",
 
   // Solar Wind
   "sw.title": "Solar Wind",
@@ -51,90 +66,26 @@ export default {
   "chart.storm": "Storm (5-6)",
   "chart.severe": "Severe (7+)",
   "chart.forecast": "Forecast",
-
-  // Symptom Tracker
-  "tracker.title": "Symptom Tracker",
-  "tracker.logEntry": "+ Log Entry",
-  "tracker.cancel": "Cancel",
-  "tracker.save": "Save Entry",
-  "tracker.empty": "No entries yet. Start tracking to find your patterns.",
-  "tracker.severity": "Overall Severity",
-  "tracker.symptoms": "Symptoms",
-  "tracker.sleep": "Sleep",
-  "tracker.hydration": "Hydration",
-  "tracker.caffeine": "Caffeine",
-  "tracker.stress": "Stress Level",
-  "tracker.weather": "Weather / Pressure Notes",
-  "tracker.weatherPlaceholder": "e.g. rainy, pressure drop...",
-  "tracker.notes": "Notes",
-  "tracker.notesPlaceholder": "Anything else...",
-  "tracker.currentKp": "Current Kp",
-  "tracker.savedWith": "Will be saved with this entry",
-  "tracker.deleteTitle": "Delete entry",
-
-  // Symptoms
-  "symptom.headache": "Headache",
-  "symptom.fatigue": "Fatigue",
-  "symptom.dizziness": "Dizziness",
-  "symptom.nausea": "Nausea",
-  "symptom.anxiety": "Anxiety",
-  "symptom.brain_fog": "Brain Fog",
-  "symptom.palpitations": "Palpitations",
-  "symptom.insomnia": "Insomnia",
-  "symptom.irritability": "Irritability",
-  "symptom.joint_pain": "Joint Pain",
-  "symptom.malaise": "Malaise",
-
-  // Sleep options
-  "sleep.great": "Great",
-  "sleep.good": "Good",
-  "sleep.fair": "Fair",
-  "sleep.poor": "Poor",
-  "sleep.terrible": "Terrible",
-
-  // Hydration options
-  "hydration.well": "Well",
-  "hydration.moderate": "Moderate",
-  "hydration.poor": "Poor",
-
-  // Caffeine options
-  "caffeine.none": "None",
-  "caffeine.light": "1-2 cups",
-  "caffeine.moderate": "3-4 cups",
-  "caffeine.heavy": "5+",
-
-  // Stress options
-  "stress.low": "Low",
-  "stress.moderate": "Moderate",
-  "stress.high": "High",
-  "stress.extreme": "Extreme",
-
-  // Correlation
-  "corr.title": "Your Patterns",
-  "corr.empty": "Log at least 3 entries to see correlation patterns.",
-  "corr.totalEntries": "Total Entries",
-  "corr.severityDiff": "Severity Diff (High vs Low Kp)",
-  "corr.avgHigh": "Avg Severity (Kp ≥ 4)",
-  "corr.avgLow": "Avg Severity (Kp < 4)",
-  "corr.entries": "entries",
-  "corr.topSymptoms": "Most Common Symptoms During Kp ≥ 4",
-  "corr.notable": "Your data shows a notable pattern: you report higher severity ({high} avg) during high Kp conditions vs {low} avg on quiet days. Keep logging to strengthen this pattern.",
-  "corr.mild": "There's a mild trend in your data — slightly higher severity during elevated Kp. More entries will help clarify if this is consistent.",
-  "corr.none": "So far, your data doesn't show a strong difference between high and low Kp days. Keep tracking — patterns may emerge with more data points.",
+  "chart.forecastFrom": "{source} forecast",
+  "chart.now": "Now",
+  "chart.today": "Today",
+  "chart.estimate": "Estimate",
+  "chart.legendForecast": "Forecast",
+  "chart.legendEstimate": "Estimate",
 
   // Info
   "info.title": "Kp Index",
   "info.show": "Show",
   "info.hide": "Hide",
   "info.noaaTitle": "NOAA Kp (Global)",
-  "info.noaaText": "The official Planetary Kp Index from NOAA. Each of 13 stations worldwide measures the biggest magnetic disturbance in a 3-hour window. That disturbance (in nanotesla) gets converted to a 0-9 scale — small disturbance = low K, big disturbance = high K. The scale is logarithmic: K5 isn't just \"a bit more\" than K4, it's roughly double the disturbance. NOAA averages all 13 stations to get one global number. Updated every 3 hours, with a 1-minute live estimate in between.",
-  "info.noaaMath": "How: max disturbance (nT) in 3h window → logarithmic scale 0-9 → average of 13 stations",
+  "info.noaaText": "The official Planetary Kp Index, calculated by GFZ Potsdam and distributed by NOAA SWPC. A network of 13 mid-latitude magnetometer stations worldwide each measures the biggest magnetic disturbance in a 3-hour window. That disturbance (in nanotesla) gets converted to a 0-9 scale — small disturbance = low K, big disturbance = high K. The scale is quasi-logarithmic: K5 isn't just \"a bit more\" than K4, it's roughly double the disturbance. The 13 station values are combined into one global Kp. Updated every 3 hours, with a 1-minute estimated Kp published in between.",
+  "info.noaaMath": "How: max disturbance (nT) in 3h window → quasi-log scale 0-9 → combined across 13 stations",
   "info.basTitle": "BAS Kpm (Model)",
-  "info.basText": "The Bulgarian Academy of Sciences doesn't use ground stations. Instead, it reads solar wind data from the ACE satellite (sitting between Earth and the Sun) and feeds it into the MAK model: \"if the solar wind looks like this, then Kp is probably that.\" It's a prediction, not a measurement. Updates every 15 minutes, but tends to compress extremes — real storms might hit Kp 7 while BAS shows 5. Accuracy is ±0.63 Kp at 50% confidence.",
-  "info.basMath": "How: solar wind speed + magnetic field (from ACE satellite) → MAK model → predicted Kp",
+  "info.basText": "The Bulgarian Academy of Sciences doesn't use ground stations. Instead, it reads solar wind data from the L1 monitor (ACE / DSCOVR, between Earth and the Sun) and feeds it into the MAK model: \"if the solar wind looks like this, then Kp is probably that.\" It's a prediction, not a measurement. Updates every 15 minutes. Models like this tend to compress extremes — a real storm might hit Kp 7 while BAS shows 5. BAS publishes an accuracy of ±0.63 Kp at 50% probability.",
+  "info.basMath": "How: solar wind speed + magnetic field (L1 satellite) → MAK model → predicted Kp",
   "info.komshiTitle": "Komshi K (Regional)",
-  "info.komshiText": "Our own regional K-index built from 4 real ground stations in the Balkans: Panagyurishte (Bulgaria), Surlari (Romania), Grocka (Serbia), and Pedeli (Greece). We take 1-minute magnetic field readings from each station, calculate the horizontal field strength (H = \u221A(X\u00B2 + Y\u00B2)), subtract the quiet baseline, find the max disturbance in each 3h window, and map it to the same 0-9 scale as NOAA. Then we average across all reporting stations. Same method as NOAA, just for our neighborhood.",
-  "info.komshiMath": "How: H = \u221A(X\u00B2 + Y\u00B2) → subtract quiet baseline → max disturbance in 3h → K scale → average of 4 Balkan stations",
+  "info.komshiText": "Our own regional K-index built from 4 real ground stations in the Balkans: Panagyurishte (Bulgaria), Surlari (Romania), Grocka (Serbia), and Pedeli (Greece). We take 1-minute magnetic field readings from each station, calculate the horizontal field strength (H = √(X² + Y²)), subtract the quiet baseline, find the max disturbance in each 3h window, and map it to the same 0-9 scale as NOAA. Then we average across all reporting stations. Same method as NOAA, just for our neighborhood.",
+  "info.komshiMath": "How: H = √(X² + Y²) → subtract quiet baseline → max disturbance in 3h → K scale → average of 4 Balkan stations",
   "info.quiet": "Quiet — no disturbance",
   "info.active": "Active — noticeable",
   "info.stormG1G2": "Storm (G1-G2)",
@@ -154,19 +105,11 @@ export default {
   "settings.every1m": "Every minute",
   "settings.every2m": "Every 2 minutes",
   "settings.every5m": "Every 5 minutes",
-  "settings.data": "Data",
-  "settings.export": "Export Logs",
-  "settings.import": "Import Logs",
-  "settings.danger": "Danger Zone",
-  "settings.clear": "Clear All Logs",
-  "settings.clearConfirm": "Delete all logged entries? This cannot be undone.",
   "settings.language": "Language",
+  "settings.theme": "Theme",
 
   // Footer
   "footer.dataFrom": "Data from",
   "footer.autoRefresh": "Auto-refreshes every {seconds}s.",
   "footer.disclaimer": "Not a medical tool. If you experience severe symptoms, seek medical care.",
-
-  // General
-  "general.select": "-- Select --",
 }

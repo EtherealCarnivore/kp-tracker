@@ -36,13 +36,42 @@ function getBASHistory() {
 }
 
 function getBASCurrent() {
-  if (!basData.value?.current?.kpm) return null
+  const kpm = basData.value?.current?.kpm
+  if (kpm == null) return null
   return {
-    kp: basData.value.current.kpm,
+    kp: kpm,
     timeTag: basData.value.current.time_tag,
     type: 'bas_kpm',
     activityLevel: basData.value.current.activity_level,
   }
+}
+
+// BAS provides 15-min forecast entries spanning ~6h. Aggregate into 3h windows
+// to match the chart's bar granularity. Use max within window since this is a
+// forecast — surfacing worst-case is what someone tracking symptoms needs.
+function getBASForecast() {
+  const entries = basData.value?.forecast_15min
+  if (!Array.isArray(entries) || entries.length === 0) return []
+
+  const groups = {}
+  for (const e of entries) {
+    const d = new Date(e.time_tag.replace(' ', 'T') + 'Z')
+    if (isNaN(d)) continue
+    const windowHour = Math.floor(d.getUTCHours() / 3) * 3
+    const key = `${d.toISOString().split('T')[0]} ${String(windowHour).padStart(2, '0')}:00:00`
+    if (!groups[key]) groups[key] = []
+    groups[key].push(e.kpm)
+  }
+
+  return Object.entries(groups)
+    .sort(([a], [b]) => a < b ? -1 : 1)
+    .map(([timeTag, values]) => ({
+      timeTag,
+      kp: Math.max(...values),
+      type: 'predicted',
+      source: 'bas',
+      readings: values.length,
+    }))
 }
 
 function getBASStatus() {
@@ -73,6 +102,7 @@ export function useBASData(refreshSeconds = 120) {
     fetchBASData,
     getBASHistory,
     getBASCurrent,
+    getBASForecast,
     getBASStatus,
   }
 }
