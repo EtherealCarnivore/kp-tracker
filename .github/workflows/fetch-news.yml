@@ -1,0 +1,53 @@
+name: Fetch News
+
+on:
+  schedule:
+    # Every hour (GitHub throttles free-tier crons; this typically lands every 1-2h in practice)
+    - cron: '15 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: data-update
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        env:
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+        env:
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+      - name: Fetch news
+        run: node scripts/fetch-news.js
+
+      - name: Commit and push if changed
+        id: push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/news.json
+          if git diff --cached --quiet; then
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "chore: update news feed"
+          git pull --rebase || true
+          git push
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Trigger deploy
+        if: steps.push.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main

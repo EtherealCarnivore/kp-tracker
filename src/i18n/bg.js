@@ -55,6 +55,7 @@ export default {
   "kp.alertMeAt": "Извести ме при Kp",
   "kp.thresholdDown": "Намали прага",
   "kp.thresholdUp": "Увеличи прага",
+  "kp.thresholdSourceHint": "Всеки източник използва своя скала — Kp 4 от BAS, NOAA и Komshi не означават едно и също. Настрой прага според източника, който следиш.",
 
   // Solar Wind
   "sw.title": "Слънчев вятър",
@@ -106,6 +107,13 @@ export default {
   "info.active": "Активно — забележимо",
   "info.stormG1G2": "Буря (G1-G2)",
   "info.severeG3G5": "Тежка (G3-G5)",
+
+  // News feed
+  "news.title": "Последни новини и известия",
+  "news.fetched": "Изтеглено",
+  "news.empty": "Няма скорошни новини. Може cron-ът да още не е минал — провери след час.",
+  "news.showMore": "Покажи още {count}",
+  "news.moreLinks": "Виж още:",
 
   // Settings
   "settings.title": "Настройки",

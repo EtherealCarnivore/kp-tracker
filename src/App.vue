@@ -3,6 +3,7 @@ import { computed, ref, onMounted, onUnmounted } from 'vue'
 import { useKpData } from './composables/useKpData.js'
 import { useBASData } from './composables/useBASData.js'
 import { useBalkanData } from './composables/useBalkanData.js'
+import { useNews } from './composables/useNews.js'
 import { useSettings } from './composables/useSettings.js'
 import { useTheme } from './composables/useTheme.js'
 import { useI18n } from './i18n/index.js'
@@ -11,6 +12,7 @@ import AlertBanner from './components/AlertBanner.vue'
 import KpGauge from './components/KpGauge.vue'
 import SolarWind from './components/SolarWind.vue'
 import KpChart from './components/KpChart.vue'
+import NewsFeed from './components/NewsFeed.vue'
 import SettingsModal from './components/SettingsModal.vue'
 
 const { t } = useI18n()
@@ -24,6 +26,7 @@ const {
 
 const { getBASCurrent, getBASHistory, getBASForecast, getBASLastUpdated } = useBASData(settings.value.refreshInterval)
 const { getBalkanCurrent, getBalkanHistory, getBalkanLastUpdated } = useBalkanData(settings.value.refreshInterval)
+const { newsData } = useNews()
 
 const showSettings = ref(false)
 const showInfo = ref(true)
@@ -280,8 +283,14 @@ function updateActiveThreshold(newValue) {
         @update:range="(r) => chartRange = r"
       />
 
+      <NewsFeed
+        class="panel-enter panel-delay-4"
+        :news-data="newsData"
+        :timezone="effectiveTz"
+      />
+
       <!-- Info Section -->
-      <div class="glass-panel p-5 sm:p-6 panel-enter panel-delay-4">
+      <div class="glass-panel p-5 sm:p-6 panel-enter panel-delay-5">
         <div class="flex items-center justify-between">
           <h2 class="text-lg font-semibold text-text-primary">{{ t('info.title') }}</h2>
           <button

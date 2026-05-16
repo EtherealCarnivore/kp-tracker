@@ -55,6 +55,7 @@ export default {
   "kp.alertMeAt": "Alert me at Kp",
   "kp.thresholdDown": "Decrease threshold",
   "kp.thresholdUp": "Increase threshold",
+  "kp.thresholdSourceHint": "Each source reads on its own scale — a Kp 4 from BAS, NOAA, and Komshi don't all mean the same thing. Set the threshold based on the source you're watching.",
 
   // Solar Wind
   "sw.title": "Solar Wind",
@@ -106,6 +107,13 @@ export default {
   "info.active": "Active — noticeable",
   "info.stormG1G2": "Storm (G1-G2)",
   "info.severeG3G5": "Severe (G3-G5)",
+
+  // News feed
+  "news.title": "Latest news & alerts",
+  "news.fetched": "Fetched",
+  "news.empty": "No recent items. The news cron may not have run yet — check back in an hour.",
+  "news.showMore": "Show {count} more",
+  "news.moreLinks": "Read more:",
 
   // Settings
   "settings.title": "Settings",

@@ -151,6 +151,16 @@
       >· {{ t('kp.active') }}</span>
     </div>
 
+    <!-- Cross-source threshold hint: a one-line note reminding the user that
+         the three sources read on different scales, so the same threshold
+         number means different things across them. Visible whenever an
+         inline-edit on the threshold has interactive focus, or as a small
+         persistent helper when activeSource isn't NOAA. -->
+    <div class="text-[11px] text-text-muted mb-3 sm:mb-4 -mt-2 flex items-start gap-1.5">
+      <span aria-hidden="true" class="shrink-0">ⓘ</span>
+      <span>{{ t('kp.thresholdSourceHint') }}</span>
+    </div>
+
     <!-- Details Row — secondary metadata only -->
     <div class="grid grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm">
       <div>
