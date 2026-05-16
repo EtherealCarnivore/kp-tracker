@@ -1,13 +1,23 @@
 {
-  "last_updated": "2026-05-16T21:04:22.642Z",
-  "last_check": "2026-05-16T21:04:22.642Z",
-  "count": 21,
+  "last_updated": "2026-05-16T22:05:04.686Z",
+  "last_check": "2026-05-16T22:05:04.686Z",
+  "count": 22,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
+      "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1112 Issue Time: 2026 May 16 2134 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: May 17: G1 (Minor) May 18: G1 (Minor) May 19: None (Below G1) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EFFE",
+      "published": "2026-05-16T21:34:00.863Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A20F"
+    },
     {
       "title": "EXTENDED WARNING: Geomagnetic K-index of 5 expected",
       "excerpt": "Space Weather Message Code: WARK05 Serial Number: 2237 Issue Time: 2026 May 16 1814 UTC EXTENDED WARNING: Geomagnetic K-index of 5 expected Extension to Serial Number: 2236 Valid From: 2026-05-15T13:05:00 Now Valid Until: 2026-05-17 09:00 Warning Condition: Persistence Extended 2",
