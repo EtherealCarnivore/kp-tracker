@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-19T08:38:28.786Z",
-  "last_check": "2026-05-19T08:38:28.786Z",
+  "last_updated": "2026-05-19T12:20:23.981Z",
+  "last_check": "2026-05-19T12:20:23.981Z",
   "count": 25,
   "sources": [
     "noaa-swpc",
@@ -8,6 +8,16 @@
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "ALERT: Geomagnetic K-index of 4",
+      "excerpt": "Space Weather Message Code: ALTK04 Serial Number: 2657 Issue Time: 2026 May 19 0855 UTC ALERT: Geomagnetic K-index of 4 Threshold Reached: 2026 May 19 0828 UTC Synoptic Period: 0600-0900 Active Warning: YES Comment: NOAA Space Weather Scale descriptions can be found at www.swpc.n",
+      "published": "2026-05-19T08:55:28.143Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04A"
+    },
     {
       "title": "WARNING: Geomagnetic K-index of 4 expected",
       "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5343 Issue Time: 2026 May 19 0703 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 May 19 0701 UTC Valid To: 2026 May 19 1800 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
@@ -247,16 +257,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "A30F"
-    },
-    {
-      "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
-      "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1111 Issue Time: 2026 May 12 1326 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: May 13: None (Below G1) May 14: None (Below G1) May 15: G1 (Minor) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN",
-      "published": "2026-05-12T13:26:26.800Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "A20F"
     }
   ]
 }
