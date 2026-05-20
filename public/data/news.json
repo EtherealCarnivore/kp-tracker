@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-19T23:21:39.281Z",
-  "last_check": "2026-05-19T23:21:39.281Z",
+  "last_updated": "2026-05-20T04:35:41.342Z",
+  "last_check": "2026-05-20T04:35:41.342Z",
   "count": 25,
   "sources": [
     "noaa-swpc",
@@ -8,6 +8,16 @@
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5346 Issue Time: 2026 May 19 2356 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5345 Valid From: 2026-05-19T07:01:00 Now Valid Until: 2026-05-20 06:00 Warning Condition: Persistence Extended 2",
+      "published": "2026-05-19T23:56:50.663Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04W"
+    },
     {
       "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
       "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5345 Issue Time: 2026 May 19 2057 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5344 Valid From: 2026-05-19T07:01:00 Now Valid Until: 2026-05-19 24:00 Warning Condition: Persistence Extended 2",
@@ -247,16 +257,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K04W"
-    },
-    {
-      "title": "WATCH: Geomagnetic Storm Category G2 Predicted",
-      "excerpt": "Space Weather Message Code: WATA30 Serial Number: 273 Issue Time: 2026 May 14 0853 UTC WATCH: Geomagnetic Storm Category G2 Predicted Highest Storm Level Predicted by Day: May 15: G2 (Moderate) May 16: G1 (Minor) May 17: G1 (Minor) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EFFECT ",
-      "published": "2026-05-14T08:53:02.820Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "A30F"
     }
   ]
 }
