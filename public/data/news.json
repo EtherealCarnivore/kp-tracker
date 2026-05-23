@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-05-23T21:07:52.640Z",
-  "last_check": "2026-05-23T21:07:52.640Z",
-  "count": 9,
+  "last_updated": "2026-05-23T22:07:55.373Z",
+  "last_check": "2026-05-23T22:07:55.373Z",
+  "count": 8,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -86,16 +86,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K04W"
-    },
-    {
-      "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
-      "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1112 Issue Time: 2026 May 16 2134 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: May 17: G1 (Minor) May 18: G1 (Minor) May 19: None (Below G1) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EFFE",
-      "published": "2026-05-16T21:34:00.863Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "A20F"
     }
   ]
 }
