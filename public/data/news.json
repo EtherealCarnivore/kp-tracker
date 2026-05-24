@@ -1,22 +1,13 @@
 {
-  "last_updated": "2026-05-24T11:42:06.668Z",
-  "last_check": "2026-05-24T11:42:06.668Z",
-  "count": 7,
+  "last_updated": "2026-05-24T13:58:37.291Z",
+  "last_check": "2026-05-24T13:58:37.291Z",
+  "count": 6,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
-    {
-      "title": "<p>Най-дългият слънчев &nbsp;радиовзрив&nbsp;в историята обърква НАСА</p>",
-      "excerpt": "Експерти обясняват причините за продължителната слънчева активност",
-      "published": "2026-05-23T15:13:00.000Z",
-      "source": "Vesti.bg",
-      "source_id": "vesti-bg",
-      "url": "https://www.vesti.bg/lyubopitno/naj-dylgiiat-slynchev-radiovzrivv-istoriiata-obyrkva-nasa-6260391",
-      "lang": "bg"
-    },
     {
       "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
       "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5346 Issue Time: 2026 May 19 2356 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5345 Valid From: 2026-05-19T07:01:00 Now Valid Until: 2026-05-20 06:00 Warning Condition: Persistence Extended 2",
