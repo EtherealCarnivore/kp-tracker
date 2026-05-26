@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-26T19:27:58.719Z",
-  "last_check": "2026-05-26T19:27:58.719Z",
+  "last_updated": "2026-05-26T21:58:04.350Z",
+  "last_check": "2026-05-26T21:58:04.350Z",
   "count": 2,
   "sources": [
     "noaa-swpc",
@@ -9,9 +9,9 @@
   ],
   "items": [
     {
-      "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
-      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5346 Issue Time: 2026 May 19 2356 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5345 Valid From: 2026-05-19T07:01:00 Now Valid Until: 2026-05-20 06:00 Warning Condition: Persistence Extended 2",
-      "published": "2026-05-19T23:56:50.663Z",
+      "title": "WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5347 Issue Time: 2026 May 26 2138 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 May 26 2137 UTC Valid To: 2026 May 27 0600 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
+      "published": "2026-05-26T21:38:28.160Z",
       "source": "NOAA SWPC",
       "source_id": "noaa-swpc",
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
@@ -20,8 +20,8 @@
     },
     {
       "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
-      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5345 Issue Time: 2026 May 19 2057 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5344 Valid From: 2026-05-19T07:01:00 Now Valid Until: 2026-05-19 24:00 Warning Condition: Persistence Extended 2",
-      "published": "2026-05-19T20:57:51.727Z",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5346 Issue Time: 2026 May 19 2356 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5345 Valid From: 2026-05-19T07:01:00 Now Valid Until: 2026-05-20 06:00 Warning Condition: Persistence Extended 2",
+      "published": "2026-05-19T23:56:50.663Z",
       "source": "NOAA SWPC",
       "source_id": "noaa-swpc",
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
