@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-26T23:33:18.042Z",
-  "last_check": "2026-05-26T23:33:18.042Z",
+  "last_updated": "2026-05-27T04:47:20.523Z",
+  "last_check": "2026-05-27T04:47:20.523Z",
   "count": 2,
   "sources": [
     "noaa-swpc",
@@ -9,19 +9,19 @@
   ],
   "items": [
     {
-      "title": "WARNING: Geomagnetic K-index of 4 expected",
-      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5347 Issue Time: 2026 May 26 2138 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 May 26 2137 UTC Valid To: 2026 May 27 0600 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
-      "published": "2026-05-26T21:38:28.160Z",
+      "title": "ALERT: Geomagnetic K-index of 4",
+      "excerpt": "Space Weather Message Code: ALTK04 Serial Number: 2658 Issue Time: 2026 May 27 0001 UTC ALERT: Geomagnetic K-index of 4 Threshold Reached: 2026 May 26 2359 UTC Synoptic Period: 2100-2400 Active Warning: YES Comment: NOAA Space Weather Scale descriptions can be found at www.swpc.n",
+      "published": "2026-05-27T00:01:34.010Z",
       "source": "NOAA SWPC",
       "source_id": "noaa-swpc",
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
-      "product_id": "K04W"
+      "product_id": "K04A"
     },
     {
-      "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
-      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5346 Issue Time: 2026 May 19 2356 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5345 Valid From: 2026-05-19T07:01:00 Now Valid Until: 2026-05-20 06:00 Warning Condition: Persistence Extended 2",
-      "published": "2026-05-19T23:56:50.663Z",
+      "title": "WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5347 Issue Time: 2026 May 26 2138 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 May 26 2137 UTC Valid To: 2026 May 27 0600 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
+      "published": "2026-05-26T21:38:28.160Z",
       "source": "NOAA SWPC",
       "source_id": "noaa-swpc",
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
