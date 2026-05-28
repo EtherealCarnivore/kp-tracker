@@ -1,13 +1,23 @@
 {
-  "last_updated": "2026-05-28T04:39:13.770Z",
-  "last_check": "2026-05-28T04:39:13.770Z",
-  "count": 4,
+  "last_updated": "2026-05-28T08:53:06.679Z",
+  "last_check": "2026-05-28T08:53:06.679Z",
+  "count": 5,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5350 Issue Time: 2026 May 28 0517 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5349 Valid From: 2026-05-27T23:47:00 Now Valid Until: 2026-05-28 12:00 Warning Condition: Persistence Extended 2",
+      "published": "2026-05-28T05:17:14.347Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04W"
+    },
     {
       "title": "WARNING: Geomagnetic K-index of 4 expected",
       "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5349 Issue Time: 2026 May 27 2347 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 May 27 2347 UTC Valid To: 2026 May 28 0600 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
