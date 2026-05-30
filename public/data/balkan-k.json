@@ -2,12 +2,12 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT",
-  "last_updated": "2026-05-30T10:04:37.860Z",
+  "last_updated": "2026-05-30T11:53:35.585Z",
   "status": "ok",
   "current": {
-    "balkan_k": 2.93,
+    "balkan_k": 3.2,
     "time_tag": "2026-05-30 09:00:00",
-    "activity_level": "quiet",
+    "activity_level": "unsettled",
     "station_count": 2
   },
   "max_24h": 3.59,
@@ -50,37 +50,37 @@
     },
     {
       "time_tag": "2026-05-30 06:00:00",
-      "balkan_k": 2.15,
-      "balkan_k_max": 2.2,
+      "balkan_k": 2.02,
+      "balkan_k_max": 2.04,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 2.2,
-          "disturbance_nt": 8.5
+          "k": 2.04,
+          "disturbance_nt": 7.4
         },
         {
           "code": "SUA",
-          "k": 2.1,
-          "disturbance_nt": 8.2
+          "k": 2,
+          "disturbance_nt": 7.5
         }
       ]
     },
     {
       "time_tag": "2026-05-30 09:00:00",
-      "balkan_k": 2.93,
-      "balkan_k_max": 3.13,
+      "balkan_k": 3.2,
+      "balkan_k_max": 3.21,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 3.13,
-          "disturbance_nt": 16
+          "k": 3.18,
+          "disturbance_nt": 16.8
         },
         {
           "code": "SUA",
-          "k": 2.72,
-          "disturbance_nt": 12.8
+          "k": 3.21,
+          "disturbance_nt": 18.1
         }
       ]
     }
@@ -91,7 +91,7 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2027,
+      "valid_readings": 2137,
       "k_windows": 4
     },
     {
@@ -99,7 +99,7 @@
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 2030,
+      "valid_readings": 2140,
       "k_windows": 4
     },
     {
