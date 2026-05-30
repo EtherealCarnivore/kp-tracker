@@ -2,15 +2,15 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT",
-  "last_updated": "2026-05-30T21:05:35.124Z",
+  "last_updated": "2026-05-30T22:31:55.617Z",
   "status": "ok",
   "current": {
-    "balkan_k": 3.77,
-    "time_tag": "2026-05-30 18:00:00",
+    "balkan_k": 3.72,
+    "time_tag": "2026-05-30 21:00:00",
     "activity_level": "unsettled",
     "station_count": 2
   },
-  "max_24h": 3.77,
+  "max_24h": 3.87,
   "windows_3h": [
     {
       "time_tag": "2026-05-30 00:00:00",
@@ -122,19 +122,37 @@
     },
     {
       "time_tag": "2026-05-30 18:00:00",
-      "balkan_k": 3.77,
-      "balkan_k_max": 3.81,
+      "balkan_k": 3.87,
+      "balkan_k_max": 3.9,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 3.73,
-          "disturbance_nt": 24.6
+          "k": 3.83,
+          "disturbance_nt": 26
         },
         {
           "code": "SUA",
-          "k": 3.81,
-          "disturbance_nt": 27
+          "k": 3.9,
+          "disturbance_nt": 28.3
+        }
+      ]
+    },
+    {
+      "time_tag": "2026-05-30 21:00:00",
+      "balkan_k": 3.72,
+      "balkan_k_max": 3.76,
+      "station_count": 2,
+      "stations": [
+        {
+          "code": "PAG",
+          "k": 3.67,
+          "disturbance_nt": 23.7
+        },
+        {
+          "code": "SUA",
+          "k": 3.76,
+          "disturbance_nt": 26.3
         }
       ]
     }
@@ -145,16 +163,16 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2687,
-      "k_windows": 7
+      "valid_readings": 2777,
+      "k_windows": 8
     },
     {
       "code": "SUA",
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 2700,
-      "k_windows": 7
+      "valid_readings": 2780,
+      "k_windows": 8
     },
     {
       "code": "GCK",
