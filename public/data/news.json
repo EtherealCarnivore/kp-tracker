@@ -1,13 +1,23 @@
 {
-  "last_updated": "2026-06-03T12:10:40.274Z",
-  "last_check": "2026-06-03T12:10:40.274Z",
-  "count": 14,
+  "last_updated": "2026-06-03T17:17:17.736Z",
+  "last_check": "2026-06-03T17:17:17.736Z",
+  "count": 15,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WATCH: Geomagnetic Storm Category G3 Predicted",
+      "excerpt": "Space Weather Message Code: WATA50 Serial Number: 98 Issue Time: 2026 Jun 03 1452 UTC WATCH: Geomagnetic Storm Category G3 Predicted Highest Storm Level Predicted by Day: Jun 04: G3 (Strong) Jun 05: G3 (Strong) Jun 06: None (Below G1) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EFFE",
+      "published": "2026-06-03T14:52:28.343Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A50F"
+    },
     {
       "title": "WARNING: Geomagnetic K-index of 4 expected",
       "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5357 Issue Time: 2026 Jun 01 1754 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Jun 01 1753 UTC Valid To: 2026 Jun 02 0000 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
