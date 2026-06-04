@@ -2,10 +2,10 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT",
-  "last_updated": "2026-06-04T21:45:58.914Z",
+  "last_updated": "2026-06-04T23:13:17.374Z",
   "status": "ok",
   "current": {
-    "balkan_k": 0.73,
+    "balkan_k": 1.06,
     "time_tag": "2026-06-04 21:00:00",
     "activity_level": "quiet",
     "station_count": 2
@@ -248,8 +248,8 @@
     },
     {
       "time_tag": "2026-06-04 15:00:00",
-      "balkan_k": 1.2,
-      "balkan_k_max": 1.25,
+      "balkan_k": 1.21,
+      "balkan_k_max": 1.26,
       "station_count": 2,
       "stations": [
         {
@@ -259,44 +259,44 @@
         },
         {
           "code": "SUA",
-          "k": 1.25,
-          "disturbance_nt": 4.6
+          "k": 1.26,
+          "disturbance_nt": 4.7
         }
       ]
     },
     {
       "time_tag": "2026-06-04 18:00:00",
-      "balkan_k": 0.71,
-      "balkan_k_max": 0.73,
+      "balkan_k": 0.64,
+      "balkan_k_max": 0.65,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 0.73,
-          "disturbance_nt": 2.6
+          "k": 0.65,
+          "disturbance_nt": 2.3
         },
         {
           "code": "SUA",
-          "k": 0.68,
-          "disturbance_nt": 2.5
+          "k": 0.62,
+          "disturbance_nt": 2.3
         }
       ]
     },
     {
       "time_tag": "2026-06-04 21:00:00",
-      "balkan_k": 0.73,
-      "balkan_k_max": 0.76,
+      "balkan_k": 1.06,
+      "balkan_k_max": 1.07,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 0.76,
-          "disturbance_nt": 2.7
+          "k": 1.04,
+          "disturbance_nt": 3.7
         },
         {
           "code": "SUA",
-          "k": 0.7,
-          "disturbance_nt": 2.6
+          "k": 1.07,
+          "disturbance_nt": 4
         }
       ]
     }
@@ -307,7 +307,7 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2736,
+      "valid_readings": 2826,
       "k_windows": 8
     },
     {
@@ -315,7 +315,7 @@
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 2740,
+      "valid_readings": 2820,
       "k_windows": 8
     },
     {
