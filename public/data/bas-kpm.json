@@ -2,48 +2,16 @@
   "source": "NIGGG-BAS (Bulgarian Academy of Sciences)",
   "methodology": "Kpm - estimated Kp from ACE satellite data using MAK model",
   "confidence_interval": "±0.63 at 50% probability",
-  "last_updated": "2026-06-05T15:28:33.355Z",
-  "last_check": "2026-06-05T15:28:33.355Z",
+  "last_updated": "2026-06-05T17:28:32.717Z",
+  "last_check": "2026-06-05T17:28:32.717Z",
   "status": "ok",
   "current": {
-    "kpm": 5.67,
-    "time_tag": "2026-06-05 15:15:00",
-    "activity_level": "storm"
+    "kpm": 4.33,
+    "time_tag": "2026-06-05 17:15:00",
+    "activity_level": "active"
   },
   "max_24h": 6,
   "entries_15min": [
-    {
-      "time_tag": "2026-06-05 03:15:00",
-      "kpm": 1.33
-    },
-    {
-      "time_tag": "2026-06-05 03:30:00",
-      "kpm": 1.33
-    },
-    {
-      "time_tag": "2026-06-05 03:45:00",
-      "kpm": 1.33
-    },
-    {
-      "time_tag": "2026-06-05 04:00:00",
-      "kpm": 1.67
-    },
-    {
-      "time_tag": "2026-06-05 04:15:00",
-      "kpm": 1.67
-    },
-    {
-      "time_tag": "2026-06-05 04:30:00",
-      "kpm": 3
-    },
-    {
-      "time_tag": "2026-06-05 04:45:00",
-      "kpm": 3
-    },
-    {
-      "time_tag": "2026-06-05 05:00:00",
-      "kpm": 3
-    },
     {
       "time_tag": "2026-06-05 05:15:00",
       "kpm": 2.67
@@ -206,138 +174,170 @@
     },
     {
       "time_tag": "2026-06-05 15:15:00",
+      "kpm": 6
+    },
+    {
+      "time_tag": "2026-06-05 15:30:00",
+      "kpm": 6
+    },
+    {
+      "time_tag": "2026-06-05 15:45:00",
+      "kpm": 6
+    },
+    {
+      "time_tag": "2026-06-05 16:00:00",
       "kpm": 5.67
+    },
+    {
+      "time_tag": "2026-06-05 16:15:00",
+      "kpm": 4.67
+    },
+    {
+      "time_tag": "2026-06-05 16:30:00",
+      "kpm": 4.33
+    },
+    {
+      "time_tag": "2026-06-05 16:45:00",
+      "kpm": 4.33
+    },
+    {
+      "time_tag": "2026-06-05 17:00:00",
+      "kpm": 4.33
+    },
+    {
+      "time_tag": "2026-06-05 17:15:00",
+      "kpm": 4.33
     }
   ],
   "forecast_15min": [
     {
-      "time_tag": "2026-06-05 15:30:00",
-      "kpm": 5.67,
-      "type": "forecast"
-    },
-    {
-      "time_tag": "2026-06-05 15:45:00",
-      "kpm": 5.67,
-      "type": "forecast"
-    },
-    {
-      "time_tag": "2026-06-05 16:00:00",
-      "kpm": 5.67,
-      "type": "forecast"
-    },
-    {
-      "time_tag": "2026-06-05 16:15:00",
-      "kpm": 5.33,
-      "type": "forecast"
-    },
-    {
-      "time_tag": "2026-06-05 16:30:00",
-      "kpm": 5.33,
-      "type": "forecast"
-    },
-    {
-      "time_tag": "2026-06-05 16:45:00",
-      "kpm": 5.33,
-      "type": "forecast"
-    },
-    {
-      "time_tag": "2026-06-05 17:00:00",
-      "kpm": 5.33,
-      "type": "forecast"
-    },
-    {
-      "time_tag": "2026-06-05 17:15:00",
-      "kpm": 5.33,
-      "type": "forecast"
-    },
-    {
       "time_tag": "2026-06-05 17:30:00",
-      "kpm": 5.33,
+      "kpm": 4.33,
       "type": "forecast"
     },
     {
       "time_tag": "2026-06-05 17:45:00",
-      "kpm": 5.33,
+      "kpm": 4.33,
       "type": "forecast"
     },
     {
       "time_tag": "2026-06-05 18:00:00",
-      "kpm": 5.33,
+      "kpm": 4.33,
       "type": "forecast"
     },
     {
       "time_tag": "2026-06-05 18:15:00",
-      "kpm": 5.33,
+      "kpm": 4.33,
       "type": "forecast"
     },
     {
       "time_tag": "2026-06-05 18:30:00",
-      "kpm": 5,
+      "kpm": 4.33,
       "type": "forecast"
     },
     {
       "time_tag": "2026-06-05 18:45:00",
-      "kpm": 5,
+      "kpm": 4.33,
       "type": "forecast"
     },
     {
       "time_tag": "2026-06-05 19:00:00",
-      "kpm": 5,
+      "kpm": 4,
       "type": "forecast"
     },
     {
       "time_tag": "2026-06-05 19:15:00",
-      "kpm": 5,
+      "kpm": 4,
       "type": "forecast"
     },
     {
       "time_tag": "2026-06-05 19:30:00",
-      "kpm": 5,
+      "kpm": 4,
       "type": "forecast"
     },
     {
       "time_tag": "2026-06-05 19:45:00",
-      "kpm": 5,
+      "kpm": 4,
       "type": "forecast"
     },
     {
       "time_tag": "2026-06-05 20:00:00",
-      "kpm": 5,
+      "kpm": 4,
       "type": "forecast"
     },
     {
       "time_tag": "2026-06-05 20:15:00",
-      "kpm": 5,
+      "kpm": 4,
       "type": "forecast"
     },
     {
       "time_tag": "2026-06-05 20:30:00",
-      "kpm": 5,
+      "kpm": 4,
       "type": "forecast"
     },
     {
       "time_tag": "2026-06-05 20:45:00",
-      "kpm": 4.67,
+      "kpm": 4,
       "type": "forecast"
     },
     {
       "time_tag": "2026-06-05 21:00:00",
-      "kpm": 4.67,
+      "kpm": 4,
       "type": "forecast"
     },
     {
       "time_tag": "2026-06-05 21:15:00",
-      "kpm": 4.67,
+      "kpm": 4,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-06-05 21:30:00",
+      "kpm": 4,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-06-05 21:45:00",
+      "kpm": 4,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-06-05 22:00:00",
+      "kpm": 4,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-06-05 22:15:00",
+      "kpm": 4,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-06-05 22:30:00",
+      "kpm": 4,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-06-05 22:45:00",
+      "kpm": 3.67,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-06-05 23:00:00",
+      "kpm": 3.67,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-06-05 23:15:00",
+      "kpm": 3.67,
       "type": "forecast"
     }
   ],
   "windows_3h": [
     {
       "time_tag": "2026-06-05 03:00:00",
-      "kpm_avg": 2.21,
-      "kpm_max": 3,
+      "kpm_avg": 2.67,
+      "kpm_max": 2.67,
       "kpm_latest": 2.67,
-      "readings": 11
+      "readings": 3
     },
     {
       "time_tag": "2026-06-05 06:00:00",
@@ -362,10 +362,10 @@
     },
     {
       "time_tag": "2026-06-05 15:00:00",
-      "kpm_avg": 5.5,
-      "kpm_max": 5.67,
-      "kpm_latest": 5.67,
-      "readings": 2
+      "kpm_avg": 5.1,
+      "kpm_max": 6,
+      "kpm_latest": 4.33,
+      "readings": 10
     }
   ]
 }
