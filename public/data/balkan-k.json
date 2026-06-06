@@ -2,12 +2,12 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT",
-  "last_updated": "2026-06-06T11:37:38.333Z",
+  "last_updated": "2026-06-06T13:55:41.526Z",
   "status": "ok",
   "current": {
-    "balkan_k": 3.14,
-    "time_tag": "2026-06-06 09:00:00",
-    "activity_level": "unsettled",
+    "balkan_k": 2.97,
+    "time_tag": "2026-06-06 12:00:00",
+    "activity_level": "quiet",
     "station_count": 2
   },
   "max_24h": 4.08,
@@ -62,25 +62,43 @@
         {
           "code": "SUA",
           "k": 3.59,
-          "disturbance_nt": 23.7
+          "disturbance_nt": 23.8
         }
       ]
     },
     {
       "time_tag": "2026-06-06 09:00:00",
-      "balkan_k": 3.14,
-      "balkan_k_max": 3.29,
+      "balkan_k": 3.11,
+      "balkan_k_max": 3.28,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 2.99,
-          "disturbance_nt": 14.1
+          "k": 2.94,
+          "disturbance_nt": 13.8
         },
         {
           "code": "SUA",
-          "k": 3.29,
-          "disturbance_nt": 19.3
+          "k": 3.28,
+          "disturbance_nt": 19
+        }
+      ]
+    },
+    {
+      "time_tag": "2026-06-06 12:00:00",
+      "balkan_k": 2.97,
+      "balkan_k_max": 3.07,
+      "station_count": 2,
+      "stations": [
+        {
+          "code": "PAG",
+          "k": 2.86,
+          "disturbance_nt": 13.2
+        },
+        {
+          "code": "SUA",
+          "k": 3.07,
+          "disturbance_nt": 16
         }
       ]
     }
@@ -91,16 +109,16 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2130,
-      "k_windows": 4
+      "valid_readings": 2270,
+      "k_windows": 5
     },
     {
       "code": "SUA",
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 2130,
-      "k_windows": 4
+      "valid_readings": 2270,
+      "k_windows": 5
     },
     {
       "code": "GCK",
