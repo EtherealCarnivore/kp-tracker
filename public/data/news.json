@@ -1,13 +1,23 @@
 {
-  "last_updated": "2026-06-08T19:34:54.420Z",
-  "last_check": "2026-06-08T19:34:54.420Z",
-  "count": 21,
+  "last_updated": "2026-06-08T22:00:28.342Z",
+  "last_check": "2026-06-08T22:00:28.342Z",
+  "count": 22,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "Space Weather Message Code: WATA50",
+      "excerpt": "Space Weather Message Code: WATA50 Serial Number: 100 Issue Time: 2026 Jun 08 2117 UTC CANCELLED WATCH: Geomagnetic Storm Category G3 Predicted Cancel Serial Number: 99 Original Issued Time: 2026 Jun 06 2211 UTC Due to current conditions no longer reflecting CME influence, the G3",
+      "published": "2026-06-08T21:17:43.480Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A50F"
+    },
     {
       "title": "WATCH: Geomagnetic Storm Category G3 Predicted",
       "excerpt": "Space Weather Message Code: WATA50 Serial Number: 99 Issue Time: 2026 Jun 06 2211 UTC WATCH: Geomagnetic Storm Category G3 Predicted Highest Storm Level Predicted by Day: Jun 07: None (Below G1) Jun 08: G3 (Strong) Jun 09: G2 (Moderate) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EF",
