@@ -1,13 +1,23 @@
 {
-  "last_updated": "2026-06-09T18:20:30.220Z",
-  "last_check": "2026-06-09T18:20:30.220Z",
-  "count": 22,
+  "last_updated": "2026-06-09T21:10:07.169Z",
+  "last_check": "2026-06-09T21:10:07.169Z",
+  "count": 23,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5362 Issue Time: 2026 Jun 09 2022 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Jun 09 2020 UTC Valid To: 2026 Jun 09 2359 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
+      "published": "2026-06-09T20:22:26.127Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04W"
+    },
     {
       "title": "Space Weather Message Code: WATA50",
       "excerpt": "Space Weather Message Code: WATA50 Serial Number: 100 Issue Time: 2026 Jun 08 2117 UTC CANCELLED WATCH: Geomagnetic Storm Category G3 Predicted Cancel Serial Number: 99 Original Issued Time: 2026 Jun 06 2211 UTC Due to current conditions no longer reflecting CME influence, the G3",
