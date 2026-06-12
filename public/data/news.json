@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-06-12T16:27:37.460Z",
-  "last_check": "2026-06-12T16:27:37.460Z",
-  "count": 18,
+  "last_updated": "2026-06-12T19:21:15.539Z",
+  "last_check": "2026-06-12T19:21:15.539Z",
+  "count": 12,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -127,66 +127,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K05A"
-    },
-    {
-      "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
-      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5360 Issue Time: 2026 Jun 05 1854 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5359 Valid From: 2026 Jun 05 0434 UTC Now Valid Until: 2026 Jun 06 0900 UTC Warning Condition: Persistence NOAA ",
-      "published": "2026-06-05T18:54:27.260Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K04W"
-    },
-    {
-      "title": "WATCH: Geomagnetic Storm Category G2 Predicted",
-      "excerpt": "Space Weather Message Code: WATA30 Serial Number: 274 Issue Time: 2026 Jun 05 1852 UTC WATCH: Geomagnetic Storm Category G2 Predicted Highest Storm Level Predicted by Day: Jun 06: G2 (Moderate) Jun 07: None (Below G1) Jun 08: None (Below G1) THIS SUPERSEDES ANY/ALL PRIOR WATCHES ",
-      "published": "2026-06-05T18:52:32.167Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "A30F"
-    },
-    {
-      "title": "EXTENDED WARNING: Geomagnetic K-index of 6 expected",
-      "excerpt": "Space Weather Message Code: WARK06 Serial Number: 662 Issue Time: 2026 Jun 05 1721 UTC EXTENDED WARNING: Geomagnetic K-index of 6 expected Extension to Serial Number: 661 Valid From: 2026 Jun 05 1437 UTC Now Valid Until: 2026 Jun 06 0300 UTC Warning Condition: Persistence NOAA Sc",
-      "published": "2026-06-05T17:21:33.163Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K06W"
-    },
-    {
-      "title": "EXTENDED WARNING: Geomagnetic K-index of 5 expected",
-      "excerpt": "Space Weather Message Code: WARK05 Serial Number: 2239 Issue Time: 2026 Jun 05 1719 UTC EXTENDED WARNING: Geomagnetic K-index of 5 expected Extension to Serial Number: 2238 Valid From: 2026 Jun 05 1228 UTC Now Valid Until: 2026 Jun 06 0600 UTC Warning Condition: Persistence NOAA ",
-      "published": "2026-06-05T17:19:18.143Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K05W"
-    },
-    {
-      "title": "WARNING: Geomagnetic K-index of 7 or greater expected",
-      "excerpt": "Space Weather Message Code: WARK07 Serial Number: 150 Issue Time: 2026 Jun 05 1716 UTC WARNING: Geomagnetic K-index of 7 or greater expected Valid From: 2026 Jun 05 1714 UTC Valid To: 2026 Jun 05 2359 UTC Warning Conditions: Onset Noaa Scale: G3 - Greater Comment: NOAA Scale: G3 ",
-      "published": "2026-06-05T17:16:54.460Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K07W"
-    },
-    {
-      "title": "ALERT: Geomagnetic K-index of 6",
-      "excerpt": "Space Weather Message Code: ALTK06 Serial Number: 718 Issue Time: 2026 Jun 05 1639 UTC ALERT: Geomagnetic K-index of 6 Threshold Reached: 2026 Jun 05 1638 UTC Synoptic Period: 1500-1800 Active Warning: YES Noaa Scale: G2 - Moderate Comment: NOAA Scale: G2 - Moderate NOAA Space We",
-      "published": "2026-06-05T16:39:02.210Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K06A"
     }
   ]
 }
