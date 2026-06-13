@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-06-13T20:39:55.048Z",
-  "last_check": "2026-06-13T20:39:55.048Z",
+  "last_updated": "2026-06-13T22:18:40.774Z",
+  "last_check": "2026-06-13T22:18:40.774Z",
   "count": 9,
   "sources": [
     "noaa-swpc",
@@ -8,6 +8,16 @@
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "ALERT: Geomagnetic K-index of 4",
+      "excerpt": "Space Weather Message Code: ALTK04 Serial Number: 2666 Issue Time: 2026 Jun 13 2101 UTC ALERT: Geomagnetic K-index of 4 Threshold Reached: 2026 Jun 13 2059 UTC Synoptic Period: 1800-2100 Active Warning: YES Comment: NOAA Space Weather Scale descriptions can be found at www.swpc.n",
+      "published": "2026-06-13T21:01:31.343Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04A"
+    },
     {
       "title": "WARNING: Geomagnetic K-index of 4 expected",
       "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5364 Issue Time: 2026 Jun 13 0127 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Jun 13 0126 UTC Valid To: 2026 Jun 13 2359 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
@@ -82,16 +92,6 @@
       "title": "Space Weather Message Code: WATA50",
       "excerpt": "Space Weather Message Code: WATA50 Serial Number: 100 Issue Time: 2026 Jun 08 2117 UTC CANCELLED WATCH: Geomagnetic Storm Category G3 Predicted Cancel Serial Number: 99 Original Issued Time: 2026 Jun 06 2211 UTC Due to current conditions no longer reflecting CME influence, the G3",
       "published": "2026-06-08T21:17:43.480Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "A50F"
-    },
-    {
-      "title": "WATCH: Geomagnetic Storm Category G3 Predicted",
-      "excerpt": "Space Weather Message Code: WATA50 Serial Number: 99 Issue Time: 2026 Jun 06 2211 UTC WATCH: Geomagnetic Storm Category G3 Predicted Highest Storm Level Predicted by Day: Jun 07: None (Below G1) Jun 08: G3 (Strong) Jun 09: G2 (Moderate) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EF",
-      "published": "2026-06-06T22:11:17.180Z",
       "source": "NOAA SWPC",
       "source_id": "noaa-swpc",
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
