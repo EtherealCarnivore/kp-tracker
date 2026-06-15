@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-06-15T19:08:25.301Z",
-  "last_check": "2026-06-15T19:08:25.301Z",
-  "count": 11,
+  "last_updated": "2026-06-15T21:48:56.934Z",
+  "last_check": "2026-06-15T21:48:56.934Z",
+  "count": 10,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -107,16 +107,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K04W"
-    },
-    {
-      "title": "Space Weather Message Code: WATA50",
-      "excerpt": "Space Weather Message Code: WATA50 Serial Number: 100 Issue Time: 2026 Jun 08 2117 UTC CANCELLED WATCH: Geomagnetic Storm Category G3 Predicted Cancel Serial Number: 99 Original Issued Time: 2026 Jun 06 2211 UTC Due to current conditions no longer reflecting CME influence, the G3",
-      "published": "2026-06-08T21:17:43.480Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "A50F"
     }
   ]
 }
