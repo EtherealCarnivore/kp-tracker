@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-06-19T23:13:37.983Z",
-  "last_check": "2026-06-19T23:13:37.983Z",
-  "count": 4,
+  "last_updated": "2026-06-20T01:30:11.242Z",
+  "last_check": "2026-06-20T01:30:11.242Z",
+  "count": 3,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -37,16 +37,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K04A"
-    },
-    {
-      "title": "WARNING: Geomagnetic K-index of 4 expected",
-      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5364 Issue Time: 2026 Jun 13 0127 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Jun 13 0126 UTC Valid To: 2026 Jun 13 2359 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
-      "published": "2026-06-13T01:27:47.840Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K04W"
     }
   ]
 }
