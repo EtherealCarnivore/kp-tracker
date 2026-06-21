@@ -1,6 +1,6 @@
 {
   "last_updated": "2026-06-21T06:17:39.543Z",
-  "last_check": "2026-06-21T06:17:39.543Z",
+  "last_check": "2026-06-21T10:45:13.397Z",
   "count": 1,
   "sources": [
     "noaa-swpc",
@@ -18,5 +18,6 @@
       "lang": "en",
       "product_id": "A30F"
     }
-  ]
+  ],
+  "last_check_status": "all_sources_failed"
 }
