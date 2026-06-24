@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-06-21T06:17:39.543Z",
-  "last_check": "2026-06-24T17:17:18.440Z",
-  "count": 1,
+  "last_updated": "2026-06-24T20:06:09.259Z",
+  "last_check": "2026-06-24T20:06:09.259Z",
+  "count": 3,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -9,15 +9,34 @@
   ],
   "items": [
     {
-      "title": "Space Weather Message Code: WATA30",
-      "excerpt": "Space Weather Message Code: WATA30 Serial Number: 276 Issue Time: 2026 Jun 14 0830 UTC CANCELLED WATCH: Geomagnetic Storm Category G2 Predicted Cancel Serial Number: 275 Original Issued Time: 2026 Jun 11 2029 UTC G1 (Minor) geomagnetic storm conditions are no longer expected. G1 ",
-      "published": "2026-06-14T08:30:13.163Z",
+      "title": "WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5366 Issue Time: 2026 Jun 24 1904 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Jun 24 1740 UTC Valid To: 2026 Jun 24 2359 UTC Warning Conditions: Onset Comment: Correcting the wrong End Date Correcting the wrong",
+      "published": "2026-06-24T19:04:12.020Z",
       "source": "NOAA SWPC",
       "source_id": "noaa-swpc",
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
-      "product_id": "A30F"
+      "product_id": "K04W"
+    },
+    {
+      "title": "ALERT: Geomagnetic K-index of 4",
+      "excerpt": "Space Weather Message Code: ALTK04 Serial Number: 2667 Issue Time: 2026 Jun 24 1748 UTC ALERT: Geomagnetic K-index of 4 Threshold Reached: 2026 Jun 24 1746 UTC Synoptic Period: 1500-1800 Active Warning: YES Comment: NOAA Space Weather Scale descriptions can be found at www.swpc.n",
+      "published": "2026-06-24T17:48:29.840Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04A"
+    },
+    {
+      "title": "WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5366 Issue Time: 2026 Jun 24 1746 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Jun 24 1740 UTC Valid To: 2026 Jun 25 2359 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
+      "published": "2026-06-24T17:46:31.420Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04W"
     }
-  ],
-  "last_check_status": "all_sources_failed"
+  ]
 }
