@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-06-30T09:59:25.011Z",
-  "last_check": "2026-06-30T09:59:25.011Z",
+  "last_updated": "2026-06-30T12:23:08.582Z",
+  "last_check": "2026-06-30T12:23:08.582Z",
   "count": 14,
   "sources": [
     "noaa-swpc",
@@ -9,13 +9,14 @@
   ],
   "items": [
     {
-      "title": "Слънчевите бури способни да предизвикат жп инцидент",
-      "excerpt": "Те могат да объркат електрическите системи на влаковете и сигнализацията, твърди британски учен Мощните слънчеви бури (известни като геомагнитни бури) заплашват не само спътниците в орбита, те биха могли да нарушат и критична инфраструктура на Земята, като например железопътните ",
-      "published": "2026-06-30T06:37:00.000Z",
-      "source": "24 часа",
-      "source_id": "24chasa-bg",
-      "url": "https://www.24chasa.bg/mezhdunarodni/article/23134906",
-      "lang": "bg"
+      "title": "WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5371 Issue Time: 2026 Jun 30 1210 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Jun 30 1209 UTC Valid To: 2026 Jun 30 2359 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
+      "published": "2026-06-30T12:10:11.040Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04W"
     },
     {
       "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
