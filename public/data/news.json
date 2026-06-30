@@ -1,13 +1,22 @@
 {
-  "last_updated": "2026-06-30T05:16:49.949Z",
-  "last_check": "2026-06-30T05:16:49.949Z",
-  "count": 13,
+  "last_updated": "2026-06-30T09:59:25.011Z",
+  "last_check": "2026-06-30T09:59:25.011Z",
+  "count": 14,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "Слънчевите бури способни да предизвикат жп инцидент",
+      "excerpt": "Те могат да объркат електрическите системи на влаковете и сигнализацията, твърди британски учен Мощните слънчеви бури (известни като геомагнитни бури) заплашват не само спътниците в орбита, те биха могли да нарушат и критична инфраструктура на Земята, като например железопътните ",
+      "published": "2026-06-30T06:37:00.000Z",
+      "source": "24 часа",
+      "source_id": "24chasa-bg",
+      "url": "https://www.24chasa.bg/mezhdunarodni/article/23134906",
+      "lang": "bg"
+    },
     {
       "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
       "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1114 Issue Time: 2026 Jun 28 1041 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Jun 28: None (Below G1) Jun 29: G1 (Minor) Jun 30: G1 (Minor) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EFFE",
