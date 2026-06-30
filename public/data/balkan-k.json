@@ -2,15 +2,15 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT",
-  "last_updated": "2026-06-30T17:24:31.240Z",
+  "last_updated": "2026-06-30T19:20:26.710Z",
   "status": "ok",
   "current": {
-    "balkan_k": 4.09,
-    "time_tag": "2026-06-30 15:00:00",
-    "activity_level": "active",
-    "station_count": 2
+    "balkan_k": 2.97,
+    "time_tag": "2026-06-30 18:00:00",
+    "activity_level": "quiet",
+    "station_count": 1
   },
-  "max_24h": 4.1,
+  "max_24h": 4.38,
   "windows_3h": [
     {
       "time_tag": "2026-06-29 00:00:00",
@@ -190,14 +190,14 @@
     },
     {
       "time_tag": "2026-06-30 12:00:00",
-      "balkan_k": 3.69,
+      "balkan_k": 3.76,
       "balkan_k_max": 4.32,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 3.06,
-          "disturbance_nt": 15
+          "k": 3.2,
+          "disturbance_nt": 17
         },
         {
           "code": "SUA",
@@ -208,19 +208,32 @@
     },
     {
       "time_tag": "2026-06-30 15:00:00",
-      "balkan_k": 4.09,
-      "balkan_k_max": 4.28,
+      "balkan_k": 4.38,
+      "balkan_k_max": 4.48,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 3.89,
-          "disturbance_nt": 26.9
+          "k": 4.48,
+          "disturbance_nt": 38.7
         },
         {
           "code": "SUA",
           "k": 4.28,
           "disturbance_nt": 36.2
+        }
+      ]
+    },
+    {
+      "time_tag": "2026-06-30 18:00:00",
+      "balkan_k": 2.97,
+      "balkan_k_max": 2.97,
+      "station_count": 1,
+      "stations": [
+        {
+          "code": "PAG",
+          "k": 2.97,
+          "disturbance_nt": 14
         }
       ]
     }
@@ -231,8 +244,8 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2249,
-      "k_windows": 6
+      "valid_readings": 2359,
+      "k_windows": 7
     },
     {
       "code": "SUA",
