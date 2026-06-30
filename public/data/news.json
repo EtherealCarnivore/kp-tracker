@@ -1,13 +1,23 @@
 {
-  "last_updated": "2026-06-30T20:20:20.995Z",
-  "last_check": "2026-06-30T20:20:20.995Z",
-  "count": 17,
+  "last_updated": "2026-06-30T22:38:57.389Z",
+  "last_check": "2026-06-30T22:38:57.389Z",
+  "count": 18,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "ALERT: Geomagnetic K-index of 5",
+      "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2029 Issue Time: 2026 Jun 30 2028 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Jun 30 2027 UTC Synoptic Period: 1800-2100 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
+      "published": "2026-06-30T20:28:01.803Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K05A"
+    },
     {
       "title": "WARNING: Geomagnetic K-index of 5 expected",
       "excerpt": "Space Weather Message Code: WARK05 Serial Number: 2244 Issue Time: 2026 Jun 30 1943 UTC WARNING: Geomagnetic K-index of 5 expected Valid From: 2026 Jun 30 1943 UTC Valid To: 2026 Jul 01 0600 UTC Warning Conditions: Onset Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA",
