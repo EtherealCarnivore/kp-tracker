@@ -2,8 +2,8 @@
   "source": "NIGGG-BAS (Bulgarian Academy of Sciences)",
   "methodology": "Kpm - estimated Kp from ACE satellite data using MAK model",
   "confidence_interval": "±0.63 at 50% probability",
-  "last_updated": "2026-07-01T00:11:32.057Z",
-  "last_check": "2026-07-01T00:11:32.057Z",
+  "last_updated": "2026-07-01T04:55:13.869Z",
+  "last_check": "2026-07-01T04:55:13.869Z",
   "status": "ok",
   "current": {
     "kpm": 4,
@@ -12,82 +12,6 @@
   },
   "max_24h": 4.67,
   "entries_15min": [
-    {
-      "time_tag": "2026-07-01 12:00:00",
-      "kpm": 3
-    },
-    {
-      "time_tag": "2026-07-01 12:15:00",
-      "kpm": 3
-    },
-    {
-      "time_tag": "2026-07-01 12:30:00",
-      "kpm": 3
-    },
-    {
-      "time_tag": "2026-07-01 12:45:00",
-      "kpm": 3
-    },
-    {
-      "time_tag": "2026-07-01 13:00:00",
-      "kpm": 3
-    },
-    {
-      "time_tag": "2026-07-01 13:15:00",
-      "kpm": 3
-    },
-    {
-      "time_tag": "2026-07-01 13:30:00",
-      "kpm": 3
-    },
-    {
-      "time_tag": "2026-07-01 13:45:00",
-      "kpm": 3
-    },
-    {
-      "time_tag": "2026-07-01 14:00:00",
-      "kpm": 3
-    },
-    {
-      "time_tag": "2026-07-01 14:15:00",
-      "kpm": 2.67
-    },
-    {
-      "time_tag": "2026-07-01 14:30:00",
-      "kpm": 2.67
-    },
-    {
-      "time_tag": "2026-07-01 14:45:00",
-      "kpm": 2.67
-    },
-    {
-      "time_tag": "2026-07-01 15:00:00",
-      "kpm": 2.67
-    },
-    {
-      "time_tag": "2026-07-01 15:15:00",
-      "kpm": 2.67
-    },
-    {
-      "time_tag": "2026-07-01 15:30:00",
-      "kpm": 3
-    },
-    {
-      "time_tag": "2026-07-01 15:45:00",
-      "kpm": 3.67
-    },
-    {
-      "time_tag": "2026-07-01 16:00:00",
-      "kpm": 4
-    },
-    {
-      "time_tag": "2026-07-01 16:15:00",
-      "kpm": 4.33
-    },
-    {
-      "time_tag": "2026-07-01 16:30:00",
-      "kpm": 4
-    },
     {
       "time_tag": "2026-07-01 16:45:00",
       "kpm": 4
@@ -124,18 +48,11 @@
   "forecast_15min": [],
   "windows_3h": [
     {
-      "time_tag": "2026-07-01 12:00:00",
-      "kpm_avg": 2.92,
-      "kpm_max": 3,
-      "kpm_latest": 2.67,
-      "readings": 12
-    },
-    {
       "time_tag": "2026-07-01 15:00:00",
-      "kpm_avg": 3.83,
+      "kpm_avg": 4.33,
       "kpm_max": 4.67,
       "kpm_latest": 4.33,
-      "readings": 12
+      "readings": 5
     },
     {
       "time_tag": "2026-07-01 18:00:00",
