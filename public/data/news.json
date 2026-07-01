@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-07-01T05:53:40.566Z",
-  "last_check": "2026-07-01T05:53:40.566Z",
-  "count": 20,
+  "last_updated": "2026-07-01T10:12:25.174Z",
+  "last_check": "2026-07-01T10:12:25.174Z",
+  "count": 21,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -9,13 +9,24 @@
   ],
   "items": [
     {
-      "title": "Жегите през юли в норма, ще е идеален и за море, и за планина",
-      "excerpt": "Ще има и периоди с повече валежи, това е месецът на градушките Магнитни бури на Балканите не се очакват След жежката вълна в Европа, в чиято периферия се оказа България, юли идва с месечни температури около климатичните норми - от 28 до 33°. Това сочи прогнозата на шефа на синопт",
-      "published": "2026-07-01T04:30:00.000Z",
-      "source": "24 часа",
-      "source_id": "24chasa-bg",
-      "url": "https://www.24chasa.bg/spravochnik/article/23142016",
-      "lang": "bg"
+      "title": "EXTENDED WARNING: Geomagnetic K-index of 5 expected",
+      "excerpt": "Space Weather Message Code: WARK05 Serial Number: 2245 Issue Time: 2026 Jul 01 0554 UTC EXTENDED WARNING: Geomagnetic K-index of 5 expected Extension to Serial Number: 2244 Valid From: 2026 Jun 30 1943 UTC Now Valid Until: 2026 Jul 01 1800 UTC Warning Condition: Persistence NOAA ",
+      "published": "2026-07-01T05:54:08.210Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K05W"
+    },
+    {
+      "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5373 Issue Time: 2026 Jul 01 0553 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5372 Valid From: 2026 Jun 30 1209 UTC Now Valid Until: 2026 Jul 01 2100 UTC Warning Condition: Persistence NOAA ",
+      "published": "2026-07-01T05:53:48.253Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04W"
     },
     {
       "title": "ALERT: Geomagnetic K-index of 5",
