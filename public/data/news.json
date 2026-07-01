@@ -1,13 +1,32 @@
 {
-  "last_updated": "2026-07-01T00:20:54.216Z",
-  "last_check": "2026-07-01T00:20:54.216Z",
-  "count": 18,
+  "last_updated": "2026-07-01T05:53:40.566Z",
+  "last_check": "2026-07-01T05:53:40.566Z",
+  "count": 20,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "Жегите през юли в норма, ще е идеален и за море, и за планина",
+      "excerpt": "Ще има и периоди с повече валежи, това е месецът на градушките Магнитни бури на Балканите не се очакват След жежката вълна в Европа, в чиято периферия се оказа България, юли идва с месечни температури около климатичните норми - от 28 до 33°. Това сочи прогнозата на шефа на синопт",
+      "published": "2026-07-01T04:30:00.000Z",
+      "source": "24 часа",
+      "source_id": "24chasa-bg",
+      "url": "https://www.24chasa.bg/spravochnik/article/23142016",
+      "lang": "bg"
+    },
+    {
+      "title": "ALERT: Geomagnetic K-index of 5",
+      "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2030 Issue Time: 2026 Jul 01 0259 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Jul 01 0259 UTC Synoptic Period: 0000-0300 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
+      "published": "2026-07-01T02:59:26.100Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K05A"
+    },
     {
       "title": "ALERT: Geomagnetic K-index of 5",
       "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2029 Issue Time: 2026 Jun 30 2028 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Jun 30 2027 UTC Synoptic Period: 1800-2100 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
