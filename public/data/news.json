@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-07-02T18:47:25.816Z",
-  "last_check": "2026-07-02T18:47:25.816Z",
-  "count": 14,
+  "last_updated": "2026-07-02T20:36:47.630Z",
+  "last_check": "2026-07-02T20:36:47.630Z",
+  "count": 12,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -122,26 +122,6 @@
       "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
       "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5370 Issue Time: 2026 Jun 25 2343 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5369 Valid From: 2026 Jun 25 1939 UTC Now Valid Until: 2026 Jun 26 1200 UTC Warning Condition: Persistence NOAA ",
       "published": "2026-06-25T23:43:25.917Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K04W"
-    },
-    {
-      "title": "ALERT: Geomagnetic K-index of 4",
-      "excerpt": "Space Weather Message Code: ALTK04 Serial Number: 2668 Issue Time: 2026 Jun 25 1941 UTC ALERT: Geomagnetic K-index of 4 Threshold Reached: 2026 Jun 25 1940 UTC Synoptic Period: 1800-2100 Active Warning: YES Comment: NOAA Space Weather Scale descriptions can be found at www.swpc.n",
-      "published": "2026-06-25T19:41:10.373Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K04A"
-    },
-    {
-      "title": "WARNING: Geomagnetic K-index of 4 expected",
-      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5369 Issue Time: 2026 Jun 25 1939 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Jun 25 1939 UTC Valid To: 2026 Jun 25 2359 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
-      "published": "2026-06-25T19:39:22.820Z",
       "source": "NOAA SWPC",
       "source_id": "noaa-swpc",
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
