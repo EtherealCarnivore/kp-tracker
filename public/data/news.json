@@ -1,13 +1,22 @@
 {
-  "last_updated": "2026-07-03T00:18:14.788Z",
-  "last_check": "2026-07-03T00:18:14.788Z",
-  "count": 11,
+  "last_updated": "2026-07-03T04:55:52.487Z",
+  "last_check": "2026-07-03T04:55:52.487Z",
+  "count": 12,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "<p>Геомагнитна буря удря Земята</p>",
+      "excerpt": "Очакват се временни смущения в комуникациите, спътниковите системи и възможност за полярни сияния",
+      "published": "2026-07-03T04:17:00.000Z",
+      "source": "Vesti.bg",
+      "source_id": "vesti-bg",
+      "url": "https://www.vesti.bg/sviat/geomagnitna-buria-udria-zemiata-6263927",
+      "lang": "bg"
+    },
     {
       "title": "WATCH: Geomagnetic Storm Category G2 Predicted",
       "excerpt": "Space Weather Message Code: WATA30 Serial Number: 278 Issue Time: 2026 Jul 02 0935 UTC WATCH: Geomagnetic Storm Category G2 Predicted Highest Storm Level Predicted by Day: Jul 02: None (Below G1) Jul 03: G2 (Moderate) Jul 04: G2 (Moderate) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN",
