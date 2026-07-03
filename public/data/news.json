@@ -1,13 +1,33 @@
 {
-  "last_updated": "2026-07-03T08:26:45.791Z",
-  "last_check": "2026-07-03T08:26:45.791Z",
-  "count": 12,
+  "last_updated": "2026-07-03T11:41:09.503Z",
+  "last_check": "2026-07-03T11:41:09.503Z",
+  "count": 14,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WARNING: Geomagnetic Sudden Impulse expected",
+      "excerpt": "Space Weather Message Code: WARSUD Serial Number: 256 Issue Time: 2026 Jul 03 1138 UTC WARNING: Geomagnetic Sudden Impulse expected Valid From: 2026 Jul 03 1157 UTC Valid To: 2026 Jul 03 1227 UTC Ip Shock: 2026-07-03 11:20 Comment:",
+      "published": "2026-07-03T11:38:06.157Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "SGIW"
+    },
+    {
+      "title": "WATCH: Geomagnetic Storm Category G2 Predicted",
+      "excerpt": "Space Weather Message Code: WATA30 Serial Number: 278 Issue Time: 2026 Jul 03 1123 UTC WATCH: Geomagnetic Storm Category G2 Predicted Highest Storm Level Predicted by Day: Jul 03: G2 (Moderate) Jul 04: G2 (Moderate) Jul 05: G1 (Minor) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EFFE",
+      "published": "2026-07-03T11:24:17.033Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A30F"
+    },
     {
       "title": "<p>Геомагнитна буря удря Земята</p>",
       "excerpt": "Очакват се временни смущения в комуникациите, спътниковите системи и възможност за полярни сияния",
