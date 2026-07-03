@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-03T11:41:09.503Z",
-  "last_check": "2026-07-03T11:41:09.503Z",
+  "last_updated": "2026-07-03T14:31:20.767Z",
+  "last_check": "2026-07-03T14:31:20.767Z",
   "count": 14,
   "sources": [
     "noaa-swpc",
@@ -8,6 +8,16 @@
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5374 Issue Time: 2026 Jul 03 1209 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Jul 03 1209 UTC Valid To: 2026 Jul 04 0300 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
+      "published": "2026-07-03T12:09:51.550Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04W"
+    },
     {
       "title": "WARNING: Geomagnetic Sudden Impulse expected",
       "excerpt": "Space Weather Message Code: WARSUD Serial Number: 256 Issue Time: 2026 Jul 03 1138 UTC WARNING: Geomagnetic Sudden Impulse expected Valid From: 2026 Jul 03 1157 UTC Valid To: 2026 Jul 03 1227 UTC Ip Shock: 2026-07-03 11:20 Comment:",
@@ -27,15 +37,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "A30F"
-    },
-    {
-      "title": "<p>Геомагнитна буря удря Земята</p>",
-      "excerpt": "Очакват се временни смущения в комуникациите, спътниковите системи и възможност за полярни сияния",
-      "published": "2026-07-03T04:17:00.000Z",
-      "source": "Vesti.bg",
-      "source_id": "vesti-bg",
-      "url": "https://www.vesti.bg/sviat/geomagnitna-buria-udria-zemiata-6263927",
-      "lang": "bg"
     },
     {
       "title": "WATCH: Geomagnetic Storm Category G2 Predicted",
