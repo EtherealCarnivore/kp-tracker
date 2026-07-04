@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-04T19:35:27.062Z",
-  "last_check": "2026-07-04T19:35:27.062Z",
+  "last_updated": "2026-07-04T21:13:06.369Z",
+  "last_check": "2026-07-04T21:13:06.369Z",
   "count": 25,
   "sources": [
     "noaa-swpc",
@@ -8,6 +8,16 @@
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "ALERT: Geomagnetic K-index of 5",
+      "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2037 Issue Time: 2026 Jul 04 2022 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Jul 04 2018 UTC Synoptic Period: 1800-2100 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
+      "published": "2026-07-04T20:22:27.850Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K05A"
+    },
     {
       "title": "ALERT: Geomagnetic K-index of 6",
       "excerpt": "Space Weather Message Code: ALTK06 Serial Number: 723 Issue Time: 2026 Jul 04 1700 UTC ALERT: Geomagnetic K-index of 6 Threshold Reached: 2026 Jul 04 1655 UTC Synoptic Period: 1500-1800 Active Warning: YES Noaa Scale: G2 - Moderate Comment: NOAA Scale: G2 - Moderate NOAA Space We",
@@ -247,16 +257,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K04A"
-    },
-    {
-      "title": "WARNING: Geomagnetic K-index of 4 expected",
-      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5374 Issue Time: 2026 Jul 03 1209 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Jul 03 1209 UTC Valid To: 2026 Jul 04 0300 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
-      "published": "2026-07-03T12:09:51.550Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K04W"
     }
   ]
 }
