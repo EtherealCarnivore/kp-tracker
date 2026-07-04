@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-04T22:12:02.199Z",
-  "last_check": "2026-07-04T22:12:02.199Z",
+  "last_updated": "2026-07-04T23:13:38.303Z",
+  "last_check": "2026-07-04T23:13:38.303Z",
   "count": 25,
   "sources": [
     "noaa-swpc",
@@ -8,6 +8,16 @@
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "ALERT: Geomagnetic K-index of 5",
+      "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2038 Issue Time: 2026 Jul 04 2300 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Jul 04 2301 UTC Synoptic Period: 2100-2400 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
+      "published": "2026-07-04T23:00:54.203Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K05A"
+    },
     {
       "title": "ALERT: Geomagnetic K-index of 5",
       "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2037 Issue Time: 2026 Jul 04 2022 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Jul 04 2018 UTC Synoptic Period: 1800-2100 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
@@ -247,16 +257,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K05W"
-    },
-    {
-      "title": "ALERT: Geomagnetic K-index of 4",
-      "excerpt": "Space Weather Message Code: ALTK04 Serial Number: 2670 Issue Time: 2026 Jul 03 2054 UTC ALERT: Geomagnetic K-index of 4 Threshold Reached: 2026 Jul 03 2049 UTC Synoptic Period: 1800-2100 Active Warning: YES Comment: NOAA Space Weather Scale descriptions can be found at www.swpc.n",
-      "published": "2026-07-03T20:54:38.663Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K04A"
     }
   ]
 }
