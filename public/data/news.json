@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-04T16:14:38.752Z",
-  "last_check": "2026-07-04T16:14:38.752Z",
+  "last_updated": "2026-07-04T17:28:54.086Z",
+  "last_check": "2026-07-04T17:28:54.086Z",
   "count": 25,
   "sources": [
     "noaa-swpc",
@@ -8,6 +8,26 @@
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "ALERT: Geomagnetic K-index of 6",
+      "excerpt": "Space Weather Message Code: ALTK06 Serial Number: 723 Issue Time: 2026 Jul 04 1700 UTC ALERT: Geomagnetic K-index of 6 Threshold Reached: 2026 Jul 04 1655 UTC Synoptic Period: 1500-1800 Active Warning: YES Noaa Scale: G2 - Moderate Comment: NOAA Scale: G2 - Moderate NOAA Space We",
+      "published": "2026-07-04T17:00:15.597Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K06A"
+    },
+    {
+      "title": "ALERT: Geomagnetic K-index of 5",
+      "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2036 Issue Time: 2026 Jul 04 1614 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Jul 04 1610 UTC Synoptic Period: 1500-1800 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
+      "published": "2026-07-04T16:14:30.417Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K05A"
+    },
     {
       "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
       "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5377 Issue Time: 2026 Jul 04 1421 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5376 Valid From: 2026 Jul 03 1209 UTC Now Valid Until: 2026 Jul 05 0300 UTC Warning Condition: Persistence NOAA ",
@@ -237,26 +257,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K04W"
-    },
-    {
-      "title": "WARNING: Geomagnetic Sudden Impulse expected",
-      "excerpt": "Space Weather Message Code: WARSUD Serial Number: 256 Issue Time: 2026 Jul 03 1138 UTC WARNING: Geomagnetic Sudden Impulse expected Valid From: 2026 Jul 03 1157 UTC Valid To: 2026 Jul 03 1227 UTC Ip Shock: 2026-07-03 11:20 Comment:",
-      "published": "2026-07-03T11:38:06.157Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "SGIW"
-    },
-    {
-      "title": "WATCH: Geomagnetic Storm Category G2 Predicted",
-      "excerpt": "Space Weather Message Code: WATA30 Serial Number: 278 Issue Time: 2026 Jul 03 1123 UTC WATCH: Geomagnetic Storm Category G2 Predicted Highest Storm Level Predicted by Day: Jul 03: G2 (Moderate) Jul 04: G2 (Moderate) Jul 05: G1 (Minor) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EFFE",
-      "published": "2026-07-03T11:24:17.033Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "A30F"
     }
   ]
 }
