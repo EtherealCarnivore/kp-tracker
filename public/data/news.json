@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-08T03:45:40.857Z",
-  "last_check": "2026-07-08T03:45:40.857Z",
+  "last_updated": "2026-07-08T06:37:43.881Z",
+  "last_check": "2026-07-08T06:37:43.881Z",
   "count": 25,
   "sources": [
     "noaa-swpc",
@@ -8,6 +8,16 @@
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5380 Issue Time: 2026 Jul 08 0529 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Jul 08 0528 UTC Valid To: 2026 Jul 08 1200 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
+      "published": "2026-07-08T05:29:41.360Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04W"
+    },
     {
       "title": "ALERT: Geomagnetic K-index of 4",
       "excerpt": "Space Weather Message Code: ALTK04 Serial Number: 2671 Issue Time: 2026 Jul 05 1802 UTC ALERT: Geomagnetic K-index of 4 Threshold Reached: 2026 Jul 05 1759 UTC Synoptic Period: 1500-1800 Active Warning: YES Comment: NOAA Space Weather Scale descriptions can be found at www.swpc.n",
@@ -247,16 +257,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K05W"
-    },
-    {
-      "title": "EXTENDED WARNING: Geomagnetic K-index of 6 expected",
-      "excerpt": "Space Weather Message Code: WARK06 Serial Number: 664 Issue Time: 2026 Jul 04 0254 UTC EXTENDED WARNING: Geomagnetic K-index of 6 expected Extension to Serial Number: 663 Valid From: 2026 Jul 04 0227 UTC Now Valid Until: 2026 Jul 04 1200 UTC Warning Condition: Persistence Conditi",
-      "published": "2026-07-04T02:54:56.360Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K06W"
     }
   ]
 }
