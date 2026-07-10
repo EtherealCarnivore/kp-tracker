@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-10T18:44:02.202Z",
-  "last_check": "2026-07-10T18:44:02.202Z",
+  "last_updated": "2026-07-10T20:42:08.498Z",
+  "last_check": "2026-07-10T20:42:08.498Z",
   "count": 25,
   "sources": [
     "noaa-swpc",
@@ -8,6 +8,16 @@
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
+      "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1115 Issue Time: 2026 Jul 10 1946 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Jul 11: None (Below G1) Jul 12: G1 (Minor) Jul 13: None (Below G1) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN",
+      "published": "2026-07-10T19:46:30.540Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A20F"
+    },
     {
       "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
       "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5382 Issue Time: 2026 Jul 10 1151 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5381 Valid From: 2026 Jul 09 1119 UTC Now Valid Until: 2026 Jul 11 0300 UTC Warning Condition: Persistence NOAA ",
@@ -247,16 +257,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K06A"
-    },
-    {
-      "title": "ALERT: Geomagnetic K-index of 5",
-      "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2032 Issue Time: 2026 Jul 04 0423 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Jul 04 0423 UTC Synoptic Period: 0300-0600 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
-      "published": "2026-07-04T04:23:28.410Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K05A"
     }
   ]
 }
