@@ -1,6 +1,6 @@
 {
   "last_updated": "2026-07-11T12:04:22.217Z",
-  "last_check": "2026-07-11T12:04:22.217Z",
+  "last_check": "2026-07-11T13:52:53.995Z",
   "count": 19,
   "sources": [
     "noaa-swpc",
@@ -198,5 +198,6 @@
       "lang": "en",
       "product_id": "K05A"
     }
-  ]
+  ],
+  "last_check_status": "all_sources_failed"
 }
