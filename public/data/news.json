@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-07-11T06:25:21.205Z",
-  "last_check": "2026-07-11T06:25:21.205Z",
-  "count": 22,
+  "last_updated": "2026-07-11T08:58:25.769Z",
+  "last_check": "2026-07-11T08:58:25.769Z",
+  "count": 20,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -202,26 +202,6 @@
       "title": "ALERT: Geomagnetic K-index of 5",
       "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2034 Issue Time: 2026 Jul 04 1043 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Jul 04 1043 UTC Synoptic Period: 0900-1200 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
       "published": "2026-07-04T10:43:53.823Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K05A"
-    },
-    {
-      "title": "ALERT: Geomagnetic K-index of 6",
-      "excerpt": "Space Weather Message Code: ALTK06 Serial Number: 721 Issue Time: 2026 Jul 04 0839 UTC ALERT: Geomagnetic K-index of 6 Threshold Reached: 2026 Jul 04 0839 UTC Synoptic Period: 0600-0900 Active Warning: YES Noaa Scale: G2 - Moderate Comment: NOAA Scale: G2 - Moderate NOAA Space We",
-      "published": "2026-07-04T08:39:45.390Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K06A"
-    },
-    {
-      "title": "ALERT: Geomagnetic K-index of 5",
-      "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2033 Issue Time: 2026 Jul 04 0715 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Jul 04 0715 UTC Synoptic Period: 0600-0900 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
-      "published": "2026-07-04T07:15:51.787Z",
       "source": "NOAA SWPC",
       "source_id": "noaa-swpc",
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
