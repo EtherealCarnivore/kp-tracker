@@ -2,15 +2,15 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT",
-  "last_updated": "2026-07-12T17:04:39.199Z",
+  "last_updated": "2026-07-12T18:28:27.607Z",
   "status": "ok",
   "current": {
-    "balkan_k": 4.45,
-    "time_tag": "2026-07-12 15:00:00",
-    "activity_level": "active",
+    "balkan_k": 2.7,
+    "time_tag": "2026-07-12 18:00:00",
+    "activity_level": "quiet",
     "station_count": 1
   },
-  "max_24h": 4.45,
+  "max_24h": 4.38,
   "windows_3h": [
     {
       "time_tag": "2026-07-12 00:00:00",
@@ -86,8 +86,8 @@
     },
     {
       "time_tag": "2026-07-12 12:00:00",
-      "balkan_k": 3.14,
-      "balkan_k_max": 4.23,
+      "balkan_k": 3.13,
+      "balkan_k_max": 4.22,
       "station_count": 2,
       "stations": [
         {
@@ -97,21 +97,34 @@
         },
         {
           "code": "SUA",
-          "k": 4.23,
-          "disturbance_nt": 34.9
+          "k": 4.22,
+          "disturbance_nt": 34.8
         }
       ]
     },
     {
       "time_tag": "2026-07-12 15:00:00",
-      "balkan_k": 4.45,
-      "balkan_k_max": 4.45,
+      "balkan_k": 4.38,
+      "balkan_k_max": 4.38,
       "station_count": 1,
       "stations": [
         {
           "code": "SUA",
-          "k": 4.45,
-          "disturbance_nt": 39.8
+          "k": 4.38,
+          "disturbance_nt": 38.4
+        }
+      ]
+    },
+    {
+      "time_tag": "2026-07-12 18:00:00",
+      "balkan_k": 2.7,
+      "balkan_k_max": 2.7,
+      "station_count": 1,
+      "stations": [
+        {
+          "code": "SUA",
+          "k": 2.7,
+          "disturbance_nt": 12.7
         }
       ]
     }
@@ -122,7 +135,7 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2210,
+      "valid_readings": 2230,
       "k_windows": 5
     },
     {
@@ -130,8 +143,8 @@
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 2450,
-      "k_windows": 6
+      "valid_readings": 2540,
+      "k_windows": 7
     },
     {
       "code": "GCK",
