@@ -2,20 +2,20 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT",
-  "last_updated": "2026-07-12T14:05:29.260Z",
+  "last_updated": "2026-07-12T15:34:43.508Z",
   "status": "ok",
   "current": {
-    "balkan_k": 2.41,
-    "time_tag": "2026-07-12 12:00:00",
-    "activity_level": "quiet",
-    "station_count": 2
+    "balkan_k": 3.56,
+    "time_tag": "2026-07-12 15:00:00",
+    "activity_level": "unsettled",
+    "station_count": 1
   },
-  "max_24h": 3.49,
+  "max_24h": 3.56,
   "windows_3h": [
     {
       "time_tag": "2026-07-12 00:00:00",
-      "balkan_k": 3.49,
-      "balkan_k_max": 3.56,
+      "balkan_k": 3.5,
+      "balkan_k_max": 3.57,
       "station_count": 2,
       "stations": [
         {
@@ -25,8 +25,8 @@
         },
         {
           "code": "SUA",
-          "k": 3.56,
-          "disturbance_nt": 23.3
+          "k": 3.57,
+          "disturbance_nt": 23.4
         }
       ]
     },
@@ -50,8 +50,8 @@
     },
     {
       "time_tag": "2026-07-12 06:00:00",
-      "balkan_k": 3.1,
-      "balkan_k_max": 3.2,
+      "balkan_k": 3.11,
+      "balkan_k_max": 3.21,
       "station_count": 2,
       "stations": [
         {
@@ -61,14 +61,14 @@
         },
         {
           "code": "SUA",
-          "k": 3.2,
+          "k": 3.21,
           "disturbance_nt": 18
         }
       ]
     },
     {
       "time_tag": "2026-07-12 09:00:00",
-      "balkan_k": 2.8,
+      "balkan_k": 2.79,
       "balkan_k_max": 3.01,
       "station_count": 2,
       "stations": [
@@ -79,15 +79,15 @@
         },
         {
           "code": "SUA",
-          "k": 2.59,
-          "disturbance_nt": 11.9
+          "k": 2.57,
+          "disturbance_nt": 11.7
         }
       ]
     },
     {
       "time_tag": "2026-07-12 12:00:00",
-      "balkan_k": 2.41,
-      "balkan_k_max": 2.78,
+      "balkan_k": 3.18,
+      "balkan_k_max": 4.32,
       "station_count": 2,
       "stations": [
         {
@@ -97,8 +97,21 @@
         },
         {
           "code": "SUA",
-          "k": 2.78,
-          "disturbance_nt": 13.2
+          "k": 4.32,
+          "disturbance_nt": 36.9
+        }
+      ]
+    },
+    {
+      "time_tag": "2026-07-12 15:00:00",
+      "balkan_k": 3.56,
+      "balkan_k_max": 3.56,
+      "station_count": 1,
+      "stations": [
+        {
+          "code": "SUA",
+          "k": 3.56,
+          "disturbance_nt": 23.3
         }
       ]
     }
@@ -117,8 +130,8 @@
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 2280,
-      "k_windows": 5
+      "valid_readings": 2360,
+      "k_windows": 6
     },
     {
       "code": "GCK",
