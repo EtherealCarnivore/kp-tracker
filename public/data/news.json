@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-07-11T23:09:43.356Z",
-  "last_check": "2026-07-11T23:09:43.356Z",
-  "count": 10,
+  "last_updated": "2026-07-12T00:09:50.782Z",
+  "last_check": "2026-07-12T00:09:50.782Z",
+  "count": 9,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -97,16 +97,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K07W"
-    },
-    {
-      "title": "Space Weather Message Code: WARK06",
-      "excerpt": "Space Weather Message Code: WARK06 Serial Number: 666 Issue Time: 2026 Jul 05 0005 UTC CANCEL WARNING: Geomagnetic K-index of 6 expected Cancel Serial Number: 665 Original Issue Time: 2026 Jul 04 1357 UTC Wrong date in the original end time. Warning was supposed to expire at 04/2",
-      "published": "2026-07-05T00:05:42.410Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K06W"
     }
   ]
 }
