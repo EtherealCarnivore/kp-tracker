@@ -2,15 +2,15 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT",
-  "last_updated": "2026-07-19T09:29:22.296Z",
+  "last_updated": "2026-07-19T10:56:51.891Z",
   "status": "ok",
   "current": {
-    "balkan_k": 0.77,
+    "balkan_k": 1.04,
     "time_tag": "2026-07-19 09:00:00",
     "activity_level": "quiet",
     "station_count": 2
   },
-  "max_24h": 2.03,
+  "max_24h": 2.57,
   "windows_3h": [
     {
       "time_tag": "2026-07-19 00:00:00",
@@ -50,37 +50,37 @@
     },
     {
       "time_tag": "2026-07-19 06:00:00",
-      "balkan_k": 1.76,
-      "balkan_k_max": 1.77,
+      "balkan_k": 2.57,
+      "balkan_k_max": 2.63,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 1.75,
-          "disturbance_nt": 6.2
+          "k": 2.63,
+          "disturbance_nt": 11.6
         },
         {
           "code": "SUA",
-          "k": 1.77,
-          "disturbance_nt": 6.6
+          "k": 2.5,
+          "disturbance_nt": 11.2
         }
       ]
     },
     {
       "time_tag": "2026-07-19 09:00:00",
-      "balkan_k": 0.77,
-      "balkan_k_max": 0.78,
+      "balkan_k": 1.04,
+      "balkan_k_max": 1.18,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 0.76,
-          "disturbance_nt": 2.7
+          "k": 0.9,
+          "disturbance_nt": 3.2
         },
         {
           "code": "SUA",
-          "k": 0.78,
-          "disturbance_nt": 2.9
+          "k": 1.18,
+          "disturbance_nt": 4.4
         }
       ]
     }
@@ -91,7 +91,7 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2000,
+      "valid_readings": 2070,
       "k_windows": 4
     },
     {
@@ -99,7 +99,7 @@
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 2000,
+      "valid_readings": 2090,
       "k_windows": 4
     },
     {
