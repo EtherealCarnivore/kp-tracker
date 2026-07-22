@@ -1,13 +1,23 @@
 {
-  "last_updated": "2026-07-22T18:20:38.145Z",
-  "last_check": "2026-07-22T18:20:38.145Z",
-  "count": 5,
+  "last_updated": "2026-07-22T20:20:54.604Z",
+  "last_check": "2026-07-22T20:20:54.604Z",
+  "count": 6,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
+      "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1117 Issue Time: 2026 Jul 22 1925 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Jul 23: None (Below G1) Jul 24: G1 (Minor) Jul 25: None (Below G1) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN",
+      "published": "2026-07-22T19:25:10.567Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A20F"
+    },
     {
       "title": "WARNING: Geomagnetic K-index of 4 expected",
       "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5390 Issue Time: 2026 Jul 22 1456 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Jul 22 1454 UTC Valid To: 2026 Jul 22 2359 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
