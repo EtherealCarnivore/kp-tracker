@@ -2,7 +2,7 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT",
-  "last_updated": "2026-07-22T19:52:57.128Z",
+  "last_updated": "2026-07-22T21:18:44.698Z",
   "status": "ok",
   "current": {
     "balkan_k": 2.01,
