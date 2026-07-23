@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-07-23T14:29:49.302Z",
-  "last_check": "2026-07-23T14:29:49.302Z",
-  "count": 7,
+  "last_updated": "2026-07-23T16:44:41.952Z",
+  "last_check": "2026-07-23T16:44:41.952Z",
+  "count": 11,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -9,13 +9,54 @@
   ],
   "items": [
     {
-      "title": "Слънцето праща нова буря към Земята: Къде могат да се видят полярни сияния",
-      "excerpt": "NOAA предупреждава за повишена геомагнитна активност, която може да повлияе на метеочувствителни хора и да създаде условия за полярни сияния",
-      "published": "2026-07-23T09:16:00.000Z",
-      "source": "Vesti.bg",
-      "source_id": "vesti-bg",
-      "url": "https://www.vesti.bg/sviat/slynceto-prashta-nova-buria-kym-zemiata-kyde-mogat-da-se-vidiat-poliarni-siianiia-6265656",
-      "lang": "bg"
+      "title": "WARNING: Geomagnetic K-index of 6 expected",
+      "excerpt": "Space Weather Message Code: WARK06 Serial Number: 667 Issue Time: 2026 Jul 23 1640 UTC WARNING: Geomagnetic K-index of 6 expected Valid From: 2026 Jul 23 1639 UTC Valid To: 2026 Jul 23 2359 UTC Warning Conditions: Onset Noaa Scale: G2 - Moderate Comment: NOAA Scale: G2 - Moderate",
+      "published": "2026-07-23T16:40:47.233Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K06W"
+    },
+    {
+      "title": "ALERT: Geomagnetic K-index of 5",
+      "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2040 Issue Time: 2026 Jul 23 1621 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Jul 23 1621 UTC Synoptic Period: 1500-1800 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
+      "published": "2026-07-23T16:21:57.240Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K05A"
+    },
+    {
+      "title": "WARNING: Geomagnetic K-index of 5 expected",
+      "excerpt": "Space Weather Message Code: WARK05 Serial Number: 2251 Issue Time: 2026 Jul 23 1620 UTC WARNING: Geomagnetic K-index of 5 expected Valid From: 2026 Jul 23 1619 UTC Valid To: 2026 Jul 23 2359 UTC Warning Conditions: Onset Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA",
+      "published": "2026-07-23T16:20:07.837Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K05W"
+    },
+    {
+      "title": "ALERT: Geomagnetic K-index of 4",
+      "excerpt": "Space Weather Message Code: ALTK04 Serial Number: 2677 Issue Time: 2026 Jul 23 1559 UTC ALERT: Geomagnetic K-index of 4 Threshold Reached: 2026 Jul 23 1547 UTC Synoptic Period: 1500-1800 Active Warning: YES Comment: NOAA Space Weather Scale descriptions can be found at www.swpc.n",
+      "published": "2026-07-23T15:59:32.603Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04A"
+    },
+    {
+      "title": "WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5391 Issue Time: 2026 Jul 23 1435 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Jul 23 1432 UTC Valid To: 2026 Jul 24 0900 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
+      "published": "2026-07-23T14:35:42.900Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04W"
     },
     {
       "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
