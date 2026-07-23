@@ -1,13 +1,22 @@
 {
-  "last_updated": "2026-07-23T06:39:18.152Z",
-  "last_check": "2026-07-23T06:39:18.152Z",
-  "count": 6,
+  "last_updated": "2026-07-23T09:34:51.878Z",
+  "last_check": "2026-07-23T09:34:51.878Z",
+  "count": 7,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "Слънцето праща нова буря към Земята: Къде могат да се видят полярни сияния",
+      "excerpt": "NOAA предупреждава за повишена геомагнитна активност, която може да повлияе на метеочувствителни хора и да създаде условия за полярни сияния",
+      "published": "2026-07-23T09:16:00.000Z",
+      "source": "Vesti.bg",
+      "source_id": "vesti-bg",
+      "url": "https://www.vesti.bg/sviat/slynceto-prashta-nova-buria-kym-zemiata-kyde-mogat-da-se-vidiat-poliarni-siianiia-6265656",
+      "lang": "bg"
+    },
     {
       "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
       "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1117 Issue Time: 2026 Jul 22 1925 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Jul 23: None (Below G1) Jul 24: G1 (Minor) Jul 25: None (Below G1) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN",
