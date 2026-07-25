@@ -2,49 +2,49 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT",
-  "last_updated": "2026-07-25T03:49:28.377Z",
+  "last_updated": "2026-07-25T06:21:53.288Z",
   "status": "ok",
   "current": {
-    "balkan_k": 1.54,
+    "balkan_k": 2.12,
     "time_tag": "2026-07-25 03:00:00",
     "activity_level": "quiet",
     "station_count": 2
   },
-  "max_24h": 1.54,
+  "max_24h": 2.12,
   "windows_3h": [
     {
       "time_tag": "2026-07-25 00:00:00",
-      "balkan_k": 0.82,
-      "balkan_k_max": 0.99,
+      "balkan_k": 0.72,
+      "balkan_k_max": 0.88,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 0.65,
-          "disturbance_nt": 2.3
+          "k": 0.56,
+          "disturbance_nt": 2
         },
         {
           "code": "SUA",
-          "k": 0.99,
-          "disturbance_nt": 3.7
+          "k": 0.88,
+          "disturbance_nt": 3.3
         }
       ]
     },
     {
       "time_tag": "2026-07-25 03:00:00",
-      "balkan_k": 1.54,
-      "balkan_k_max": 1.55,
+      "balkan_k": 2.12,
+      "balkan_k_max": 2.15,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 1.55,
-          "disturbance_nt": 5.5
+          "k": 2.15,
+          "disturbance_nt": 8.2
         },
         {
           "code": "SUA",
-          "k": 1.53,
-          "disturbance_nt": 5.7
+          "k": 2.09,
+          "disturbance_nt": 8.1
         }
       ]
     }
@@ -55,7 +55,7 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 1660,
+      "valid_readings": 1800,
       "k_windows": 2
     },
     {
@@ -63,7 +63,7 @@
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 1660,
+      "valid_readings": 1810,
       "k_windows": 2
     },
     {
