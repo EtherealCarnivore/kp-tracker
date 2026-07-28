@@ -2,15 +2,15 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT",
-  "last_updated": "2026-07-28T13:10:49.897Z",
+  "last_updated": "2026-07-28T15:50:28.849Z",
   "status": "ok",
   "current": {
-    "balkan_k": 3.45,
-    "time_tag": "2026-07-28 12:00:00",
-    "activity_level": "unsettled",
+    "balkan_k": 2.22,
+    "time_tag": "2026-07-28 15:00:00",
+    "activity_level": "quiet",
     "station_count": 1
   },
-  "max_24h": 3.45,
+  "max_24h": 3.42,
   "windows_3h": [
     {
       "time_tag": "2026-07-27 00:00:00",
@@ -172,8 +172,8 @@
     },
     {
       "time_tag": "2026-07-28 09:00:00",
-      "balkan_k": 2.92,
-      "balkan_k_max": 3.53,
+      "balkan_k": 2.9,
+      "balkan_k_max": 3.49,
       "station_count": 2,
       "stations": [
         {
@@ -183,21 +183,34 @@
         },
         {
           "code": "SUA",
-          "k": 3.53,
-          "disturbance_nt": 22.8
+          "k": 3.49,
+          "disturbance_nt": 22.2
         }
       ]
     },
     {
       "time_tag": "2026-07-28 12:00:00",
-      "balkan_k": 3.45,
-      "balkan_k_max": 3.45,
+      "balkan_k": 3.42,
+      "balkan_k_max": 3.42,
       "station_count": 1,
       "stations": [
         {
           "code": "SUA",
-          "k": 3.45,
-          "disturbance_nt": 21.7
+          "k": 3.42,
+          "disturbance_nt": 21.2
+        }
+      ]
+    },
+    {
+      "time_tag": "2026-07-28 15:00:00",
+      "balkan_k": 2.22,
+      "balkan_k_max": 2.22,
+      "station_count": 1,
+      "stations": [
+        {
+          "code": "SUA",
+          "k": 2.22,
+          "disturbance_nt": 9.1
         }
       ]
     }
@@ -216,8 +229,8 @@
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 2220,
-      "k_windows": 5
+      "valid_readings": 2380,
+      "k_windows": 6
     },
     {
       "code": "GCK",
