@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-31T07:12:46.584Z",
-  "last_check": "2026-07-31T09:59:02.761Z",
+  "last_updated": "2026-07-31T12:15:23.075Z",
+  "last_check": "2026-07-31T12:15:23.075Z",
   "count": 1,
   "sources": [
     "noaa-swpc",
@@ -9,15 +9,14 @@
   ],
   "items": [
     {
-      "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
-      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5392 Issue Time: 2026 Jul 24 0856 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5391 Valid From: 2026 Jul 23 1432 UTC Now Valid Until: 2026 Jul 24 1500 UTC Warning Condition: Persistence NOAA ",
-      "published": "2026-07-24T08:56:02.930Z",
+      "title": "WATCH: Geomagnetic Storm Category G2 Predicted",
+      "excerpt": "Space Weather Message Code: WATA30 Serial Number: 279 Issue Time: 2026 Jul 31 1105 UTC WATCH: Geomagnetic Storm Category G2 Predicted Highest Storm Level Predicted by Day: Jul 31: None (Below G1) Aug 01: None (Below G1) Aug 02: G2 (Moderate) THIS SUPERSEDES ANY/ALL PRIOR WATCHES ",
+      "published": "2026-07-31T11:05:14.830Z",
       "source": "NOAA SWPC",
       "source_id": "noaa-swpc",
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
-      "product_id": "K04W"
+      "product_id": "A30F"
     }
-  ],
-  "last_check_status": "all_sources_failed"
+  ]
 }
