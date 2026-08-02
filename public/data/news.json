@@ -1,13 +1,23 @@
 {
-  "last_updated": "2026-08-02T15:18:11.691Z",
-  "last_check": "2026-08-02T15:18:11.691Z",
-  "count": 6,
+  "last_updated": "2026-08-02T17:13:54.076Z",
+  "last_check": "2026-08-02T17:13:54.076Z",
+  "count": 7,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
+      "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1118 Issue Time: 2026 Aug 02 1634 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Aug 03: G1 (Minor) Aug 04: None (Below G1) Aug 05: None (Below G1) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN",
+      "published": "2026-08-02T16:34:29.760Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A20F"
+    },
     {
       "title": "WARNING: Geomagnetic K-index of 5 expected",
       "excerpt": "Space Weather Message Code: WARK05 Serial Number: 2253 Issue Time: 2026 Aug 02 1428 UTC WARNING: Geomagnetic K-index of 5 expected Valid From: 2026 Aug 02 1427 UTC Valid To: 2026 Aug 02 2359 UTC Warning Conditions: Onset Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA",
