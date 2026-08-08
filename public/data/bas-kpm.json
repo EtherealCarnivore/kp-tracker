@@ -2,24 +2,16 @@
   "source": "NIGGG-BAS (Bulgarian Academy of Sciences)",
   "methodology": "Kpm - estimated Kp from ACE satellite data using MAK model",
   "confidence_interval": "±0.63 at 50% probability",
-  "last_updated": "2026-08-08T17:13:10.152Z",
-  "last_check": "2026-08-08T17:13:10.152Z",
+  "last_updated": "2026-08-08T17:49:04.277Z",
+  "last_check": "2026-08-08T17:49:04.277Z",
   "status": "ok",
   "current": {
     "kpm": 5.33,
-    "time_tag": "2026-08-08 17:00:00",
+    "time_tag": "2026-08-08 17:30:00",
     "activity_level": "storm"
   },
   "max_24h": 5.67,
   "entries_15min": [
-    {
-      "time_tag": "2026-08-08 05:00:00",
-      "kpm": 1
-    },
-    {
-      "time_tag": "2026-08-08 05:15:00",
-      "kpm": 1.33
-    },
     {
       "time_tag": "2026-08-08 05:30:00",
       "kpm": 1.33
@@ -207,19 +199,17 @@
     {
       "time_tag": "2026-08-08 17:00:00",
       "kpm": 5.33
-    }
-  ],
-  "forecast_15min": [
+    },
     {
       "time_tag": "2026-08-08 17:15:00",
-      "kpm": 5.33,
-      "type": "forecast"
+      "kpm": 5.33
     },
     {
       "time_tag": "2026-08-08 17:30:00",
-      "kpm": 5.33,
-      "type": "forecast"
-    },
+      "kpm": 5.33
+    }
+  ],
+  "forecast_15min": [
     {
       "time_tag": "2026-08-08 17:45:00",
       "kpm": 5.33,
@@ -232,12 +222,12 @@
     },
     {
       "time_tag": "2026-08-08 18:15:00",
-      "kpm": 5,
+      "kpm": 5.33,
       "type": "forecast"
     },
     {
       "time_tag": "2026-08-08 18:30:00",
-      "kpm": 5,
+      "kpm": 5.33,
       "type": "forecast"
     },
     {
@@ -282,12 +272,12 @@
     },
     {
       "time_tag": "2026-08-08 20:45:00",
-      "kpm": 4.67,
+      "kpm": 5,
       "type": "forecast"
     },
     {
       "time_tag": "2026-08-08 21:00:00",
-      "kpm": 4.67,
+      "kpm": 5,
       "type": "forecast"
     },
     {
@@ -329,15 +319,25 @@
       "time_tag": "2026-08-08 23:00:00",
       "kpm": 4.67,
       "type": "forecast"
+    },
+    {
+      "time_tag": "2026-08-08 23:15:00",
+      "kpm": 4.67,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-08-08 23:30:00",
+      "kpm": 4.67,
+      "type": "forecast"
     }
   ],
   "windows_3h": [
     {
       "time_tag": "2026-08-08 03:00:00",
-      "kpm_avg": 1.25,
+      "kpm_avg": 1.33,
       "kpm_max": 1.33,
       "kpm_latest": 1.33,
-      "readings": 4
+      "readings": 2
     },
     {
       "time_tag": "2026-08-08 06:00:00",
@@ -362,10 +362,10 @@
     },
     {
       "time_tag": "2026-08-08 15:00:00",
-      "kpm_avg": 4.74,
+      "kpm_avg": 4.85,
       "kpm_max": 5.33,
       "kpm_latest": 5.33,
-      "readings": 9
+      "readings": 11
     }
   ]
 }
