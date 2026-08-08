@@ -2,15 +2,15 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT",
-  "last_updated": "2026-08-08T21:34:24.262Z",
+  "last_updated": "2026-08-08T22:34:17.921Z",
   "status": "ok",
   "current": {
-    "balkan_k": 3.01,
+    "balkan_k": 2.92,
     "time_tag": "2026-08-08 21:00:00",
-    "activity_level": "unsettled",
+    "activity_level": "quiet",
     "station_count": 2
   },
-  "max_24h": 5.07,
+  "max_24h": 5.03,
   "windows_3h": [
     {
       "time_tag": "2026-08-08 00:00:00",
@@ -122,37 +122,37 @@
     },
     {
       "time_tag": "2026-08-08 18:00:00",
-      "balkan_k": 5.07,
-      "balkan_k_max": 5.23,
+      "balkan_k": 5.03,
+      "balkan_k_max": 5.21,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 4.91,
-          "disturbance_nt": 47.7
+          "k": 4.85,
+          "disturbance_nt": 46.6
         },
         {
           "code": "SUA",
-          "k": 5.23,
-          "disturbance_nt": 60.8
+          "k": 5.21,
+          "disturbance_nt": 60.1
         }
       ]
     },
     {
       "time_tag": "2026-08-08 21:00:00",
-      "balkan_k": 3.01,
-      "balkan_k_max": 3.13,
+      "balkan_k": 2.92,
+      "balkan_k_max": 3.04,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 3.13,
-          "disturbance_nt": 16.1
+          "k": 3.04,
+          "disturbance_nt": 14.8
         },
         {
           "code": "SUA",
-          "k": 2.88,
-          "disturbance_nt": 14
+          "k": 2.8,
+          "disturbance_nt": 13.4
         }
       ]
     }
@@ -163,7 +163,7 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2730,
+      "valid_readings": 2790,
       "k_windows": 8
     },
     {
@@ -171,7 +171,7 @@
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 2720,
+      "valid_readings": 2780,
       "k_windows": 8
     },
     {
