@@ -2,15 +2,15 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT",
-  "last_updated": "2026-08-08T22:34:17.921Z",
+  "last_updated": "2026-08-08T23:33:37.556Z",
   "status": "ok",
   "current": {
-    "balkan_k": 2.92,
+    "balkan_k": 3.04,
     "time_tag": "2026-08-08 21:00:00",
-    "activity_level": "quiet",
+    "activity_level": "unsettled",
     "station_count": 2
   },
-  "max_24h": 5.03,
+  "max_24h": 5,
   "windows_3h": [
     {
       "time_tag": "2026-08-08 00:00:00",
@@ -122,37 +122,37 @@
     },
     {
       "time_tag": "2026-08-08 18:00:00",
-      "balkan_k": 5.03,
-      "balkan_k_max": 5.21,
+      "balkan_k": 5,
+      "balkan_k_max": 5.18,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 4.85,
-          "disturbance_nt": 46.6
+          "k": 4.82,
+          "disturbance_nt": 45.8
         },
         {
           "code": "SUA",
-          "k": 5.21,
-          "disturbance_nt": 60.1
+          "k": 5.18,
+          "disturbance_nt": 59.1
         }
       ]
     },
     {
       "time_tag": "2026-08-08 21:00:00",
-      "balkan_k": 2.92,
-      "balkan_k_max": 3.04,
+      "balkan_k": 3.04,
+      "balkan_k_max": 3.11,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 3.04,
-          "disturbance_nt": 14.8
+          "k": 2.96,
+          "disturbance_nt": 13.9
         },
         {
           "code": "SUA",
-          "k": 2.8,
-          "disturbance_nt": 13.4
+          "k": 3.11,
+          "disturbance_nt": 16.6
         }
       ]
     }
@@ -163,7 +163,7 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2790,
+      "valid_readings": 2850,
       "k_windows": 8
     },
     {
@@ -171,7 +171,7 @@
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 2780,
+      "valid_readings": 2840,
       "k_windows": 8
     },
     {
