@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-08-10T02:32:59.463Z",
-  "last_check": "2026-08-10T02:32:59.463Z",
-  "count": 18,
+  "last_updated": "2026-08-10T04:52:30.397Z",
+  "last_check": "2026-08-10T04:52:30.397Z",
+  "count": 16,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -162,26 +162,6 @@
       "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
       "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5396 Issue Time: 2026 Aug 03 2003 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5395 Valid From: 2026 Aug 02 1237 UTC Now Valid Until: 2026 Aug 04 0000 UTC Warning Condition: Persistence NOAA ",
       "published": "2026-08-03T20:03:52.160Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K04W"
-    },
-    {
-      "title": "EXTENDED WARNING: Geomagnetic K-index of 5 expected",
-      "excerpt": "Space Weather Message Code: WARK05 Serial Number: 2255 Issue Time: 2026 Aug 03 0253 UTC EXTENDED WARNING: Geomagnetic K-index of 5 expected Extension to Serial Number: 2254 Valid From: 2026 Aug 02 1427 UTC Now Valid Until: 2026 Aug 03 1500 UTC Warning Condition: Persistence NOAA ",
-      "published": "2026-08-03T02:53:49.763Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K05W"
-    },
-    {
-      "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
-      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5395 Issue Time: 2026 Aug 03 0253 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5394 Valid From: 2026 Aug 02 1237 UTC Now Valid Until: 2026 Aug 03 2100 UTC Warning Condition: Persistence NOAA ",
-      "published": "2026-08-03T02:53:13.473Z",
       "source": "NOAA SWPC",
       "source_id": "noaa-swpc",
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
