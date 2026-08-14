@@ -1,13 +1,23 @@
 {
-  "last_updated": "2026-08-14T10:15:23.085Z",
-  "last_check": "2026-08-14T10:15:23.085Z",
-  "count": 16,
+  "last_updated": "2026-08-14T11:55:43.272Z",
+  "last_check": "2026-08-14T11:55:43.272Z",
+  "count": 17,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5401 Issue Time: 2026 Aug 14 1054 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Aug 14 1052 UTC Valid To: 2026 Aug 14 2359 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
+      "published": "2026-08-14T10:54:33.670Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04W"
+    },
     {
       "title": "Space Weather Message Code: WATA20",
       "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1120 Issue Time: 2026 Aug 11 2055 UTC CANCEL WATCH: Geomagnetic Storm Category G1 Predicted Cancel Serial Number: 1119 Original Issue Time: 2026 Aug 09 1338 UTC Cancelled Level Predicted: Aug 10 : None (Bellow G1) Aug 11 : None (B",
