@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-08-16T12:59:15.584Z",
-  "last_check": "2026-08-16T12:59:15.584Z",
-  "count": 5,
+  "last_updated": "2026-08-16T13:43:44.955Z",
+  "last_check": "2026-08-16T13:43:44.955Z",
+  "count": 4,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -47,16 +47,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "SGIW"
-    },
-    {
-      "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
-      "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1119 Issue Time: 2026 Aug 09 1338 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Aug 10: None (Below G1) Aug 11: None (Below G1) Aug 12: G1 (Minor) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN",
-      "published": "2026-08-09T13:38:09.543Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "A20F"
     }
   ]
 }
