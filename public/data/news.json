@@ -1,13 +1,23 @@
 {
-  "last_updated": "2026-08-17T22:39:23.981Z",
-  "last_check": "2026-08-17T22:39:23.981Z",
-  "count": 6,
+  "last_updated": "2026-08-17T23:34:40.257Z",
+  "last_check": "2026-08-17T23:34:40.257Z",
+  "count": 7,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
+      "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1121 Issue Time: 2026 Aug 17 2246 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Aug 18: None (Below G1) Aug 19: G1 (Minor) Aug 20: None (Below G1) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN",
+      "published": "2026-08-17T22:46:24.740Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A20F"
+    },
     {
       "title": "ALERT: Geomagnetic K-index of 4",
       "excerpt": "Space Weather Message Code: ALTK04 Serial Number: 2680 Issue Time: 2026 Aug 17 2105 UTC ALERT: Geomagnetic K-index of 4 Threshold Reached: 2026 Aug 17 2059 UTC Synoptic Period: 1800-2100 Active Warning: YES Comment: NOAA Space Weather Scale descriptions can be found at www.swpc.n",
