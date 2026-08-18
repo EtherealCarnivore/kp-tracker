@@ -2,24 +2,16 @@
   "source": "NIGGG-BAS (Bulgarian Academy of Sciences)",
   "methodology": "Kpm - estimated Kp from ACE satellite data using MAK model",
   "confidence_interval": "±0.63 at 50% probability",
-  "last_updated": "2026-08-18T16:36:00.557Z",
-  "last_check": "2026-08-18T16:36:00.557Z",
+  "last_updated": "2026-08-18T17:06:03.911Z",
+  "last_check": "2026-08-18T17:06:03.911Z",
   "status": "ok",
   "current": {
     "kpm": 3,
-    "time_tag": "2026-08-18 16:15:00",
+    "time_tag": "2026-08-18 16:45:00",
     "activity_level": "quiet"
   },
   "max_24h": 4,
   "entries_15min": [
-    {
-      "time_tag": "2026-08-18 04:15:00",
-      "kpm": 4
-    },
-    {
-      "time_tag": "2026-08-18 04:30:00",
-      "kpm": 4
-    },
     {
       "time_tag": "2026-08-18 04:45:00",
       "kpm": 4
@@ -207,19 +199,17 @@
     {
       "time_tag": "2026-08-18 16:15:00",
       "kpm": 3
-    }
-  ],
-  "forecast_15min": [
+    },
     {
       "time_tag": "2026-08-18 16:30:00",
-      "kpm": 3,
-      "type": "forecast"
+      "kpm": 3
     },
     {
       "time_tag": "2026-08-18 16:45:00",
-      "kpm": 3,
-      "type": "forecast"
-    },
+      "kpm": 3
+    }
+  ],
+  "forecast_15min": [
     {
       "time_tag": "2026-08-18 17:00:00",
       "kpm": 3,
@@ -329,15 +319,25 @@
       "time_tag": "2026-08-18 22:15:00",
       "kpm": 3,
       "type": "forecast"
+    },
+    {
+      "time_tag": "2026-08-18 22:30:00",
+      "kpm": 3,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-08-18 22:45:00",
+      "kpm": 3,
+      "type": "forecast"
     }
   ],
   "windows_3h": [
     {
       "time_tag": "2026-08-18 03:00:00",
-      "kpm_avg": 3.95,
+      "kpm_avg": 3.93,
       "kpm_max": 4,
       "kpm_latest": 3.67,
-      "readings": 7
+      "readings": 5
     },
     {
       "time_tag": "2026-08-18 06:00:00",
@@ -362,10 +362,10 @@
     },
     {
       "time_tag": "2026-08-18 15:00:00",
-      "kpm_avg": 2.89,
+      "kpm_avg": 2.92,
       "kpm_max": 3,
       "kpm_latest": 3,
-      "readings": 6
+      "readings": 8
     }
   ]
 }
