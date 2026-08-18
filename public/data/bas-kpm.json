@@ -2,24 +2,16 @@
   "source": "NIGGG-BAS (Bulgarian Academy of Sciences)",
   "methodology": "Kpm - estimated Kp from ACE satellite data using MAK model",
   "confidence_interval": "±0.63 at 50% probability",
-  "last_updated": "2026-08-18T21:59:00.548Z",
-  "last_check": "2026-08-18T21:59:00.548Z",
+  "last_updated": "2026-08-18T22:34:21.167Z",
+  "last_check": "2026-08-18T22:34:21.167Z",
   "status": "ok",
   "current": {
     "kpm": 4,
-    "time_tag": "2026-08-18 21:30:00",
+    "time_tag": "2026-08-18 22:00:00",
     "activity_level": "active"
   },
   "max_24h": 4.67,
   "entries_15min": [
-    {
-      "time_tag": "2026-08-18 09:45:00",
-      "kpm": 3
-    },
-    {
-      "time_tag": "2026-08-18 10:00:00",
-      "kpm": 3
-    },
     {
       "time_tag": "2026-08-18 10:15:00",
       "kpm": 3
@@ -203,19 +195,17 @@
     {
       "time_tag": "2026-08-18 21:30:00",
       "kpm": 4
+    },
+    {
+      "time_tag": "2026-08-18 21:45:00",
+      "kpm": 4
+    },
+    {
+      "time_tag": "2026-08-18 22:00:00",
+      "kpm": 4
     }
   ],
   "forecast_15min": [
-    {
-      "time_tag": "2026-08-18 22:00:00",
-      "kpm": 4,
-      "type": "forecast"
-    },
-    {
-      "time_tag": "2026-08-18 22:15:00",
-      "kpm": 4,
-      "type": "forecast"
-    },
     {
       "time_tag": "2026-08-18 22:30:00",
       "kpm": 4,
@@ -325,15 +315,25 @@
       "time_tag": "2026-08-19 03:45:00",
       "kpm": 4,
       "type": "forecast"
+    },
+    {
+      "time_tag": "2026-08-19 04:00:00",
+      "kpm": 4,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-08-19 04:15:00",
+      "kpm": 4,
+      "type": "forecast"
     }
   ],
   "windows_3h": [
     {
       "time_tag": "2026-08-18 09:00:00",
-      "kpm_avg": 2.89,
+      "kpm_avg": 2.86,
       "kpm_max": 3,
       "kpm_latest": 2.67,
-      "readings": 9
+      "readings": 7
     },
     {
       "time_tag": "2026-08-18 12:00:00",
@@ -358,10 +358,10 @@
     },
     {
       "time_tag": "2026-08-18 21:00:00",
-      "kpm_avg": 4.11,
+      "kpm_avg": 4.07,
       "kpm_max": 4.33,
       "kpm_latest": 4,
-      "readings": 3
+      "readings": 5
     }
   ]
 }
