@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-08-18T11:39:15.429Z",
-  "last_check": "2026-08-18T11:39:15.429Z",
-  "count": 9,
+  "last_updated": "2026-08-18T13:06:28.002Z",
+  "last_check": "2026-08-18T13:06:28.002Z",
+  "count": 8,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -87,16 +87,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "A20F"
-    },
-    {
-      "title": "SUMMARY: Geomagnetic Sudden Impulse",
-      "excerpt": "Space Weather Message Code: SUMSUD Serial Number: 302 Issue Time: 2026 Aug 11 1141 UTC SUMMARY: Geomagnetic Sudden Impulse Observed: 2026 Aug 11 1133 UTC Deviation: 12 nT Station: BOU Comment:",
-      "published": "2026-08-11T11:41:52.250Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "MSIS"
     }
   ]
 }
