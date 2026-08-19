@@ -2,24 +2,16 @@
   "source": "NIGGG-BAS (Bulgarian Academy of Sciences)",
   "methodology": "Kpm - estimated Kp from ACE satellite data using MAK model",
   "confidence_interval": "±0.63 at 50% probability",
-  "last_updated": "2026-08-19T19:29:18.206Z",
-  "last_check": "2026-08-19T19:29:18.206Z",
+  "last_updated": "2026-08-19T19:53:05.732Z",
+  "last_check": "2026-08-19T19:53:05.732Z",
   "status": "ok",
   "current": {
     "kpm": 3,
-    "time_tag": "2026-08-19 19:15:00",
+    "time_tag": "2026-08-19 19:45:00",
     "activity_level": "quiet"
   },
   "max_24h": 3.67,
   "entries_15min": [
-    {
-      "time_tag": "2026-08-19 07:15:00",
-      "kpm": 3.67
-    },
-    {
-      "time_tag": "2026-08-19 07:30:00",
-      "kpm": 3.67
-    },
     {
       "time_tag": "2026-08-19 07:45:00",
       "kpm": 3.67
@@ -202,24 +194,22 @@
     },
     {
       "time_tag": "2026-08-19 19:00:00",
-      "kpm": 3
+      "kpm": 2.67
     },
     {
       "time_tag": "2026-08-19 19:15:00",
       "kpm": 3
-    }
-  ],
-  "forecast_15min": [
+    },
     {
       "time_tag": "2026-08-19 19:30:00",
-      "kpm": 3,
-      "type": "forecast"
+      "kpm": 3
     },
     {
       "time_tag": "2026-08-19 19:45:00",
-      "kpm": 3,
-      "type": "forecast"
-    },
+      "kpm": 3
+    }
+  ],
+  "forecast_15min": [
     {
       "time_tag": "2026-08-19 20:00:00",
       "kpm": 3,
@@ -329,6 +319,16 @@
       "time_tag": "2026-08-20 01:15:00",
       "kpm": 3,
       "type": "forecast"
+    },
+    {
+      "time_tag": "2026-08-20 01:30:00",
+      "kpm": 3,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-08-20 01:45:00",
+      "kpm": 3,
+      "type": "forecast"
     }
   ],
   "windows_3h": [
@@ -337,7 +337,7 @@
       "kpm_avg": 3.67,
       "kpm_max": 3.67,
       "kpm_latest": 3.67,
-      "readings": 7
+      "readings": 5
     },
     {
       "time_tag": "2026-08-19 09:00:00",
@@ -362,10 +362,10 @@
     },
     {
       "time_tag": "2026-08-19 18:00:00",
-      "kpm_avg": 2.78,
+      "kpm_avg": 2.79,
       "kpm_max": 3,
       "kpm_latest": 3,
-      "readings": 6
+      "readings": 8
     }
   ]
 }
