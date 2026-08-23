@@ -2,117 +2,26 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT",
-  "last_updated": "2026-08-22T23:47:42.993Z",
+  "last_updated": "2026-08-23T01:42:42.313Z",
   "status": "ok",
   "current": {
-    "balkan_k": 1.13,
-    "time_tag": "2026-08-22 21:00:00",
+    "balkan_k": 0.53,
+    "time_tag": "2026-08-23 00:00:00",
     "activity_level": "quiet",
     "station_count": 1
   },
-  "max_24h": 4.14,
+  "max_24h": 0.53,
   "windows_3h": [
     {
-      "time_tag": "2026-08-22 00:00:00",
-      "balkan_k": 1.01,
-      "balkan_k_max": 1.01,
+      "time_tag": "2026-08-23 00:00:00",
+      "balkan_k": 0.53,
+      "balkan_k_max": 0.53,
       "station_count": 1,
       "stations": [
         {
           "code": "PAG",
-          "k": 1.01,
-          "disturbance_nt": 3.6
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-08-22 03:00:00",
-      "balkan_k": 2.97,
-      "balkan_k_max": 2.97,
-      "station_count": 1,
-      "stations": [
-        {
-          "code": "PAG",
-          "k": 2.97,
-          "disturbance_nt": 14
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-08-22 06:00:00",
-      "balkan_k": 2.96,
-      "balkan_k_max": 2.96,
-      "station_count": 1,
-      "stations": [
-        {
-          "code": "PAG",
-          "k": 2.96,
-          "disturbance_nt": 13.9
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-08-22 09:00:00",
-      "balkan_k": 4.14,
-      "balkan_k_max": 4.14,
-      "station_count": 1,
-      "stations": [
-        {
-          "code": "PAG",
-          "k": 4.14,
-          "disturbance_nt": 31.3
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-08-22 12:00:00",
-      "balkan_k": 3.11,
-      "balkan_k_max": 3.11,
-      "station_count": 1,
-      "stations": [
-        {
-          "code": "PAG",
-          "k": 3.11,
-          "disturbance_nt": 15.8
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-08-22 15:00:00",
-      "balkan_k": 2.35,
-      "balkan_k_max": 2.35,
-      "station_count": 1,
-      "stations": [
-        {
-          "code": "PAG",
-          "k": 2.35,
-          "disturbance_nt": 9.6
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-08-22 18:00:00",
-      "balkan_k": 0.96,
-      "balkan_k_max": 0.96,
-      "station_count": 1,
-      "stations": [
-        {
-          "code": "PAG",
-          "k": 0.96,
-          "disturbance_nt": 3.4
-        }
-      ]
-    },
-    {
-      "time_tag": "2026-08-22 21:00:00",
-      "balkan_k": 1.13,
-      "balkan_k_max": 1.13,
-      "station_count": 1,
-      "stations": [
-        {
-          "code": "PAG",
-          "k": 1.13,
-          "disturbance_nt": 4
+          "k": 0.53,
+          "disturbance_nt": 1.9
         }
       ]
     }
@@ -123,8 +32,8 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2857,
-      "k_windows": 8
+      "valid_readings": 1537,
+      "k_windows": 1
     },
     {
       "code": "SUA",
