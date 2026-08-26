@@ -1,13 +1,23 @@
 {
-  "last_updated": "2026-08-26T15:51:36.394Z",
-  "last_check": "2026-08-26T15:51:36.394Z",
-  "count": 2,
+  "last_updated": "2026-08-26T16:58:05.065Z",
+  "last_check": "2026-08-26T16:58:05.065Z",
+  "count": 3,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WATCH: Geomagnetic Storm Category G2 Predicted",
+      "excerpt": "Space Weather Message Code: WATA30 Serial Number: 280 Issue Time: 2026 Aug 26 1636 UTC WATCH: Geomagnetic Storm Category G2 Predicted Highest Storm Level Predicted by Day: Aug 27: G1 (Minor) Aug 28: G2 (Moderate) Aug 29: G2 (Moderate) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EFFE",
+      "published": "2026-08-26T16:36:10.973Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A30F"
+    },
     {
       "title": "WATCH: Geomagnetic Storm Category G2 Predicted",
       "excerpt": "Space Weather Message Code: WATA30 Serial Number: 280 Issue Time: 2026 Aug 25 1838 UTC WATCH: Geomagnetic Storm Category G2 Predicted Highest Storm Level Predicted by Day: Aug 26: None (Below G1) Aug 27: G1 (Minor) Aug 28: G2 (Moderate) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EF",
