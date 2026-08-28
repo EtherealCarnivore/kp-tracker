@@ -1,13 +1,33 @@
 {
-  "last_updated": "2026-08-28T05:22:40.934Z",
-  "last_check": "2026-08-28T05:22:40.934Z",
-  "count": 2,
+  "last_updated": "2026-08-28T18:40:05.989Z",
+  "last_check": "2026-08-28T18:40:05.989Z",
+  "count": 4,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "ALERT: Geomagnetic K-index of 4",
+      "excerpt": "Space Weather Message Code: ALTK04 Serial Number: 2681 Issue Time: 2026 Aug 28 1502 UTC ALERT: Geomagnetic K-index of 4 Threshold Reached: 2026 Aug 28 1500 UTC Synoptic Period: 1500-1800 Active Warning: YES Comment: NOAA Space Weather Scale descriptions can be found at www.swpc.n",
+      "published": "2026-08-28T15:02:40.837Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04A"
+    },
+    {
+      "title": "WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5407 Issue Time: 2026 Aug 28 1411 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Aug 28 1409 UTC Valid To: 2026 Aug 28 2359 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
+      "published": "2026-08-28T14:11:14.530Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04W"
+    },
     {
       "title": "WATCH: Geomagnetic Storm Category G2 Predicted",
       "excerpt": "Space Weather Message Code: WATA30 Serial Number: 280 Issue Time: 2026 Aug 26 1636 UTC WATCH: Geomagnetic Storm Category G2 Predicted Highest Storm Level Predicted by Day: Aug 27: G1 (Minor) Aug 28: G2 (Moderate) Aug 29: G2 (Moderate) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EFFE",
