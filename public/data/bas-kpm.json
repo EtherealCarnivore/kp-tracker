@@ -2,48 +2,16 @@
   "source": "NIGGG-BAS (Bulgarian Academy of Sciences)",
   "methodology": "Kpm - estimated Kp from ACE satellite data using MAK model",
   "confidence_interval": "±0.63 at 50% probability",
-  "last_updated": "2026-09-04T20:57:14.684Z",
-  "last_check": "2026-09-04T20:57:14.684Z",
+  "last_updated": "2026-09-04T22:57:51.779Z",
+  "last_check": "2026-09-04T22:57:51.779Z",
   "status": "ok",
   "current": {
     "kpm": 1,
-    "time_tag": "2026-09-04 20:30:00",
+    "time_tag": "2026-09-04 22:45:00",
     "activity_level": "quiet"
   },
   "max_24h": 1.67,
   "entries_15min": [
-    {
-      "time_tag": "2026-09-04 08:45:00",
-      "kpm": 1.67
-    },
-    {
-      "time_tag": "2026-09-04 09:00:00",
-      "kpm": 1.67
-    },
-    {
-      "time_tag": "2026-09-04 09:15:00",
-      "kpm": 1.67
-    },
-    {
-      "time_tag": "2026-09-04 09:30:00",
-      "kpm": 1.67
-    },
-    {
-      "time_tag": "2026-09-04 09:45:00",
-      "kpm": 1.67
-    },
-    {
-      "time_tag": "2026-09-04 10:00:00",
-      "kpm": 1.67
-    },
-    {
-      "time_tag": "2026-09-04 10:15:00",
-      "kpm": 1.67
-    },
-    {
-      "time_tag": "2026-09-04 10:30:00",
-      "kpm": 1.67
-    },
     {
       "time_tag": "2026-09-04 10:45:00",
       "kpm": 1.67
@@ -203,49 +171,45 @@
     {
       "time_tag": "2026-09-04 20:30:00",
       "kpm": 1
-    }
-  ],
-  "forecast_15min": [
+    },
+    {
+      "time_tag": "2026-09-04 20:45:00",
+      "kpm": 1
+    },
     {
       "time_tag": "2026-09-04 21:00:00",
-      "kpm": 1,
-      "type": "forecast"
+      "kpm": 1
     },
     {
       "time_tag": "2026-09-04 21:15:00",
-      "kpm": 1,
-      "type": "forecast"
+      "kpm": 1
     },
     {
       "time_tag": "2026-09-04 21:30:00",
-      "kpm": 1,
-      "type": "forecast"
+      "kpm": 1
     },
     {
       "time_tag": "2026-09-04 21:45:00",
-      "kpm": 1,
-      "type": "forecast"
+      "kpm": 1
     },
     {
       "time_tag": "2026-09-04 22:00:00",
-      "kpm": 1,
-      "type": "forecast"
+      "kpm": 1
     },
     {
       "time_tag": "2026-09-04 22:15:00",
-      "kpm": 1,
-      "type": "forecast"
+      "kpm": 1
     },
     {
       "time_tag": "2026-09-04 22:30:00",
-      "kpm": 1,
-      "type": "forecast"
+      "kpm": 1
     },
     {
       "time_tag": "2026-09-04 22:45:00",
-      "kpm": 1,
-      "type": "forecast"
-    },
+      "kpm": 1
+    }
+  ],
+  "forecast_15min": [
     {
       "time_tag": "2026-09-04 23:00:00",
       "kpm": 1,
@@ -325,22 +289,55 @@
       "time_tag": "2026-09-05 02:45:00",
       "kpm": 1,
       "type": "forecast"
+    },
+    {
+      "time_tag": "2026-09-05 03:00:00",
+      "kpm": 1,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-09-05 03:15:00",
+      "kpm": 1,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-09-05 03:30:00",
+      "kpm": 1,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-09-05 03:45:00",
+      "kpm": 1,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-09-05 04:00:00",
+      "kpm": 1,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-09-05 04:15:00",
+      "kpm": 1,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-09-05 04:30:00",
+      "kpm": 1,
+      "type": "forecast"
+    },
+    {
+      "time_tag": "2026-09-05 04:45:00",
+      "kpm": 1,
+      "type": "forecast"
     }
   ],
   "windows_3h": [
     {
-      "time_tag": "2026-09-04 06:00:00",
-      "kpm_avg": 1.67,
-      "kpm_max": 1.67,
-      "kpm_latest": 1.67,
-      "readings": 1
-    },
-    {
       "time_tag": "2026-09-04 09:00:00",
-      "kpm_avg": 1.61,
+      "kpm_avg": 1.53,
       "kpm_max": 1.67,
       "kpm_latest": 1.67,
-      "readings": 12
+      "readings": 5
     },
     {
       "time_tag": "2026-09-04 12:00:00",
@@ -361,7 +358,14 @@
       "kpm_avg": 1,
       "kpm_max": 1,
       "kpm_latest": 1,
-      "readings": 11
+      "readings": 12
+    },
+    {
+      "time_tag": "2026-09-04 21:00:00",
+      "kpm_avg": 1,
+      "kpm_max": 1,
+      "kpm_latest": 1,
+      "readings": 8
     }
   ]
 }
