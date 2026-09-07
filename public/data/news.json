@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-07T04:38:41.889Z",
-  "last_check": "2026-09-07T04:38:41.889Z",
+  "last_updated": "2026-09-07T10:15:33.054Z",
+  "last_check": "2026-09-07T10:15:33.054Z",
   "count": 2,
   "sources": [
     "noaa-swpc",
@@ -8,6 +8,16 @@
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5412 Issue Time: 2026 Sep 07 0855 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Sep 07 0854 UTC Valid To: 2026 Sep 07 1800 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
+      "published": "2026-09-07T08:55:00.770Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04W"
+    },
     {
       "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
       "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1122 Issue Time: 2026 Sep 06 1212 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Sep 06: None (Below G1) Sep 07: None (Below G1) Sep 08: G1 (Minor) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN",
@@ -17,16 +27,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "A20F"
-    },
-    {
-      "title": "WARNING: Geomagnetic K-index of 4 expected",
-      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5411 Issue Time: 2026 Aug 31 0858 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Aug 31 0858 UTC Valid To: 2026 Aug 31 1500 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
-      "published": "2026-08-31T08:58:42.793Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K04W"
     }
   ]
 }
