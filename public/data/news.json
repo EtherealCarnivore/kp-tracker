@@ -1,13 +1,33 @@
 {
-  "last_updated": "2026-09-07T16:26:19.830Z",
-  "last_check": "2026-09-07T16:26:19.830Z",
-  "count": 4,
+  "last_updated": "2026-09-07T20:33:29.619Z",
+  "last_check": "2026-09-07T20:33:29.619Z",
+  "count": 6,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WARNING: Geomagnetic K-index of 5 expected",
+      "excerpt": "Space Weather Message Code: WARK05 Serial Number: 2262 Issue Time: 2026 Sep 07 2001 UTC WARNING: Geomagnetic K-index of 5 expected Valid From: 2026 Sep 07 2000 UTC Valid To: 2026 Sep 08 0600 UTC Warning Conditions: Onset Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA",
+      "published": "2026-09-07T20:01:31.767Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K05W"
+    },
+    {
+      "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
+      "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1123 Issue Time: 2026 Sep 07 1635 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Sep 08: G1 (Minor) Sep 09: G1 (Minor) Sep 10: None (Below G1) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EFFE",
+      "published": "2026-09-07T16:35:08.480Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A20F"
+    },
     {
       "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
       "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5413 Issue Time: 2026 Sep 07 1413 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5412 Valid From: 2026 Sep 07 0854 UTC Now Valid Until: 2026 Sep 08 0900 UTC Warning Condition: Persistence NOAA ",
