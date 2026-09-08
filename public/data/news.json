@@ -1,13 +1,53 @@
 {
-  "last_updated": "2026-09-08T14:31:14.708Z",
-  "last_check": "2026-09-08T14:31:14.708Z",
-  "count": 9,
+  "last_updated": "2026-09-08T18:38:57.655Z",
+  "last_check": "2026-09-08T18:38:57.655Z",
+  "count": 13,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "ALERT: Geomagnetic K-index of 5",
+      "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2049 Issue Time: 2026 Sep 08 1751 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Sep 08 1744 UTC Synoptic Period: 1500-1800 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
+      "published": "2026-09-08T17:51:10.343Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K05A"
+    },
+    {
+      "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5415 Issue Time: 2026 Sep 08 1730 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5414 Valid From: 2026 Sep 07 0854 UTC Now Valid Until: 2026 Sep 09 0900 UTC Warning Condition: Persistence NOAA ",
+      "published": "2026-09-08T17:30:02.647Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04W"
+    },
+    {
+      "title": "EXTENDED WARNING: Geomagnetic K-index of 5 expected",
+      "excerpt": "Space Weather Message Code: WARK05 Serial Number: 2264 Issue Time: 2026 Sep 08 1727 UTC EXTENDED WARNING: Geomagnetic K-index of 5 expected Extension to Serial Number: 2263 Valid From: 2026 Sep 07 2000 UTC Now Valid Until: 2026 Sep 08 2359 UTC Warning Condition: Persistence NOAA ",
+      "published": "2026-09-08T17:27:15.710Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K05W"
+    },
+    {
+      "title": "WATCH: Geomagnetic Storm Category G2 Predicted",
+      "excerpt": "Space Weather Message Code: WATA30 Serial Number: 281 Issue Time: 2026 Sep 08 1702 UTC WATCH: Geomagnetic Storm Category G2 Predicted Highest Storm Level Predicted by Day: Sep 08: G1 (Minor) Sep 09: G2 (Moderate) Sep 10: None (Below G1) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EF",
+      "published": "2026-09-08T17:02:16.717Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A30F"
+    },
     {
       "title": "ALERT: Geomagnetic K-index of 5",
       "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2048 Issue Time: 2026 Sep 08 0734 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Sep 08 0730 UTC Synoptic Period: 0600-0900 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
