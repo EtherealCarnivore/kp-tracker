@@ -1,13 +1,23 @@
 {
-  "last_updated": "2026-09-09T18:34:55.482Z",
-  "last_check": "2026-09-09T18:34:55.482Z",
-  "count": 13,
+  "last_updated": "2026-09-09T21:41:07.755Z",
+  "last_check": "2026-09-09T21:41:07.755Z",
+  "count": 14,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "Space Weather Message Code: WATA30",
+      "excerpt": "Space Weather Message Code: WATA30 Serial Number: 282 Issue Time: 2026 Sep 09 2101 UTC CANCEL WATCH: Geomagnetic Storm Category G2 Predicted Cancel Serial Number: 281 Original Issue Time: 2026 Sep 08 1702 UTC Cancelled Level Predicted: Sep 08 : None (Bellow G1) Sep 09 : None (Bel",
+      "published": "2026-09-09T21:01:32.307Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A30F"
+    },
     {
       "title": "ALERT: Geomagnetic K-index of 5",
       "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2049 Issue Time: 2026 Sep 08 1751 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Sep 08 1744 UTC Synoptic Period: 1500-1800 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
