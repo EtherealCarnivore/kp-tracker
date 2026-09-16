@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-09-16T20:06:18.733Z",
-  "last_check": "2026-09-16T20:06:18.733Z",
-  "count": 9,
+  "last_updated": "2026-09-16T22:55:13.116Z",
+  "last_check": "2026-09-16T22:55:13.116Z",
+  "count": 8,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -87,16 +87,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "A20F"
-    },
-    {
-      "title": "Space Weather Message Code: WATA30",
-      "excerpt": "Space Weather Message Code: WATA30 Serial Number: 282 Issue Time: 2026 Sep 09 2101 UTC CANCEL WATCH: Geomagnetic Storm Category G2 Predicted Cancel Serial Number: 281 Original Issue Time: 2026 Sep 08 1702 UTC Cancelled Level Predicted: Sep 08 : None (Bellow G1) Sep 09 : None (Bel",
-      "published": "2026-09-09T21:01:32.307Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "A30F"
     }
   ]
 }
