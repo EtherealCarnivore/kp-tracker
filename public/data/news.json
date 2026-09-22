@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-09-22T18:53:13.921Z",
-  "last_check": "2026-09-22T18:53:13.921Z",
-  "count": 4,
+  "last_updated": "2026-09-22T22:08:00.670Z",
+  "last_check": "2026-09-22T22:08:00.670Z",
+  "count": 3,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -37,16 +37,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K04A"
-    },
-    {
-      "title": "WARNING: Geomagnetic K-index of 5 expected",
-      "excerpt": "Space Weather Message Code: WARK05 Serial Number: 2265 Issue Time: 2026 Sep 15 1856 UTC WARNING: Geomagnetic K-index of 5 expected Valid From: 2026 Sep 15 1855 UTC Valid To: 2026 Sep 16 0600 UTC Warning Conditions: Onset Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA",
-      "published": "2026-09-15T18:56:11.670Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K05W"
     }
   ]
 }
