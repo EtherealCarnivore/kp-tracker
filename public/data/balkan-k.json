@@ -2,11 +2,11 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT",
-  "last_updated": "2026-09-24T20:18:53.955Z",
+  "last_updated": "2026-09-24T23:19:41.525Z",
   "status": "ok",
   "current": {
-    "balkan_k": 3.22,
-    "time_tag": "2026-09-24 18:00:00",
+    "balkan_k": 3.05,
+    "time_tag": "2026-09-24 21:00:00",
     "activity_level": "unsettled",
     "station_count": 2
   },
@@ -248,14 +248,14 @@
     },
     {
       "time_tag": "2026-09-24 15:00:00",
-      "balkan_k": 2.01,
+      "balkan_k": 2,
       "balkan_k_max": 2.19,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 1.83,
-          "disturbance_nt": 6.5
+          "k": 1.8,
+          "disturbance_nt": 6.4
         },
         {
           "code": "SUA",
@@ -266,19 +266,37 @@
     },
     {
       "time_tag": "2026-09-24 18:00:00",
-      "balkan_k": 3.22,
-      "balkan_k_max": 3.22,
+      "balkan_k": 3.06,
+      "balkan_k_max": 3.06,
       "station_count": 2,
       "stations": [
         {
           "code": "PAG",
-          "k": 3.22,
-          "disturbance_nt": 17.3
+          "k": 3.06,
+          "disturbance_nt": 15
         },
         {
           "code": "SUA",
-          "k": 3.21,
-          "disturbance_nt": 18.1
+          "k": 3.05,
+          "disturbance_nt": 15.6
+        }
+      ]
+    },
+    {
+      "time_tag": "2026-09-24 21:00:00",
+      "balkan_k": 3.05,
+      "balkan_k_max": 3.09,
+      "station_count": 2,
+      "stations": [
+        {
+          "code": "PAG",
+          "k": 3.01,
+          "disturbance_nt": 14.4
+        },
+        {
+          "code": "SUA",
+          "k": 3.09,
+          "disturbance_nt": 16.2
         }
       ]
     }
@@ -289,16 +307,16 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2650,
-      "k_windows": 7
+      "valid_readings": 2830,
+      "k_windows": 8
     },
     {
       "code": "SUA",
       "name": "Surlari",
       "country": "Romania",
       "status": "ok",
-      "valid_readings": 2650,
-      "k_windows": 7
+      "valid_readings": 2830,
+      "k_windows": 8
     },
     {
       "code": "GCK",
