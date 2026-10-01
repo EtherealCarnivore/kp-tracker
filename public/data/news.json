@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-01T13:10:47.527Z",
-  "last_check": "2026-10-01T13:10:47.527Z",
+  "last_updated": "2026-10-01T18:52:42.732Z",
+  "last_check": "2026-10-01T18:52:42.732Z",
   "count": 9,
   "sources": [
     "noaa-swpc",
@@ -8,6 +8,16 @@
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
+      "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1128 Issue Time: 2026 Oct 01 1428 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Oct 02: G1 (Minor) Oct 03: None (Below G1) Oct 04: G1 (Minor) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EFFE",
+      "published": "2026-10-01T14:28:54.257Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A20F"
+    },
     {
       "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
       "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1127 Issue Time: 2026 Sep 29 1301 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Sep 30: None (Below G1) Oct 01: None (Below G1) Oct 02: G1 (Minor) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN",
@@ -82,16 +92,6 @@
       "title": "WARNING: Geomagnetic K-index of 4 expected",
       "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5421 Issue Time: 2026 Sep 25 0226 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Sep 25 0226 UTC Valid To: 2026 Sep 25 1800 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
       "published": "2026-09-25T02:26:55.457Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K04W"
-    },
-    {
-      "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
-      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5420 Issue Time: 2026 Sep 24 1430 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5419 Valid From: 2026 Sep 24 0944 UTC Now Valid Until: 2026 Sep 24 2100 UTC Warning Condition: Persistence NOAA ",
-      "published": "2026-09-24T14:30:01.217Z",
       "source": "NOAA SWPC",
       "source_id": "noaa-swpc",
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
