@@ -1,13 +1,22 @@
 {
-  "last_updated": "2026-10-02T09:43:39.224Z",
-  "last_check": "2026-10-02T09:43:39.224Z",
-  "count": 6,
+  "last_updated": "2026-10-02T16:15:36.259Z",
+  "last_check": "2026-10-02T16:15:36.259Z",
+  "count": 7,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "Ще има ли магнитни бури през октомври? Една дата заслужава внимание",
+      "excerpt": "След променливия септември, октомври започва с обещание за значително по-спокойна геомагнитна картина. Предварителните прогнози сочат ниска до умерена активност",
+      "published": "2026-10-02T13:01:00.000Z",
+      "source": "Vesti.bg",
+      "source_id": "vesti-bg",
+      "url": "https://www.vesti.bg/lyubopitno/shte-ima-li-magnitni-buri-prez-oktomvri-edna-data-zasluzhava-vnimanie-6271850",
+      "lang": "bg"
+    },
     {
       "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
       "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1128 Issue Time: 2026 Oct 01 1428 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Oct 02: G1 (Minor) Oct 03: None (Below G1) Oct 04: G1 (Minor) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EFFE",
