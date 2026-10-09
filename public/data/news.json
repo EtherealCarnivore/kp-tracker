@@ -1,13 +1,23 @@
 {
-  "last_updated": "2026-10-09T02:07:59.956Z",
-  "last_check": "2026-10-09T02:07:59.956Z",
-  "count": 18,
+  "last_updated": "2026-10-09T09:01:25.129Z",
+  "last_check": "2026-10-09T09:01:25.129Z",
+  "count": 19,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WATCH: Geomagnetic Storm Category G2 Predicted",
+      "excerpt": "Space Weather Message Code: WATA30 Serial Number: 284 Issue Time: 2026 Oct 09 0812 UTC WATCH: Geomagnetic Storm Category G2 Predicted Highest Storm Level Predicted by Day: Oct 10: None (Below G1) Oct 11: G2 (Moderate) Oct 12: None (Below G1) THIS SUPERSEDES ANY/ALL PRIOR WATCHES ",
+      "published": "2026-10-09T08:12:52.153Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A30F"
+    },
     {
       "title": "WARNING: Geomagnetic K-index of 4 expected",
       "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5429 Issue Time: 2026 Oct 09 0129 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Oct 09 0128 UTC Valid To: 2026 Oct 10 0600 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
