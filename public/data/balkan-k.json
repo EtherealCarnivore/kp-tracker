@@ -2,15 +2,15 @@
   "source": "INTERMAGNET Balkan Stations",
   "methodology": "Regional K-index from ground magnetometer H-component disturbance (PAG, SUA, GCK, PEG)",
   "k_scale": "Per-station IAGA K9: PAG=355, SUA=373, GCK=378, PEG=323 nT",
-  "last_updated": "2026-10-10T17:45:23.018Z",
+  "last_updated": "2026-10-10T21:24:40.042Z",
   "status": "ok",
   "current": {
-    "balkan_k": 5.06,
-    "time_tag": "2026-10-10 15:00:00",
-    "activity_level": "storm",
+    "balkan_k": 3.08,
+    "time_tag": "2026-10-10 21:00:00",
+    "activity_level": "unsettled",
     "station_count": 1
   },
-  "max_24h": 5.06,
+  "max_24h": 6.62,
   "windows_3h": [
     {
       "time_tag": "2026-10-10 00:00:00",
@@ -66,27 +66,53 @@
     },
     {
       "time_tag": "2026-10-10 12:00:00",
-      "balkan_k": 3.09,
-      "balkan_k_max": 3.09,
+      "balkan_k": 3.06,
+      "balkan_k_max": 3.06,
       "station_count": 1,
       "stations": [
         {
           "code": "PAG",
-          "k": 3.09,
-          "disturbance_nt": 15.5
+          "k": 3.06,
+          "disturbance_nt": 15
         }
       ]
     },
     {
       "time_tag": "2026-10-10 15:00:00",
-      "balkan_k": 5.06,
-      "balkan_k_max": 5.06,
+      "balkan_k": 6.62,
+      "balkan_k_max": 6.62,
       "station_count": 1,
       "stations": [
         {
           "code": "PAG",
-          "k": 5.06,
-          "disturbance_nt": 51.8
+          "k": 6.62,
+          "disturbance_nt": 120.6
+        }
+      ]
+    },
+    {
+      "time_tag": "2026-10-10 18:00:00",
+      "balkan_k": 4.08,
+      "balkan_k_max": 4.08,
+      "station_count": 1,
+      "stations": [
+        {
+          "code": "PAG",
+          "k": 4.08,
+          "disturbance_nt": 30.1
+        }
+      ]
+    },
+    {
+      "time_tag": "2026-10-10 21:00:00",
+      "balkan_k": 3.08,
+      "balkan_k_max": 3.08,
+      "station_count": 1,
+      "stations": [
+        {
+          "code": "PAG",
+          "k": 3.08,
+          "disturbance_nt": 15.4
         }
       ]
     }
@@ -97,8 +123,8 @@
       "name": "Panagjurishte",
       "country": "Bulgaria",
       "status": "ok",
-      "valid_readings": 2500,
-      "k_windows": 6
+      "valid_readings": 2720,
+      "k_windows": 8
     },
     {
       "code": "SUA",
