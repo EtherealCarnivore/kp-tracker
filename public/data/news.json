@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-11T01:51:31.769Z",
-  "last_check": "2026-10-11T01:51:31.769Z",
+  "last_updated": "2026-10-11T08:48:05.840Z",
+  "last_check": "2026-10-11T08:48:05.840Z",
   "count": 25,
   "sources": [
     "noaa-swpc",
@@ -8,6 +8,16 @@
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5432 Issue Time: 2026 Oct 11 0457 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5431 Valid From: 2026 Oct 09 0128 UTC Now Valid Until: 2026 Oct 11 1200 UTC Warning Condition: Persistence NOAA ",
+      "published": "2026-10-11T04:57:50.150Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04W"
+    },
     {
       "title": "ALERT: Geomagnetic K-index of 5",
       "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2057 Issue Time: 2026 Oct 10 2145 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Oct 10 2145 UTC Synoptic Period: 2100-2400 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
@@ -247,16 +257,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K04W"
-    },
-    {
-      "title": "ALERT: Geomagnetic K-index of 5",
-      "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2053 Issue Time: 2026 Oct 04 2357 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Oct 04 2357 UTC Synoptic Period: 2100-2400 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
-      "published": "2026-10-04T23:57:49.970Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K05A"
     }
   ]
 }
