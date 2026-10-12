@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-10-11T23:42:32.145Z",
-  "last_check": "2026-10-11T23:42:32.145Z",
-  "count": 25,
+  "last_updated": "2026-10-12T05:54:35.166Z",
+  "last_check": "2026-10-12T05:54:35.166Z",
+  "count": 24,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -247,16 +247,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K04W"
-    },
-    {
-      "title": "ALERT: Geomagnetic K-index of 5",
-      "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2054 Issue Time: 2026 Oct 05 0352 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Oct 05 0352 UTC Synoptic Period: 0300-0600 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
-      "published": "2026-10-05T03:52:52.680Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K05A"
     }
   ]
 }
