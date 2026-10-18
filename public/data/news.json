@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-18T14:33:07.111Z",
-  "last_check": "2026-10-18T14:33:07.111Z",
+  "last_updated": "2026-10-18T18:04:19.041Z",
+  "last_check": "2026-10-18T18:04:19.041Z",
   "count": 8,
   "sources": [
     "noaa-swpc",
@@ -8,6 +8,16 @@
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
+      "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1131 Issue Time: 2026 Oct 18 1724 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Oct 19: G1 (Minor) Oct 20: G1 (Minor) Oct 21: None (Below G1) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EFFE",
+      "published": "2026-10-18T17:24:58.920Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A20F"
+    },
     {
       "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
       "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1130 Issue Time: 2026 Oct 17 2014 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Oct 18: None (Below G1) Oct 19: None (Below G1) Oct 20: G1 (Minor) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN",
@@ -77,16 +87,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "A20F"
-    },
-    {
-      "title": "Space Weather Message Code: WATA30",
-      "excerpt": "Space Weather Message Code: WATA30 Serial Number: 286 Issue Time: 2026 Oct 11 1702 UTC CANCEL WATCH: Geomagnetic Storm Category G2 Predicted Cancel Serial Number: 285 Original Issue Time: 2026 Oct 09 1636 UTC Cancelled Level Predicted: Oct 11 : None (Below G1) Conditions no longe",
-      "published": "2026-10-11T17:02:59.390Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "A30F"
     }
   ]
 }
