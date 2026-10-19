@@ -1,13 +1,22 @@
 {
-  "last_updated": "2026-10-19T07:44:31.850Z",
-  "last_check": "2026-10-19T07:44:31.850Z",
-  "count": 7,
+  "last_updated": "2026-10-19T15:34:35.049Z",
+  "last_check": "2026-10-19T15:34:35.049Z",
+  "count": 8,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "Румънска изпълнителка е големият победител в 30-ото „Северно сияние\"",
+      "excerpt": "В международния конкурс за песен русенката Магдалена Тодорова заслужи Наградата на кмета Пенчо Милков, информират от община Русе. Патриция-Елена Тимофте от Румъния спечели Голямата награда на 30-ото издание на Международния конкурс за млади изпълнители на българска и популярна пе",
+      "published": "2026-10-19T12:15:00.000Z",
+      "source": "24 часа",
+      "source_id": "24chasa-bg",
+      "url": "https://www.24chasa.bg/bulgaria/article/23760283",
+      "lang": "bg"
+    },
     {
       "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
       "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1131 Issue Time: 2026 Oct 18 1724 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Oct 19: G1 (Minor) Oct 20: G1 (Minor) Oct 21: None (Below G1) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EFFE",
