@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-28T15:59:23.614Z",
-  "last_check": "2026-10-28T15:59:23.614Z",
+  "last_updated": "2026-10-28T21:02:05.229Z",
+  "last_check": "2026-10-28T21:02:05.229Z",
   "count": 10,
   "sources": [
     "noaa-swpc",
@@ -8,6 +8,16 @@
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
+      "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1133 Issue Time: 2026 Oct 28 1638 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Oct 29: None (Below G1) Oct 30: None (Below G1) Oct 31: G1 (Minor) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN",
+      "published": "2026-10-28T16:38:01.100Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A20F"
+    },
     {
       "title": "ALERT: Geomagnetic K-index of 4",
       "excerpt": "Space Weather Message Code: ALTK04 Serial Number: 2694 Issue Time: 2026 Oct 23 1955 UTC ALERT: Geomagnetic K-index of 4 Threshold Reached: 2026 Oct 23 1953 UTC Synoptic Period: 1800-2100 Active Warning: YES Comment: NOAA Space Weather Scale descriptions can be found at www.swpc.n",
@@ -97,16 +107,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K04A"
-    },
-    {
-      "title": "WARNING: Geomagnetic K-index of 4 expected",
-      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5438 Issue Time: 2026 Oct 21 1617 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Oct 21 1616 UTC Valid To: 2026 Oct 22 0600 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
-      "published": "2026-10-21T16:17:18.167Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K04W"
     }
   ]
 }
