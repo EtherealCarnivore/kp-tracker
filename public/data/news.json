@@ -1,13 +1,41 @@
 {
-  "last_updated": "2026-11-01T07:30:04.166Z",
-  "last_check": "2026-11-01T07:30:04.166Z",
-  "count": 13,
+  "last_updated": "2026-11-01T15:04:58.615Z",
+  "last_check": "2026-11-01T15:04:58.615Z",
+  "count": 16,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5446 Issue Time: 2026 Nov 01 1457 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5445 Valid From: 2026 Oct 31 1235 UTC Now Valid Until: 2026 Nov 01 2359 UTC Warning Condition: Persistence NOAA ",
+      "published": "2026-11-01T14:57:52.780Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04W"
+    },
+    {
+      "title": "Неочаквана магнитна буря удари Земята",
+      "excerpt": "Във вечерните часове на 31 октомври Земята е била засегната от магнитна буря от степен G2, която не е била предвидена от учените",
+      "published": "2026-11-01T14:27:00.000Z",
+      "source": "Vesti.bg",
+      "source_id": "vesti-bg",
+      "url": "https://www.vesti.bg/lyubopitno/neochakvana-magnitna-buria-udari-zemiata-6274883",
+      "lang": "bg"
+    },
+    {
+      "title": "Пробив в щита на Земята: Слънчева буря пусна \"електрони-убийци\" твърде близо до планетата",
+      "excerpt": "Мощната слънчева буря от май 2024 г. е унищожила защитната зона около Земята, разкриват японски учени",
+      "published": "2026-11-01T11:34:00.000Z",
+      "source": "Vesti.bg",
+      "source_id": "vesti-bg",
+      "url": "https://www.vesti.bg/lyubopitno/probiv-v-shtita-na-zemiata-slyncheva-buria-pusna-elektroni-ubijci-tvyrde-blizo-do-planetata-6274860",
+      "lang": "bg"
+    },
     {
       "title": "ALERT: Geomagnetic K-index of 5",
       "excerpt": "Space Weather Message Code: ALTK05 Serial Number: 2060 Issue Time: 2026 Nov 01 0117 UTC ALERT: Geomagnetic K-index of 5 Threshold Reached: 2026 Nov 01 0117 UTC Synoptic Period: 0000-0300 Active Warning: YES Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA Space Weather",
