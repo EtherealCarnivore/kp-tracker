@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-11-01T15:04:58.615Z",
-  "last_check": "2026-11-01T15:04:58.615Z",
-  "count": 16,
+  "last_updated": "2026-11-01T19:38:14.425Z",
+  "last_check": "2026-11-01T19:38:14.425Z",
+  "count": 15,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -25,15 +25,6 @@
       "source": "Vesti.bg",
       "source_id": "vesti-bg",
       "url": "https://www.vesti.bg/lyubopitno/neochakvana-magnitna-buria-udari-zemiata-6274883",
-      "lang": "bg"
-    },
-    {
-      "title": "Пробив в щита на Земята: Слънчева буря пусна \"електрони-убийци\" твърде близо до планетата",
-      "excerpt": "Мощната слънчева буря от май 2024 г. е унищожила защитната зона около Земята, разкриват японски учени",
-      "published": "2026-11-01T11:34:00.000Z",
-      "source": "Vesti.bg",
-      "source_id": "vesti-bg",
-      "url": "https://www.vesti.bg/lyubopitno/probiv-v-shtita-na-zemiata-slyncheva-buria-pusna-elektroni-ubijci-tvyrde-blizo-do-planetata-6274860",
       "lang": "bg"
     },
     {
