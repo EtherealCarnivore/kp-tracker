@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-11-02T05:58:38.706Z",
-  "last_check": "2026-11-02T05:58:38.706Z",
-  "count": 15,
+  "last_updated": "2026-11-02T15:46:45.006Z",
+  "last_check": "2026-11-02T15:46:45.006Z",
+  "count": 14,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
@@ -17,15 +17,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K04W"
-    },
-    {
-      "title": "Неочаквана магнитна буря удари Земята",
-      "excerpt": "Във вечерните часове на 31 октомври Земята е била засегната от магнитна буря от степен G2, която не е била предвидена от учените",
-      "published": "2026-11-01T14:27:00.000Z",
-      "source": "Vesti.bg",
-      "source_id": "vesti-bg",
-      "url": "https://www.vesti.bg/lyubopitno/neochakvana-magnitna-buria-udari-zemiata-6274883",
-      "lang": "bg"
     },
     {
       "title": "ALERT: Geomagnetic K-index of 5",
