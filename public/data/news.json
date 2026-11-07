@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-06T23:05:48.681Z",
-  "last_check": "2026-11-06T23:05:48.681Z",
+  "last_updated": "2026-11-07T02:46:28.409Z",
+  "last_check": "2026-11-07T02:46:28.409Z",
   "count": 13,
   "sources": [
     "noaa-swpc",
@@ -8,6 +8,16 @@
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WARNING: Geomagnetic K-index of 4 expected",
+      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5448 Issue Time: 2026 Nov 07 0056 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Nov 07 0056 UTC Valid To: 2026 Nov 07 1200 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
+      "published": "2026-11-07T00:56:27.930Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "K04W"
+    },
     {
       "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
       "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1136 Issue Time: 2026 Nov 05 1745 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Nov 06: G1 (Minor) Nov 07: G1 (Minor) Nov 08: G1 (Minor) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EFFECT Co",
@@ -127,16 +137,6 @@
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
       "lang": "en",
       "product_id": "K04W"
-    },
-    {
-      "title": "WARNING: Geomagnetic K-index of 5 expected",
-      "excerpt": "Space Weather Message Code: WARK05 Serial Number: 2272 Issue Time: 2026 Oct 30 2311 UTC WARNING: Geomagnetic K-index of 5 expected Valid From: 2026 Oct 30 2310 UTC Valid To: 2026 Oct 31 0600 UTC Warning Conditions: Onset Noaa Scale: G1 - Minor Comment: NOAA Scale: G1 - Minor NOAA",
-      "published": "2026-10-30T23:11:02.193Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K05W"
     }
   ]
 }
