@@ -1,13 +1,23 @@
 {
-  "last_updated": "2026-11-24T05:59:36.114Z",
-  "last_check": "2026-11-24T05:59:36.114Z",
-  "count": 7,
+  "last_updated": "2026-11-24T17:40:20.704Z",
+  "last_check": "2026-11-24T17:40:20.704Z",
+  "count": 8,
   "sources": [
     "noaa-swpc",
     "vesti-bg",
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
+      "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1139 Issue Time: 2026 Nov 24 1419 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Nov 25: None (Below G1) Nov 26: None (Below G1) Nov 27: G1 (Minor) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN",
+      "published": "2026-11-24T14:19:26.753Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A20F"
+    },
     {
       "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
       "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5457 Issue Time: 2026 Nov 19 0118 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5456 Valid From: 2026 Nov 19 0040 UTC Now Valid Until: 2026 Nov 19 0900 UTC Warning Condition: Persistence NOAA ",
