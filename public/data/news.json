@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-25T02:24:12.549Z",
-  "last_check": "2026-11-25T02:24:12.549Z",
+  "last_updated": "2026-11-25T12:50:16.783Z",
+  "last_check": "2026-11-25T12:50:16.783Z",
   "count": 8,
   "sources": [
     "noaa-swpc",
@@ -8,6 +8,16 @@
     "24chasa-bg"
   ],
   "items": [
+    {
+      "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
+      "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1140 Issue Time: 2026 Nov 25 0833 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Nov 26: G1 (Minor) Nov 27: G1 (Minor) Nov 28: None (Below G1) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN EFFE",
+      "published": "2026-11-25T08:33:12.430Z",
+      "source": "NOAA SWPC",
+      "source_id": "noaa-swpc",
+      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
+      "lang": "en",
+      "product_id": "A20F"
+    },
     {
       "title": "WATCH: Geomagnetic Storm Category G1 Predicted",
       "excerpt": "Space Weather Message Code: WATA20 Serial Number: 1139 Issue Time: 2026 Nov 24 1419 UTC WATCH: Geomagnetic Storm Category G1 Predicted Highest Storm Level Predicted by Day: Nov 25: None (Below G1) Nov 26: None (Below G1) Nov 27: G1 (Minor) THIS SUPERSEDES ANY/ALL PRIOR WATCHES IN",
@@ -72,16 +82,6 @@
       "title": "EXTENDED WARNING: Geomagnetic K-index of 4 expected",
       "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5455 Issue Time: 2026 Nov 18 1432 UTC EXTENDED WARNING: Geomagnetic K-index of 4 expected Extension to Serial Number: 5454 Valid From: 2026 Nov 18 0555 UTC Now Valid Until: 2026 Nov 18 1800 UTC Warning Condition: Persistence NOAA ",
       "published": "2026-11-18T14:32:13.287Z",
-      "source": "NOAA SWPC",
-      "source_id": "noaa-swpc",
-      "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
-      "lang": "en",
-      "product_id": "K04W"
-    },
-    {
-      "title": "WARNING: Geomagnetic K-index of 4 expected",
-      "excerpt": "Space Weather Message Code: WARK04 Serial Number: 5454 Issue Time: 2026 Nov 18 0556 UTC WARNING: Geomagnetic K-index of 4 expected Valid From: 2026 Nov 18 0555 UTC Valid To: 2026 Nov 18 1500 UTC Warning Conditions: Onset Comment: NOAA Space Weather Scale descriptions can be found",
-      "published": "2026-11-18T05:56:07.553Z",
       "source": "NOAA SWPC",
       "source_id": "noaa-swpc",
       "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
